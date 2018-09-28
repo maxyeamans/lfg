@@ -2,9 +2,11 @@ import React from "react";
 import { Col, Row } from "../Grid";
 import EditProfileBtn from "../EditProfileBtn";
 import "./Profile.css";
+let styles = {
 
+}
 const Profile = props => (
-  <Col size="xl-12 sm-12">
+  <Col size="xl-12 sm-12" style={{backgroundColor : 'black'}} >
     <Row>
       <h2>User's Name</h2>
       {/* name prop to be passed in later */}
