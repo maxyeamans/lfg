@@ -6,6 +6,7 @@ import CurrentGroups from "../../components/CurrentGroups";
 import Profile from "../../components/Profile";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import API from "../../utils/API";
 
 class Main extends Component {
   constructor(props) {
