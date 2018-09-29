@@ -5,6 +5,7 @@ import SearchBtn from "../../components/SearchBtn";
 import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
 import Profile from "../../components/Profile";
+import API from "../../utils/API";
 
 class Main extends Component {
   constructor(props) {
