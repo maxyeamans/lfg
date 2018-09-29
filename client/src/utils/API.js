@@ -17,7 +17,11 @@ export default {
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
   },
-  //////////////////////////////////////////
+  // Updates the user with the given id
+  updateUser: function(id) {
+    return axios.update("/api/users/" + id);
+  },
+  /////////////////////////////////////////////////////////////////////////
   // Gets all profiles
   getProfiles: function() {
     return axios.get("/api/profiles");
@@ -34,7 +38,11 @@ export default {
   saveProfile: function(profileData) {
     return axios.post("/api/profiles", profileData);
   },
-  ////////////////////////////////////////////
+  // Updates the profile with the given id
+  updateProfile: function(id) {
+    return axios.update("/api/profiles/" + id);
+  },
+  ////////////////////////////////////////////////////////////////////////////////
   // Gets all groups
   getGroups: function() {
     return axios.get("/api/groups");
@@ -50,5 +58,9 @@ export default {
   // Saves a group to the database
   saveGroup: function(GroupData) {
     return axios.post("/api/groups", GroupData);
-  }
+  },
+  // Updates the group with the given id
+  updateGroup: function(id) {
+    return axios.update("/api/groups/" + id);
+  },
 };
