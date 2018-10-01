@@ -13,7 +13,27 @@ class Main extends Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.loadUsers();
+    this.loadProfiles();
+    this.loadGroups();
+  }
+
+  loadUsers = () => {
+    API.getUsers()
+      .then(res => this.setState({ books: res.data }))
+      .catch(err => console.log(err));
+  };
+  loadProfiles = () => {
+    API.getProfiles()
+      .then(res => this.setState({ books: res.data }))
+      .catch(err => console.log(err));
+  };
+  loadGroups = () => {
+    API.getGroups()
+      .then(res => this.setState({ books: res.data }))
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     const value = event.target.value;
