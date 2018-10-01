@@ -12,6 +12,10 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    users = [];
+    profiles = [];
+    groups = [];
+
   }
 
   componentDidMount() {
@@ -20,19 +24,19 @@ class Main extends Component {
     this.loadGroups();
   }
 
-  loadUsers = () => {
+  loadUsers = () => { // gets all users
     API.getUsers()
-      .then(res => this.setState({ books: res.data }))
+      .then(res => this.setState({ users: res.data }))
       .catch(err => console.log(err));
   };
-  loadProfiles = () => {
+  loadProfiles = () => { // gets all profiles
     API.getProfiles()
-      .then(res => this.setState({ books: res.data }))
+      .then(res => this.setState({ profiles: res.data }))
       .catch(err => console.log(err));
   };
-  loadGroups = () => {
+  loadGroups = () => { // gets all groups
     API.getGroups()
-      .then(res => this.setState({ books: res.data }))
+      .then(res => this.setState({ groups: res.data }))
       .catch(err => console.log(err));
   };
 
