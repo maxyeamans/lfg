@@ -11,10 +11,11 @@ import API from "../../utils/API";
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    users = [];
-    profiles = [];
-    groups = [];
+    this.state = {
+    
+      
+    };
+    
 
   }
 
