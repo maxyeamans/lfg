@@ -10,21 +10,23 @@ let styles = {
   height: "100%",
   left: 0,
   top: 0,
-  zIndex: 10, 
+  zIndex: 10,
   backgroundImage: "url(" + Background + ")"
 }
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      username: "",
+      password: ""
+    };
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   handleInputChange = event => {
-    const value = event.target.value;
-    const name = event.target.name;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -37,11 +39,25 @@ class Login extends Component {
 
   render() {
     return (
-      // NAV IS RIGHT HERE
+      
       <Container fluid style={styles}>
-        <Row>
-          <Passport />
-        </Row>
+        <form className="m-4" action="/login" method="post">
+          <div className="form-group">
+            <label for="username" className="bg-secondary">Username</label>
+            <input type="text" className="form-control" id="username" placeholder="Username"
+              onChange={this.handleInputChange}
+              value={this.state.username}
+            />
+          </div>
+          <div className="form-group">
+            <label for="password" className="bg-secondary">Password</label>
+            <input type="password" className="form-control" id="password" placeholder="Password"
+              onChange={this.handleInputChange}
+              value={this.state.password}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
       </Container>
     );
   }
