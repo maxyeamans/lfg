@@ -32,7 +32,7 @@ const Profile = props => (
       <EditProfileBtn />
     </Row>
   </Col>
-  </div>
+
 );
 
 export default Profile;
