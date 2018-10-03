@@ -3,20 +3,16 @@ import { Col, Row, Container } from "../../components/Grid";
 import SearchBtn from "../../components/SearchBtn";
 import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
-import MainProfile from "../../components/MainProfile";
+import Profile from "../../components/Profile";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
-import "./main.css";
+import MainProfile from "../../components/MainProfile";
 
-class Main extends Component {
+class Profiles extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-     
-    };
-    
-
+    this.state = {};
   }
 
   componentDidMount() {
@@ -25,17 +21,20 @@ class Main extends Component {
     this.loadGroups();
   }
 
-  loadUsers = () => { // gets all users
+  loadUsers = () => {
+    // gets all users
     API.getUsers()
       .then(res => this.setState({ users: res.data }))
       .catch(err => console.log(err));
   };
-  loadProfiles = () => { // gets all profiles
+  loadProfiles = () => {
+    // gets all profiles
     API.getProfiles()
       .then(res => this.setState({ profiles: res.data }))
       .catch(err => console.log(err));
   };
-  loadGroups = () => { // gets all groups
+  loadGroups = () => {
+    // gets all groups
     API.getGroups()
       .then(res => this.setState({ groups: res.data }))
       .catch(err => console.log(err));
@@ -57,39 +56,27 @@ class Main extends Component {
   render() {
     return (
       // NAV IS RIGHT HERE
-
-      
-      <Container fluid >
-        <Nav />
-
-     
-
+      <Container fluid>
+      <Nav />
         <Row>
           {/* Start Column 1 */}
           <Col size="xl-6 sm-6">
-          <div className="mygroups">
-            <h1>Groups</h1>
-           
-            <CurrentGroups />
-            </div>
-            {/* PROPS NEEDED: Group Name, Members, Group Image */}
+            <MainProfile />
+            {/* PROPS NEEDED: P1(profile 1) Time Played, P1 Most Played, P1 Ranking */}
           </Col>
           {/* Start Column 2 */}
-
           <Col size="xl-6 sm-6">
             <Row>
-              <MainProfile />
+              <Col size="xl-12 sm-12">
+                <Profile />
+                {/* PROPS NEEDED: P2 Time Played, P2 Most Played, P2 Ranking */}
+              </Col>
             </Row>
-
             <Row>
-            {/* <container className="creategroupSearch"> */}
-              <Col size="xl-6 sm-6">
-                <CreateGroupBtn />
+              <Col size="xl-12 sm-12">
+                <Profile />
+                {/* PROPS NEEDED: P3 Time Played, P3 Most Played, P3 Ranking */}
               </Col>
-              <Col size="xl-6 sm-6">
-                <SearchBtn />
-              </Col>
-              {/* </container> */}
             </Row>
           </Col>
         </Row>
@@ -99,4 +86,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Profiles;
