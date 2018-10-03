@@ -12,31 +12,37 @@ const usersSeed = [
   {
     username: "test1",
     password: "password1",
+    email: "email1@email.com",
     profile: []
   },
   {
     username: "test2",
     password: "password2",
+    email: "email2@email.com",
     profile: []
   },
   {
     username: "test3",
     password: "password3",
+    email: "email3@email.com",
     profile: []
   },
   {
     username: "test4",
     password: "password4",
+    email: "email4@email.com",
     profile: []
   },
   {
     username: "test5",
     password: "password5",
+    email: "email5@email.com",
     profile: []
   },
   {
     username: "test6",
     password: "password6",
+    email: "email6@email.com",
     profile: []
   },
   
