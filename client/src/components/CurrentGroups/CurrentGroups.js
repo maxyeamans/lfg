@@ -1,4 +1,5 @@
 import React from "react";
+import "./CurrentGroups.css";
 
 const CurrentGroups = props => (
 
@@ -14,7 +15,7 @@ const CurrentGroups = props => (
         <strong>Members:</strong> 
         {/* {props.date} */}
       </li>
-      <button className="btn btn-primary" 
+      <button className="manage-groups-btn" 
       // onClick={() => props.saveArticles(props.data)}
       >
         Manage

@@ -7,13 +7,13 @@ import Profile from "../../components/Profile";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
+import "./main.css";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    
-      
+     
     };
     
 
@@ -57,27 +57,39 @@ class Main extends Component {
   render() {
     return (
       // NAV IS RIGHT HERE
-      <Container fluid>
+
+      
+      <Container fluid >
+        <Nav />
+
+     
+
         <Row>
           {/* Start Column 1 */}
           <Col size="xl-6 sm-6">
+          <div className="mygroups">
             <h1>Groups</h1>
+           
             <CurrentGroups />
+            </div>
             {/* PROPS NEEDED: Group Name, Members, Group Image */}
           </Col>
           {/* Start Column 2 */}
+
           <Col size="xl-6 sm-6">
             <Row>
               <Profile />
             </Row>
 
             <Row>
+            {/* <container className="creategroupSearch"> */}
               <Col size="xl-6 sm-6">
                 <CreateGroupBtn />
               </Col>
               <Col size="xl-6 sm-6">
                 <SearchBtn />
               </Col>
+              {/* </container> */}
             </Row>
           </Col>
         </Row>
