@@ -32,7 +32,6 @@ class Search extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
-        <Nav />
         <Row>
           <Col size="xl-4 lg-3" />
           <Col size="xl-4 lg-6">
