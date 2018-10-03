@@ -32,7 +32,6 @@ class Search extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
-      <Nav />
         <Row>
           <SearchBar />
         </Row>

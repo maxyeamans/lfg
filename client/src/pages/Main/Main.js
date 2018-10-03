@@ -57,9 +57,13 @@ class Main extends Component {
   render() {
     return (
       // NAV IS RIGHT HERE
+
       
       <Container fluid >
         <Nav />
+
+     
+
         <Row>
           {/* Start Column 1 */}
           <Col size="xl-6 sm-6">
