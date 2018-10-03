@@ -4,7 +4,7 @@ import EditProfileBtn from "../EditProfileBtn";
 
 let styles = {
   border: "2px solid"
-
+  
 }
 
 const Profile = props => (

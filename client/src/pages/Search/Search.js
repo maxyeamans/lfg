@@ -32,17 +32,25 @@ class Search extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
-      <Nav />
+        <Nav />
         <Row>
-          <SearchBar />
+          <Col size="xl-4 lg-3" />
+          <Col size="xl-4 lg-6">
+            <SearchBar />
+          </Col>
+          <Col size="xl-4 lg-3" />
         </Row>
 
         <Row>
-          <div id="search-results">
-            {/* Will need to find a way to determine which component to render, based on search filter of Players or Groups */}
-            <SearchPlayer />
-            <SearchGroup />
-          </div>
+          <Col size="xl-4 lg-3" />
+          <Col size="xl-4 lg-6">
+            <div id="search-results">
+              {/* Will need to find a way to determine which component to render, based on search filter of Players or Groups */}
+              <SearchPlayer />
+              <SearchGroup />
+            </div>
+          </Col>
+          <Col size="xl-4 lg-3" />
         </Row>
         <Footer />
       </Container>

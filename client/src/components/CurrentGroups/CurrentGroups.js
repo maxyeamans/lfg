@@ -1,22 +1,21 @@
 import React from "react";
+import "./CurrentGroups.css";
 
 const CurrentGroups = props => (
 
-  <div className="card">
+  <div className="card current-groups">
 
     <ul className="list-group">
 
       <li className="list-group-item">
         <strong>Group name:</strong> 
-        {/* {props.title} */}
+        {/* {props.name} */}
       </li>
       <li className="list-group-item">
         <strong>Members:</strong> 
-        {/* {props.date} */}
+        {/* {props.members} */}
       </li>
-      <button className="btn btn-primary" 
-      // onClick={() => props.saveArticles(props.data)}
-      >
+      <button className="btn" >
         Manage
       </button>
     </ul>
