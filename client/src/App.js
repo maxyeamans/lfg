@@ -5,7 +5,7 @@ import Main from "./pages/Main";
 import NoPage from "./pages/NoPage";
 import Search from "./pages/Search";
 import Login from "./pages/Login";
-import Profiles from "./pages/Profiles";
+import NewGroup from "./pages/NewGroup";
 import Register from "./pages/Register";
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
         <Route exact path="/register" component={Register} />
         <Route exact path="/main" component={Main} />
         <Route exact path="/search" component={Search} />
-        <Route exact path="/profile" component={Profiles} />
+        <Route exact path="/newgroup" component={NewGroup} />
         <Route component={NoPage} />
       </Switch>
     </div>

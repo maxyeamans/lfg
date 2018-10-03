@@ -17,10 +17,7 @@ const Profile = props => (
       <Col size="xl-6 sm-6">{/* Image prop to be passed in */}</Col>
       <Col size="xl-6 sm-6">
         <Row>
-          <h3>Times Played</h3>
-        </Row>
-        <Row>
-          <h3>Most Played Characters</h3>
+          <h3>Preferred Characters</h3>
         </Row>
         <Row>
           <h3>Ranking</h3>
