@@ -5,6 +5,7 @@ import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
 import MainProfile from "../../components/MainProfile";
 import Footer from "../../components/Footer";
+import ProfileModal from "../../components/ProfileModal";
 import API from "../../utils/API";
 import "./main.css";
 

@@ -1,11 +1,15 @@
 import React from "react";
 import { Col, Row } from "../Grid";
-import EditProfileBtn from "../EditProfileBtn";
+import ProfileModal from "../ProfileModal";
 
 let styles = {
   border: "2px solid"
   
 }
+
+
+  
+
 
 const Profile = props => (
   <Col size="xl-12 sm-12" style={styles} >
@@ -20,12 +24,16 @@ const Profile = props => (
           <h3>Preferred Characters</h3>
         </Row>
         <Row>
-          <h3>Ranking</h3>
+          <h3> Ranking:</h3>
+          <div id="ranking-output">
+          
+          </div>
+          
         </Row>
       </Col>
     </Row>
     <Row>
-      <EditProfileBtn />
+      <ProfileModal />
     </Row>
   </Col>
 );
