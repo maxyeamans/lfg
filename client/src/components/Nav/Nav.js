@@ -4,7 +4,6 @@ import "./Nav.css";
 
 const Nav = () => (
   <Row>
-
     <nav class="navbar navbar-expand-sm my-3">
       <a class="navbar-brand" href="/main">
         LFG
@@ -22,7 +21,7 @@ const Nav = () => (
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-        <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/main">
               Home
             </a>
@@ -30,11 +29,6 @@ const Nav = () => (
           <li class="nav-item">
             <a class="nav-link" href="/search">
               Search
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profile">
-              Profile
             </a>
           </li>
           {/* {props.isLoggedIn

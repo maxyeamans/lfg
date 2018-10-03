@@ -4,7 +4,6 @@ import SearchBtn from "../../components/SearchBtn";
 import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
 import MainProfile from "../../components/MainProfile";
-import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./main.css";

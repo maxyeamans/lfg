@@ -44,8 +44,6 @@ class Search extends Component {
           <Col size="xl-4 lg-3" />
           <Col size="xl-4 lg-6">
             <div id="search-results">
-              {/* Will need to find a way to determine which component to render, based on search filter of Players or Groups */}
-              <SearchPlayer />
               <SearchGroup />
             </div>
           </Col>
