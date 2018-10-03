@@ -1,3 +1,18 @@
 .search-btn {
-  border: 2px solid;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.search-btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
 }

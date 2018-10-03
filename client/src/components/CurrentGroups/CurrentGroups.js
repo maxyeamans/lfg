@@ -15,7 +15,9 @@ const CurrentGroups = props => (
         <strong>Members:</strong> 
         {/* {props.members} */}
       </li>
-      <button className="btn" >
+      <button className="manage-groups-btn" 
+      // onClick={() => props.saveArticles(props.data)}
+      >
         Manage
       </button>
     </ul>

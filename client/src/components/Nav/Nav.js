@@ -37,6 +37,9 @@ const Nav = () => (
               Profile
             </a>
           </li>
+          {/* {props.isLoggedIn
+      ? ( <a>Logged In</a>)
+      : ( <a>Not Logged In</a> )} */}
         </ul>
       </div>
     </nav>
