@@ -12,7 +12,6 @@ const App = () => (
   <Router>
     <div>
       <Nav isLoggedIn={true} />
-
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
