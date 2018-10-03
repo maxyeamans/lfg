@@ -11,8 +11,8 @@ import Register from "./pages/Register";
 const App = () => (
   <Router>
     <div>
-      <Nav isLoggedIn={true} >
-      </Nav>
+      <Nav isLoggedIn={true} />
+
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />

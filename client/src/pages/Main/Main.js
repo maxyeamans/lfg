@@ -60,10 +60,6 @@ class Main extends Component {
 
       
       <Container fluid >
-        <Nav />
-
-     
-
         <Row>
           {/* Start Column 1 */}
           <Col size="xl-6 sm-6">
