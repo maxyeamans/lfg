@@ -21,7 +21,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.loadUsers();
-    this.loadProfiles();
+    // this.loadProfiles();
     this.loadGroups();
   }
 
@@ -30,11 +30,11 @@ class Main extends Component {
       .then(res => this.setState({ users: res.data }))
       .catch(err => console.log(err));
   };
-  loadProfiles = () => { // gets all profiles
-    API.getProfiles()
-      .then(res => this.setState({ profiles: res.data }))
-      .catch(err => console.log(err));
-  };
+  // loadProfiles = () => { // gets all profiles
+  //   API.getProfiles()
+  //     .then(res => this.setState({ profiles: res.data }))
+  //     .catch(err => console.log(err));
+  // };
   loadGroups = () => { // gets all groups
     API.getGroups()
       .then(res => this.setState({ groups: res.data }))
