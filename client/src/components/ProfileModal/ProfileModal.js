@@ -1,11 +1,10 @@
 import React from "react";
 import "./ProfileModal.css";
 import { Modal } from "react-bootstrap";
-import { Popover } from "react-bootstrap";
-import { Tooltip } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { OverlayTrigger } from "react-bootstrap";
 import API from "../../utils/API";
+import Login from "../../pages/Login/Login";//trying to bring in current username and pass
+
 
 // We need to pass in the User ID prop so that we can include it in our post request
 
@@ -52,45 +51,46 @@ class ProfileModal extends React.Component {
       <div>
         {/* <p> Text above modal</p> */}
 
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Edit Profile
+        <Button id="settings-btn" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          Settings
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> Profile</Modal.Title>
+            <Modal.Title> Settings</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form className="m-4" action="" method="post" onSubmit="">
               <div className="form-group">
-                <label for="username">Username</label>
+                <label for="username">
+                Change current Username:</label>
                 <input
                   type="name"
                   className="form-control"
                   id="username"
-                  placeholder="Username"
+                  placeholder="New Username"
                   onChange={this.handleInputChange}
                   value={this.state.username}
                 />
               </div>
               <div className="form-group">
-                <label for="password">Password</label>
+                <label for="password">Change current Password:</label>
                 <input
                   type="text"
                   className="form-control"
                   id="password"
-                  placeholder="Password"
+                  placeholder="New Password"
                   onChange={this.handleInputChange}
                   value={this.state.password}
                 />
               </div>
               <div className="form-group">
-                <label for="email">Email</label>
+                <label for="email">Change current Email:</label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
-                  placeholder="Email"
+                  placeholder="New Email"
                   onChange={this.handleInputChange}
                   value={this.state.email}
                 />

@@ -1,6 +1,6 @@
 .search-btn {
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #aed3e0;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -10,9 +10,11 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  font-family:"bignoodletoo";
+  letter-spacing: 2px;
 }
 
 .search-btn:hover {
-  background-color: #4CAF50; /* Green */
-  color: white;
+  background-color: rgb(44, 43, 43); /* Green */
+  color: #f09731;
 }

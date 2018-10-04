@@ -1,11 +1,12 @@
 import React from "react";
 import { Row } from "../Grid";
+import ProfileModal from "../ProfileModal";
 import "./Nav.css";
 
 const Nav = () => (
   <Row>
     <nav class="navbar navbar-expand-sm my-3">
-      <a class="navbar-brand" href="/main">
+      <a id="lfg" class="navbar-brand" href="/main">
         LFG
       </a>
       <button
@@ -29,6 +30,12 @@ const Nav = () => (
           <li class="nav-item">
             <a class="nav-link" href="/search">
               Search
+            </a>
+          </li>
+          <li class="nav-item3">
+            <a id="settings-icon" class="nav-link" >
+             
+              <ProfileModal />
             </a>
           </li>
           {/* {props.isLoggedIn
