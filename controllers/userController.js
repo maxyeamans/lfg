@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("./../models");
 
 // Defining methods for the userController
 module.exports = {
@@ -16,6 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body + " req.body");
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))

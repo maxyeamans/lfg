@@ -3,6 +3,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import Background from "../../images/background-image.jpg";
 import Passport from "../../components/Passport";
 import "./Login.css";
+import API from "../../utils/API";
 
 let styles = {
   position: "fixed",
@@ -15,13 +16,11 @@ let styles = {
 }
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: ""
-    };
-  }
+  state = {
+    username: "",
+    password: ""
+  };
+  
 
   componentDidMount() { }
 
@@ -30,12 +29,13 @@ class Login extends Component {
     this.setState({
       [name]: value
     });
+    
   };
 
-  _onChange = event => {
-    event.preventDefault();
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  // _onChange = event => {
+  //   event.preventDefault();
+  //   this.setState({ [event.target.name]: event.target.value });
+  // };
 
   render() {
     return (
