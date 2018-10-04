@@ -6,6 +6,7 @@ import SearchGroup from "../../components/SearchGroup";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import "./Search.css";
+import API from "../../utils/API";
 
 class Search extends Component {
   constructor(props) {

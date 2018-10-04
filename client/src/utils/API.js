@@ -15,6 +15,7 @@ export default {
   },
   // Saves a user to the database
   saveUser: function(userData) {
+    console.log(userData);
     return axios.post("/api/users", userData);
   },
   // Updates the user with the given id

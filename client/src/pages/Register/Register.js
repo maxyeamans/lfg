@@ -1,52 +1,77 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
+import { Input } from "./../../components/Form"
 
 class Register extends Component {
     state = {
         email: "",
-        name: "",
+        username: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        group: []
     };
 
-    handleInputChange = (event) => {
-        const {id, value} = event.target;
+    handleInputChange = event => {
+        const { name, value } = event.target;
         this.setState({
-            [id]: value
+          [name]: value
+        });
+        
+      };
+
+    createNewUser = (username, password, email, group) => {
+        console.log(username, " ", password, " ", email, " ", group);
+        API.saveUser({
+          username: username,
+          password: password,
+          email: email
+          
         })
-    };
+          .then(res => this.loadGroups())
+          .catch(err => console.log(err));
+      }
+
+      loadGroups(){ // I put this function here but it might need to be on the profile/user page (whatever we end up calling it)
+        API.getGroups()
+        .then(res =>
+          this.setState({ groups: res.data })
+        )
+        .catch(err => console.log(err));
+      }
+      // was in form action="/register" method="post"
 
     render() {
         return (
-            <form className="m-4" action="/register" method="post">
+            <form className="m-4">
                 <div className="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" className="form-control" id="email" placeholder="Email"
+                <label for="email">Email</label>
+                    <input type="text" className="form-control" name="email" placeholder="Email"
                         onChange={this.handleInputChange}
                         value={this.state.email}
                     />
                 </div>
                 <div className="form-group">
                     <label for="name">Name</label>
-                    <input type="text" className="form-control" id="name" placeholder="Username"
+                    <input type="text" className="form-control" name="username" placeholder="Username"
                         onChange={this.handleInputChange}
-                        value={this.state.name}
+                        value={this.state.username}
                     />
                 </div>
                 <div className="form-group">
                     <label for="password">Password</label>
-                    <input type="password" className="form-control" id="password" placeholder="Password" 
+                    <input type="password" className="form-control" name="password" placeholder="Password" 
                         onChange={this.handleInputChange}
                         value={this.state.password}
                     />
                 </div>
                 <div className="form-group">
                     <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" className="form-control" id="confirmPassword" placeholder="Confirm Password" 
+                    <input type="password" className="form-control" name="confirmPassword" placeholder="Confirm Password" 
                         onChange={this.handleInputChange}
                         value={this.state.confirmPassword}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary" onClick={() => this.createNewUser(this.state.username, this.state.password, this.state.email)}>Submit</button>
             </form>
         )
     };
