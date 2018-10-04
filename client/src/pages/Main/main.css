@@ -1,9 +1,11 @@
 h1 {
     color:rgb(34, 34, 34);
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+   text-align:center;
   }
 
   .mygroups{
-    border: 1px solid black;
     margin-top:2%;
   }
 
@@ -16,6 +18,7 @@ h1 {
       padding:20px;
       margin:auto;
       width:50%;
+      margin-top:20%;
   }
 
   body{

@@ -32,7 +32,7 @@ const Nav = () => (
               Search
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item3">
             <a id="settings-icon" class="nav-link" >
              
               <ProfileModal />
