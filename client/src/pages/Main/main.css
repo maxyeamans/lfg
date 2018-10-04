@@ -1,14 +1,24 @@
 h1 {
-    color: #08a537;
+    color:rgb(34, 34, 34);
   }
 
   .mygroups{
-      background-color:pink;
-      height:200px;
+    border: 1px solid black;
+    margin-top:2%;
   }
 
   .creategroupSearch{
       background-color:blue;
-      
       width:100%;
   }
+
+  .buttons{
+      padding:20px;
+      margin:auto;
+      width:50%;
+  }
+
+  body{
+      background-color:rgb(223, 219, 219);
+  }
+  

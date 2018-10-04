@@ -1,4 +1,32 @@
 .navbar {
-    width: 40%;
+    width: 100%;
     border: 2px solid;
+    background-color:#161616;
+    color: #161616;
+   
  } 
+
+ /* @font-face { font-family: bignoodletoo; src: url('../bignoodletoo1.TTF'); }  */
+ a{
+     color:#afafaf;
+     /* font-family: bignoodletoo */
+    
+ }
+
+ 
+
+ a:hover { 
+    color:#ffffff;
+}
+
+#lfg{
+    color:#3d92cf;
+}
+
+#lfg:hover { 
+    color:#ffffff;
+}
+
+
+ 
+     

@@ -62,9 +62,9 @@ class Main extends Component {
       <Container fluid >
         <Row>
           {/* Start Column 1 */}
-          <Col size="xl-6 sm-6">
+          <Col size="xl-8 sm-8">
           <div className="mygroups">
-            <h1>Groups</h1>
+            <h1>My Groups</h1>
            
             <CurrentGroups />
             </div>
@@ -72,19 +72,23 @@ class Main extends Component {
           </Col>
           {/* Start Column 2 */}
 
-          <Col size="xl-6 sm-6">
-            <Row>
-              <MainProfile />
-            </Row>
-
+          <Col size="xl-4 sm-4">
+            
             <Row>
             {/* <container className="creategroupSearch"> */}
               <Col size="xl-6 sm-6">
+              <Row>
+                <div class="buttons">
                 <CreateGroupBtn />
-              </Col>
-              <Col size="xl-6 sm-6">
+                </div>
+                </Row>
+                <Row>
+                <div class="buttons">
                 <SearchBtn />
+                </div>
+                </Row>
               </Col>
+              
               {/* </container> */}
             </Row>
           </Col>

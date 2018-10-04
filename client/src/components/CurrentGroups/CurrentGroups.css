@@ -1,6 +1,6 @@
 .manage-groups-btn {
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #aed3e0;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -11,6 +11,6 @@
   }
   
   .manage-groups-btn:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: #f09731; 
     color: white;
   }

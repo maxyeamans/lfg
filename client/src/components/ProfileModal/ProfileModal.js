@@ -1,10 +1,7 @@
 import React from "react";
 import "./ProfileModal.css";
 import { Modal } from "react-bootstrap";
-import { Popover } from "react-bootstrap";
-import { Tooltip } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { OverlayTrigger } from "react-bootstrap";
 import API from "../../utils/API";
 
 // We need to pass in the User ID prop so that we can include it in our post request
@@ -52,8 +49,8 @@ class ProfileModal extends React.Component {
       <div>
         {/* <p> Text above modal</p> */}
 
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Edit Profile
+        <Button id="settings-btn" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          Settings
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>

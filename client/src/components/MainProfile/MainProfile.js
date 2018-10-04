@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "../Grid";
-import ProfileModal from "../ProfileModal";
+// import ProfileModal from "../ProfileModal";
 
 let styles = {
   border: "2px solid"
@@ -33,7 +33,7 @@ const Profile = props => (
       </Col>
     </Row>
     <Row>
-      <ProfileModal />
+      {/* <ProfileModal /> */}
     </Row>
   </Col>
 );

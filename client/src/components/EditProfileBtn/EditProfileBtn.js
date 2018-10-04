@@ -5,7 +5,7 @@ import "./EditProfileBtn.css";
 // That way we don't have to define them all individually
 const EditProfileBtn = props => (
   <button className="edit-profile-btn" {...props}>
-    Edit Profile
+    Settings
   </button>
 );
 

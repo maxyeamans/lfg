@@ -1,5 +1,10 @@
-#modal {
-    background-color: #08a537;
-    border: 2px;
+#settings-btn{
+    background-color:#161616;
+    border: none;
+    color:#afafaf;
+   
   }
   
+  #settings-btn:hover { 
+    color:#ffffff;
+}
