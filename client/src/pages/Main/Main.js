@@ -42,17 +42,17 @@ class Main extends Component {
   };
 
   handleInputChange = event => {
-    const value = event.target.value;
-    const name = event.target.name;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+    
   };
 
-  _onChange = event => {
-    event.preventDefault();
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  // _onChange = event => {
+  //   event.preventDefault();
+  //   this.setState({ [event.target.name]: event.target.value });
+  // };
 
   render() {
     return (
