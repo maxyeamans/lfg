@@ -14,10 +14,12 @@ class ProfileModal extends React.Component {
 
     this.state = {
       show: false,
+
       username: "",
       password: "",
       email: "",
       id: "5bb6d75eabd64c45c4525304"
+
     };
   }
 
@@ -82,6 +84,12 @@ class ProfileModal extends React.Component {
     });
   };
 
+
+
+
+
+  
+
   render() {
     return (
       <div>
@@ -103,7 +111,9 @@ class ProfileModal extends React.Component {
           <Modal.Body>
             <form className="m-4">
               <div className="form-group">
+
                 <label for="username">Current username: {this.state.username} </label>
+
                 <input
                   type="name"
                   className="form-control"
