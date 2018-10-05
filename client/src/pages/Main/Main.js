@@ -65,7 +65,7 @@ class Main extends Component {
           {/* Start Column 1 */}
           <Col size="xl-8 sm-8">
           <div className="mygroups">
-            <h1>My Groups</h1>
+            <h1>MY GROUPS</h1>
            
             <CurrentGroups />
             </div>

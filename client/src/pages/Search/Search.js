@@ -36,6 +36,7 @@ class Search extends Component {
         <Row>
           <Col size="xl-4 lg-3" />
           <Col size="xl-4 lg-6">
+          <h1>Search for a group below</h1>
             <SearchBar />
           </Col>
           <Col size="xl-4 lg-3" />
@@ -46,6 +47,7 @@ class Search extends Component {
           <Col size="xl-4 lg-6">
             <div id="search-results">
               <SearchGroup />
+             
             </div>
           </Col>
           <Col size="xl-4 lg-3" />

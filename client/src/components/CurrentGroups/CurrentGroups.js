@@ -11,23 +11,26 @@ const CurrentGroups = props => (
 
           <li id="group-name" className="list-group-item">
             <strong>Group name:</strong>
-            {/* {props.groupName} */}
+            {props.groupName}
           </li>
           <li className="list-group-item">
             <strong>Members:</strong>
-            {/* {props.members} */}
+            {props.members}
+            
           </li>
           <li className="list-group-item">
-            <strong>Platform:</strong>
-            {/* {props.platform} */}
+            <strong>Console:</strong>
+            {props.platform}
+            
           </li>
           <li className="list-group-item">
             <strong>Group Rank:</strong>
-            {/* {props.groupRank} */}
+            {props.groupRank}
+            
           </li>
           <li className="list-group-item">
             <strong>Times:</strong>
-            {/* {props.time} */}
+            {props.time}
           </li>
         </ul>
       </Col>

@@ -16,7 +16,10 @@ class ProfileModal extends React.Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      username:"",
+      password:"",
+      email:""
     };
   }
 
@@ -46,6 +49,12 @@ class ProfileModal extends React.Component {
       .catch(err => console.log(err));
   }
 
+
+
+
+
+  
+
   render() {
     return (
       <div>
@@ -63,6 +72,7 @@ class ProfileModal extends React.Component {
             <form className="m-4" action="" method="post" onSubmit="">
               <div className="form-group">
                 <label for="username">
+                {this.state.pictures}
                 Change current Username:</label>
                 <input
                   type="name"
