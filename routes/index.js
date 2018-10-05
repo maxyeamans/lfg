@@ -8,6 +8,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const passportJWT = require("passport-jwt");
 const JWTStrategy = passportJWT.Strategy;
 const bcrypt = require("bcrypt");
+const authRoutes = require("./auth");
 
 // Import the User model for passport strategy definition
 const UserModel = require("../models/User");
@@ -55,6 +56,8 @@ passport.use(new JWTStrategy({
 
 // API Routes
 router.use("/api", apiRoutes);
+// Passport secured regiter/login routes
+router.use("/auth", authRoutes);
 
 // If no API routes are hit, send the React app
 router.use(function (req, res) {
