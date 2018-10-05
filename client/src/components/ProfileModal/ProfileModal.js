@@ -35,9 +35,10 @@ class ProfileModal extends React.Component {
     this.setState({ show: true });
   }
 
-  createUpdatedUser = (username, password, email) => { 
+  updateUser = (username, password, email) => { 
+    console.log(username + " is updating user information");
     API.updateUser({
-      username: username, // select what you want updated
+      username: username, 
       password: password,
       email: email
 
@@ -95,7 +96,7 @@ class ProfileModal extends React.Component {
                   value={this.state.email}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" onClick={() => this.updateUser(this.state.username, this.state.password, this.state.email)}>
                 Update
               </button>
             </form>
