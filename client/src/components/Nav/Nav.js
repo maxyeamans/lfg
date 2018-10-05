@@ -5,12 +5,12 @@ import "./Nav.css";
 
 const Nav = () => (
   <Row>
-    <nav class="navbar navbar-expand-sm my-3">
-      <a id="lfg" class="navbar-brand" href="/main">
+    <nav className="navbar navbar-expand-sm my-3">
+      <a id="lfg" className="navbar-brand" href="/main">
         LFG
       </a>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -18,22 +18,22 @@ const Nav = () => (
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon" />
+        <span className="navbar-toggler-icon" />
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/main">
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="/main">
               Home
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/search">
+          <li className="nav-item">
+            <a className="nav-link" href="/search">
               Search
             </a>
           </li>
-          <li class="nav-item3">
-            <a id="settings-icon" class="nav-link" >
+          <li className="nav-item3">
+            <a id="settings-icon" className="nav-link" >
              
               <ProfileModal />
             </a>
