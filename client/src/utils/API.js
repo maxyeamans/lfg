@@ -19,8 +19,10 @@ export default {
     return axios.post("/api/users", userData);
   },
   // Updates the user with the given id
-  updateUser: function(id) {
-    return axios.update("/api/users/" + id);
+  updateUser: function(userData) {
+    
+    console.log("updateUser utils api.js");
+    return axios.put("/api/users/" + userData._id, userData);
   },
   /////////////////////////////////////////////////////////////////////////
   // // Gets all profiles
