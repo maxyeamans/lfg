@@ -23,6 +23,10 @@ export default {
     console.log("api", userData);
     return axios.put("/api/users/" + userData._id, userData); // was update instead of post
   },
+  loginUser: function(userData) {
+    console.log("api", userData);
+    return axios.post("/api/users/login", userData);
+  },
   /////////////////////////////////////////////////////////////////////////
   // // Gets all profiles
   // getProfiles: function() {
