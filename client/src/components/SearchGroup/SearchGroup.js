@@ -16,6 +16,10 @@ const SearchGroup = props => (
         <strong>Rank:</strong>
         {props.groupRank}
       </li>
+      <li className="list-group-item">
+        <strong>Time Played:</strong>
+        {props.time}
+      </li>
       <button className="btn btn-primary search-group-btn">Request Join</button>
     </ul>
   </div>

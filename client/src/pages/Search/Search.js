@@ -11,10 +11,21 @@ import API from "../../utils/API";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      groups: []
+    };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.loadGroups();
+  }
+
+  loadGroups = () => {
+    // gets all groups
+    API.getGroups()
+      .then(res => this.setState({ groups: res.data }))
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     const value = event.target.value;
@@ -46,8 +57,15 @@ class Search extends Component {
           <Col size="xl-4 lg-3" />
           <Col size="xl-4 lg-6">
             <div id="search-results">
-              <SearchGroup />
-             
+            {this.state.groups.map(group => (
+                <SearchGroup
+                  data={group}
+                  groupName={group.groupName}
+                  platform={group.platform}
+                  groupRank={group.groupRank}
+                  time={group.time}
+                />
+              ))}
             </div>
           </Col>
           <Col size="xl-4 lg-3" />
