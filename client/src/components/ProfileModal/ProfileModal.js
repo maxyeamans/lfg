@@ -18,7 +18,7 @@ class ProfileModal extends React.Component {
       username: "",
       password: "",
       email: "",
-      id: "5bb6d75eabd64c45c4525304"
+      id: "5bb5619e6cb97b6830ca34c8"
 
     };
   }
@@ -62,26 +62,23 @@ class ProfileModal extends React.Component {
     this.setState({ show: true });
   }
 
-  updateCurrentUser = (username, password, email, id) => {
+  updateCurrentUser = (id, username, password, email) => {
+    console.log(id, username)
     API.updateUser({
       _id: id,
       username: username,
       password: password,
       email: email
     })
-      .then(res => this.loadGroups())
+      .then(res => this.loadUsers())
       .catch(err => console.log(err));
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.updateCurrentUser({
-      username: this.state.username,
-      password: this.state.password,
-      email: this.state.email,
-      id: this.state.id
-    });
+    this.updateCurrentUser(this.state.id, this.state.username, this.state.password, this.state.email);
+    
   };
 
 
