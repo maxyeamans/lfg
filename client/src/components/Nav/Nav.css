@@ -1,0 +1,54 @@
+ .navbar {
+    width: 100%;
+    border: .5px solid;
+    background-color:#161616;
+    color: #161616;
+    height:30px;
+    
+ } 
+
+ @font-face { font-family: bignoodletoo; src: url('../../bignoodletoo1.ttf'); } 
+ .nav-item a{
+     color:#afafaf;
+     display: block;
+     width: 60px;
+     margin-top:12px;
+     margin-lefT:30px;
+     font-family:"bignoodletoo";
+     letter-spacing: 2px;
+     /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+     font-size: 14px; 
+     font-style: normal; 
+     font-variant: normal; 
+     font-weight: 700; 
+     line-height: 15.4px;     */
+ }
+
+ .nav-item3{
+    margin-bottom:5px;
+
+   margin-left:20px;
+
+   
+
+ }
+
+
+ a:hover { 
+    color:#ffffff;
+}
+
+#lfg{
+    color:#3d92cf;
+    font-family:"bignoodletoo";
+     letter-spacing: 2px;
+     font-size:25px;
+     margin-left:10px;
+}
+
+#lfg:hover { 
+    color:#ffffff;
+}  
+
+
+     
