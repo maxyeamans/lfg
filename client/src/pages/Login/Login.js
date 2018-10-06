@@ -20,7 +20,7 @@ class Login extends Component {
     username: "",
     password: ""
   };
-  
+
 
   componentDidMount() { }
 
@@ -29,8 +29,18 @@ class Login extends Component {
     this.setState({
       [name]: value
     });
-    
+
   };
+
+  loginUser = (username, password) => {
+    console.log(username, password);
+    API.loginUser({
+      username: username,
+      password: password
+    })
+      .then( res => console.log(res) )
+      .catch(err => console.log(err));
+  }
 
   // _onChange = event => {
   //   event.preventDefault();
@@ -39,24 +49,24 @@ class Login extends Component {
 
   render() {
     return (
-      
+
       <Container fluid style={styles}>
         <form className="m-4" action="/login" method="post">
           <div className="form-group">
             <label for="username" className="bg-secondary">Username</label>
-            <input type="text" className="form-control" id="username" placeholder="Username"
+            <input type="text" className="form-control" name="username" placeholder="Username"
               onChange={this.handleInputChange}
               value={this.state.username}
             />
           </div>
           <div className="form-group">
             <label for="password" className="bg-secondary">Password</label>
-            <input type="password" className="form-control" id="password" placeholder="Password"
+            <input type="password" className="form-control" name="password" placeholder="Password"
               onChange={this.handleInputChange}
               value={this.state.password}
             />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary" onClick={() => this.loginUser(this.state.username, this.state.password)}>Submit</button>
         </form>
       </Container>
     );
