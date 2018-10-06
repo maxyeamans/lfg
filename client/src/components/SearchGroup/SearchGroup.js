@@ -2,6 +2,7 @@ import React from "react";
 import "./SearchGroup.css";
 
 const SearchGroup = props => (
+
   <div className="card my-3">
     <ul className="list-group">
       <li className="list-group-item">
