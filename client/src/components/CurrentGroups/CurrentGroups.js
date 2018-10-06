@@ -1,6 +1,7 @@
 import React from "react";
 import "./CurrentGroups.css";
 import { Col, Row, Container } from "../Grid";
+import API from "../../utils/API";
 
 const CurrentGroups = props => (
 
@@ -15,7 +16,7 @@ const CurrentGroups = props => (
           </li>
           <li className="list-group-item">
             <strong>Members:</strong>
-            {props.members}
+            {props.player1}, {props.player2}, {props.player3}, {props.player4}, {props.player5}, {props.player6}
             
           </li>
           <li className="list-group-item">
