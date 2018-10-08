@@ -106,7 +106,7 @@ class NewGroup extends Component {
               <div className="form-group">
                 <label for="time">Game Time</label>
                 <input
-                  type="time"
+                  type="gametime"
                   className="form-control"
                   name="time"
                   placeholder="Game Time"

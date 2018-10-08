@@ -38,7 +38,7 @@ class Login extends Component {
       username: username,
       password: password
     })
-      .then( res => console.log(res) )
+      .then( res => console.log(res + "login.js page") )
       .catch(err => console.log(err));
   }
 
@@ -51,7 +51,7 @@ class Login extends Component {
     return (
 
       <Container fluid style={styles}>
-        <form className="m-4" action="/login" method="post">
+        <form className="m-4" action="/main">
           <div className="form-group">
             <label for="username" className="bg-secondary">Username</label>
             <input type="text" className="form-control" name="username" placeholder="Username"

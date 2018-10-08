@@ -13,15 +13,23 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groups: []
+      groups: [],
+      login: [],
+      globalId: ""
+      
+
     };
   }
 
   componentDidMount() {
     // this.loadUsers();
     // this.loadProfiles();
+    this.loadLogin();
     this.loadGroups();
+    
   }
+
+
 
   loadUsers = () => {
     // gets all users
@@ -29,6 +37,14 @@ class Main extends Component {
       .then(res => this.setState({ users: res.data }))
       .catch(err => console.log(err));
   };
+
+  loadLogin = () => {
+    API.getLogin()
+    .then(res => this.setState({ login: res.data }))
+    .catch(err => console.log(err));
+    console.log(this.state.login);
+    
+  }
 
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
