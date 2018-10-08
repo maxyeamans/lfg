@@ -1,4 +1,6 @@
 const User = require("./../models/User");
+// import API from "./../client/src/utils/API";
+
 
 // Defining methods for the userController
 module.exports = {
@@ -53,8 +55,14 @@ module.exports = {
       .findOne({ username: req.body.username })
       .then( foundUser => {
         if( foundUser.comparePassword(req.body.password) ) {
-          console.log(foundUser._id);
-          res.json(foundUser._id);
+          console.log(foundUser._id + "usercontroller id");
+          // User
+          // .findById({ _id: foundUser._id })
+          // .then(dbModel => res.json(dbModel))
+          // .catch(err => res.status(422).json(err));
+          res.json(foundUser);
+          console.log(foundUser);
+          
         }
         else {
           res.json({
@@ -63,5 +71,11 @@ module.exports = {
         };
       })
       .catch( err => res.status(422).json(err) );
+  },
+  loginId: function(req, res) {
+    User
+      .find(req.query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };

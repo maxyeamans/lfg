@@ -25,8 +25,12 @@ export default {
   },
   loginUser: function(userData) {
     console.log("api", userData);
-    return axios.post("/api/users/login", userData);
+    return axios.post("/api/login", userData);
   },
+  getLogin: function() {
+    return axios.get("/api/login");
+  },
+  
   /////////////////////////////////////////////////////////////////////////
   // // Gets all profiles
   // getProfiles: function() {
@@ -69,4 +73,5 @@ export default {
   updateGroup: function(id) {
     return axios.update("/api/groups/" + id);
   },
+  
 };
