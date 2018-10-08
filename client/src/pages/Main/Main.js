@@ -14,7 +14,7 @@ class Main extends Component {
     super(props);
     this.state = {
       groups: [],
-      login: [],
+      userGroups: [],
       globalId: ""
       
 
@@ -26,6 +26,8 @@ class Main extends Component {
     // this.loadProfiles();
     this.loadLogin();
     this.loadGroups();
+    this.handleGroups();
+    
     
   }
 
@@ -40,9 +42,9 @@ class Main extends Component {
 
   loadLogin = () => {
     API.getLogin()
-    .then(res => this.setState({ login: res.data }))
+    .then(res => this.setState({ globalId: res.data._id }))
     .catch(err => console.log(err));
-    console.log(this.state.login);
+    
     
   }
 
@@ -60,6 +62,7 @@ class Main extends Component {
     API.getGroups()
       .then(res => this.setState({ groups: res.data }))
       .catch(err => console.log(err));
+      
   };
 
   handleInputChange = event => {
@@ -69,6 +72,15 @@ class Main extends Component {
     });
   };
 
+  handleGroups = () => {
+    console.log(this.state.globalId);
+    console.log(this.state.groups);
+    this.state.groups.map(group => {
+      if (this.state.globalId === group.player1.user || group.player2.user || group.player3.user || group.player4.user || group.player5.user || group.player6.user) {
+        this.state.userGroups.push(group);
+      }
+    });
+  }
   // _onChange = event => {
   //   event.preventDefault();
   //   this.setState({ [event.target.name]: event.target.value });
@@ -86,7 +98,8 @@ class Main extends Component {
               <h1>MY GROUPS</h1>
 
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
-              {this.state.groups.map(group => (
+              {this.handleGroups()}
+              {this.state.userGroups.map(group => (
                 <CurrentGroups
                   data={group}
                   groupName={group.groupName}

@@ -17,7 +17,17 @@ class NewGroup extends Component {
     
 };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.loadLogin();
+  }
+
+  loadLogin = () => {
+    API.getLogin()
+    .then(res => this.setState({ user: res.data._id }))
+    .catch(err => console.log(err));
+    console.log(this.state.user);
+    
+  }
 
   loadGroups = () => {
     // gets all users
@@ -34,7 +44,7 @@ class NewGroup extends Component {
     
   };
 
-  createNewGroup = (groupName, platform, groupRank, time, gamertag, role, rank) => {
+  createNewGroup = (groupName, platform, groupRank, time, gamertag, role, rank, user) => {
     console.log(groupName);
     API.saveGroup({
       groupName: groupName,
@@ -46,7 +56,7 @@ class NewGroup extends Component {
         role: role,
         state: 2,
         rank: rank,
-        user: "5bb55f5c34be1235a0edeeed"
+        user: user
       }
       
     })
@@ -147,7 +157,7 @@ class NewGroup extends Component {
                   value={this.state.rank}
                 />
               </div>
-              <button type="submit" className="btn btn-primary" onClick={() => this.createNewGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.gamertag, this.state.role, this.state.rank)}>
+              <button type="submit" className="btn btn-primary" onClick={() => this.createNewGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.gamertag, this.state.role, this.state.rank, this.state.user)}>
                 Submit
               </button>
             </form>
