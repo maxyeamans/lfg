@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
+import "./NewGroup.css";
 
 class NewGroup extends Component {
   state = {
@@ -68,6 +69,7 @@ class NewGroup extends Component {
           <Col size="xl-2 sm-2"/>
           <Col size="xl-8 sm-8">
             <form className="m-4">
+            <h1> Create a New Group</h1>
               <div className="form-group">
                 <label for="groupName">Group Name</label>
                 <input
@@ -152,6 +154,10 @@ class NewGroup extends Component {
           </Col>
           <Col size="xl-2 sm-2"/>
         </Row>
+        <div id="footer-space">
+
+        </div>
+
         <Footer />
       </Container>
     );

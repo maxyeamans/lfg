@@ -20,7 +20,7 @@ class Login extends Component {
     username: "",
     password: ""
   };
-  
+
 
   componentDidMount() { }
 
@@ -29,8 +29,18 @@ class Login extends Component {
     this.setState({
       [name]: value
     });
-    
+
   };
+
+  loginUser = (username, password) => {
+    console.log(username, password);
+    API.loginUser({
+      username: username,
+      password: password
+    })
+      .then( res => console.log(res) )
+      .catch(err => console.log(err));
+  }
 
   // _onChange = event => {
   //   event.preventDefault();
@@ -39,7 +49,7 @@ class Login extends Component {
 
   render() {
     return (
-      
+
       <Container fluid style={styles}>
         <form className="m-4" action="/login" method="post">
           <div className="form-group">
@@ -56,7 +66,7 @@ class Login extends Component {
               value={this.state.password}
             />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary" onClick={() => this.loginUser(this.state.username, this.state.password)}>Submit</button>
         </form>
       </Container>
     );
