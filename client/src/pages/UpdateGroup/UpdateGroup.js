@@ -3,20 +3,18 @@ import { Col, Row, Container } from "../../components/Grid";
 import SearchBtn from "../../components/SearchBtn";
 import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
-// import MainProfile from "../../components/MainProfile";
 import Footer from "../../components/Footer";
-// import ProfileModal from "../../components/ProfileModal";
 import API from "../../utils/API";
-import "./main.css";
-// import SearchGroup from "../../components/SearchGroup";
+import "./UpdateGroup.css";
 
-class Main extends Component {
+class UpdateGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
       groups: [],
       userGroups: [],
       globalId: ""
+      
 
     };
   }
@@ -27,6 +25,8 @@ class Main extends Component {
     this.loadLogin();
     this.loadGroups();
     this.handleGroups();
+    
+    
   }
 
 
@@ -40,10 +40,10 @@ class Main extends Component {
 
   loadLogin = () => {
     API.getLogin()
-      .then(res => this.setState({ globalId: res.data._id }))
-      .catch(err => console.log(err));
-
-
+    .then(res => this.setState({ globalId: res.data._id }))
+    .catch(err => console.log(err));
+    
+    
   }
 
   // loadProfiles = () => { // gets all profiles
@@ -60,7 +60,7 @@ class Main extends Component {
     API.getGroups()
       .then(res => this.setState({ groups: res.data }))
       .catch(err => console.log(err));
-
+      
   };
 
   handleInputChange = event => {
@@ -79,8 +79,6 @@ class Main extends Component {
       }
     });
   }
-
-
   // _onChange = event => {
   //   event.preventDefault();
   //   this.setState({ [event.target.name]: event.target.value });
@@ -91,41 +89,11 @@ class Main extends Component {
       // NAV IS RIGHT HERE
 
       <Container fluid>
-
         <Row>
-        
-          <Col size="xl-12 lg-6">
-          
-          <h1> Looking For Group</h1>
-          
-          
-          <h3>Create and join groups with other Overwatch players!</h3>
-          
-          </Col>
-        </Row>
-
-        <Row>
-          {/* <container className="creategroupSearch"> */}
-          <Col size="xl-6 lg-6">
-            <div class="button1">
-              <CreateGroupBtn />
-            </div>
-          </Col>
-          <Col size="xl-6 lg-6">
-            <div class="button2">
-              <SearchBtn />
-            </div>
-
-          </Col>
-        </Row>
-        {/* </container> */}
-
-
-
-        <Row>
-          <Col size="xl-12 sm-8">
+          {/* Start Column 1 */}
+          <Col size="xl-8 sm-8">
             <div className="mygroups">
-              <h2>MY CURRENT GROUPS ▼</h2>
+              <h1>MY GROUPS</h1>
 
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
               {this.handleGroups()}
@@ -147,13 +115,31 @@ class Main extends Component {
             </div>
           </Col>
           {/* Start Column 2 */}
+
+          <Col size="xl-4 sm-4">
+            <Row>
+              {/* <container className="creategroupSearch"> */}
+              <Col size="xl-6 sm-6">
+                <Row>
+                  <div class="buttons">
+                    <CreateGroupBtn />
+                  </div>
+                </Row>
+                <Row>
+                  <div class="buttons">
+                    <SearchBtn />
+                  </div>
+                </Row>
+              </Col>
+
+              {/* </container> */}
+            </Row>
+          </Col>
         </Row>
-
-
         <Footer />
       </Container>
     );
   }
 }
 
-export default Main;
+export default UpdateGroup;

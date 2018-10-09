@@ -7,6 +7,7 @@ import Search from "./pages/Search";
 import Login from "./pages/Login";
 import NewGroup from "./pages/NewGroup";
 import Register from "./pages/Register";
+import UpdateGroup from "./pages/UpdateGroup";
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path="/main" component={Main} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/newgroup" component={NewGroup} />
+        <Route exact path="/updategroup" component={UpdateGroup} />
         <Route component={NoPage} />
       </Switch>
     </div>

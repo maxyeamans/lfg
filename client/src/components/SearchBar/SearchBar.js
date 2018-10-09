@@ -1,6 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
 
+
  
 
 const SearchBar = props =>
@@ -63,6 +64,8 @@ const SearchBar = props =>
  
  
  </div>
+
+
 
   
 export default SearchBar;
