@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Input } from "./../../components/Form"
+import "./Register.css";
+import { Col, Row, Container } from "../../components/Grid";
 
 class Register extends Component {
     state = {
@@ -42,7 +44,17 @@ class Register extends Component {
 
     render() {
         return (
-            <form className="m-4">
+            <Container fluid>
+            <Row>
+                
+                <Col size="xl-4 lg-6">
+            <div id="register-form">
+            <form className="m-5">
+            <div id="register-text">
+            <h7>Sign up now </h7>
+            
+            </div>
+            <p> fill out the form below</p>
                 <div className="form-group">
                 <label for="email">Email</label>
                     <input type="text" className="form-control" name="email" placeholder="Email"
@@ -73,6 +85,11 @@ class Register extends Component {
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={() => this.createNewUser(this.state.username, this.state.password, this.state.email)}>Submit</button>
             </form>
+            </div>
+            </Col>
+            
+            </Row>
+            </Container>
         )
     };
 }

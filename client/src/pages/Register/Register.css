@@ -1,0 +1,31 @@
+
+#register-form{
+    border: .5px solid;
+    margin-lefT:50%;
+    width:100%;
+    background-color:rgba(53, 52, 52, 0.349);
+  margin-top:20px;
+}
+
+
+input, label{
+    font-family: 'Archivo', sans-serif;
+    letter-spacing: 0px;
+}
+
+label{
+    color: rgb(207, 205, 205);
+}
+
+#register-text{
+    
+    color:rgb(196, 196, 196);
+    font-family: 'Archivo', sans-serif;
+     font-size: 20px;
+  }
+
+  p{
+    margin-bottom:20px;
+    color:rgb(196, 196, 196);
+    font-family: 'Archivo', sans-serif;
+  }
