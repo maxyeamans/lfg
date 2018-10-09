@@ -1,9 +1,10 @@
 h1 {
-    color:rgb(255, 255, 255);
+   
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
     font-size:80px;
+    color:white;
     
    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
   }

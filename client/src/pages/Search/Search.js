@@ -12,7 +12,8 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groups: []
+      groups: [],
+      filterGroup:[]
     };
   }
 
@@ -54,15 +55,28 @@ class Search extends Component {
   //   ));
   // }
 
-  // // Keep track of what user types into topic input so that input can be grabbed later
-  // handleGroupNameChange = (event) => {
-  //   this.setState({ groupName: event.target.value });
-  // }
+  // Keep track of what user types into topic input so that input can be grabbed later
+  handleGroupNameChange = (event) => {
+    this.setState({ groupName: event.target.value });
+    var filterGroup=this.state.groups.filter(eachitem=>eachitem.groupName===this.state.groupName )
+    this.setState({filterGroup: filterGroup})
+  }
 
-  // // Keep track of what user types into topic input so that input can be grabbed later
-  // handlePlaformChange = (event) => {
-  //   this.setState({ platform: event.target.value });
-  // }
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("works")
+    // var filterGroup=this.state.groups.filter(eachitem=>eachitem.groupName===this.state.groupName )
+    // this.setState({filterGroup: filterGroup})
+  }
+
+  //below code goes next to this.state.groupName
+  //&& eachitem.platform===this.state.platform
+
+
+  // Keep track of what user types into topic input so that input can be grabbed later
+  handlePlatformChange = (event) => {
+    this.setState({ platform: event.target.value });
+  }
 
   // // Keep track of what user types into topic input so that input can be grabbed later
   // handleGroupRankChange = (event) => {
@@ -85,12 +99,13 @@ class Search extends Component {
           <Col size="xl-12 lg-6">
           <div id="search-groups">
             <h4>Search for a group below</h4>
+          
             <SearchBar
-            // handleGroupNameChange={this.handleTopicChange}
-            // handlePlatformChange={this.handleStartYearChange}
+            handleGroupNameChange={this.handleGroupNameChange}
+            handlePlatformChange={this.handlePlatformChange}
             // handleGroupRankChange={this.handleEndYearChange}
             // handleTimeChange={this.handleTimeChange}
-            // handleFormSubmit={this.handleFormSubmit}
+            handleFormSubmit={this.handleFormSubmit}
             // renderSearchedGroups={this.renderArticles}
             />
           </div>
@@ -106,7 +121,7 @@ class Search extends Component {
           <Col size="xl-12 lg-6">
             <div id="search-results">
               <h4> results</h4>
-              {this.state.groups.map(group => (
+              {this.state.filterGroup.map(group => (
                 <SearchGroup
                   data={group}
                   groupName={group.groupName}
