@@ -5,7 +5,7 @@ import "./SearchBtn.css";
 // That way we don't have to define them all individually
 const SearchBtn = props => (
   <form action="/search">
-    <input type="submit" value="Search" className="search-btn" />
+    <input type="submit" value="Search Groups" className="search-btn" />
   </form>
 );
 

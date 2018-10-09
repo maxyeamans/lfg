@@ -6,6 +6,7 @@ import "./Nav.css";
 const Nav = () => (
   <Row>
     <nav className="navbar navbar-expand-sm my-3">
+
       <a id="lfg" className="navbar-brand" href="/main">
         LFG
       </a>
@@ -20,28 +21,34 @@ const Nav = () => (
       >
         <span className="navbar-toggler-icon" />
       </button>
+
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" href="/main">
-              Home
+         
+            <li className="nav-item">
+              <a className="nav-link" href="/main">
+                Home
             </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/search">
-              Search
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/search">
+                Search
             </a>
-          </li>
-          <li className="nav-item3">
-            <a id="settings-icon" className="nav-link" >
-             
-              <ProfileModal />
-            </a>
-          </li>
+            </li>
+            </ul>
+          <div id="settings">
+            <li className="nav-item3">
+              <a id="settings-icon" className="nav-link" >
+
+                <ProfileModal />
+              </a>
+            </li>
+            
+          </div>
           {/* {props.isLoggedIn
       ? ( <a>Logged In</a>)
       : ( <a>Not Logged In</a> )} */}
-        </ul>
+       
       </div>
     </nav>
   </Row>

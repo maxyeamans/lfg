@@ -3,7 +3,10 @@ import "./ProfileModal.css";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
-import Login from "../../pages/Login/Login"; //trying to bring in current username
+import Login from "../../pages/Login/Login";//trying to bring in current username and pass
+
+
+// We need to pass in the User ID prop so that we can include it in our post request
 
 class ProfileModal extends React.Component {
   constructor(props, context) {
@@ -14,12 +17,9 @@ class ProfileModal extends React.Component {
 
     this.state = {
       show: false,
-
-      username: "",
-      password: "",
-      email: "",
-      id: "5bb5619e6cb97b6830ca34c8"
-
+      username:"",
+      password:"",
+      email:""
     };
   }
 
@@ -30,74 +30,33 @@ class ProfileModal extends React.Component {
   //     User.save({ UserName: e.target.value });
   // };
 
-  componentDidMount() {
-    this.loadUsers();
-  }
-
-  loadUsers = () => {
-    API.getUser(this.state.id)
-      .then(res =>
-        this.setState({
-          username: res.data.username,
-          password: res.data.password,
-          email: res.data.email
-        })
-      )
-      .catch(err => console.log(err));
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
   handleClose() {
     this.setState({ show: false });
   }
 
   handleShow() {
-    this.loadUsers();
     this.setState({ show: true });
   }
 
-  updateCurrentUser = (id, username, password, email) => {
-    console.log(id, username)
+  createUpdatedUser = (username, password, email) => { 
     API.updateUser({
-      _id: id,
-      username: username,
+      username: username, // select what you want updated
       password: password,
       email: email
+
     })
-      .then(res => this.loadUsers())
+      //.then(res => this.loadGroups())
       .catch(err => console.log(err));
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-
-    this.updateCurrentUser(this.state.id, this.state.username, this.state.password, this.state.email);
-    
-  };
+  }
 
 
-
-
-
-  
 
   render() {
     return (
       <div>
         {/* <p> Text above modal</p> */}
 
-        <Button
-          id="settings-btn"
-          bsStyle="primary"
-          bsSize="large"
-          onClick={this.handleShow}
-        >
+        <Button id="settings-btn" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           Settings
         </Button>
 
@@ -106,47 +65,43 @@ class ProfileModal extends React.Component {
             <Modal.Title> Settings</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form className="m-4">
+            <form className="m-4" action="" method="post" onSubmit="">
               <div className="form-group">
-
-                <label for="username">Current username: {this.state.username} </label>
-
+                <label for="username">
+                {this.state.pictures}
+                Change current Username:</label>
                 <input
                   type="name"
                   className="form-control"
-                  name="username"
+                  id="username"
                   placeholder="New Username"
                   onChange={this.handleInputChange}
                   value={this.state.username}
                 />
               </div>
               <div className="form-group">
-                <label for="password">Change current password:</label>
+                <label for="password">Change current Password:</label>
                 <input
-                  type="password"
+                  type="text"
                   className="form-control"
-                  name="password"
+                  id="password"
                   placeholder="New Password"
                   onChange={this.handleInputChange}
                   value={this.state.password}
                 />
               </div>
               <div className="form-group">
-                <label for="email">Current Email: {this.state.email}</label>
+                <label for="email">Change current Email:</label>
                 <input
                   type="email"
                   className="form-control"
-                  name="email"
+                  id="email"
                   placeholder="New Email"
                   onChange={this.handleInputChange}
                   value={this.state.email}
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={this.handleFormSubmit}
-              >
+              <button type="submit" className="btn btn-primary">
                 Update
               </button>
             </form>

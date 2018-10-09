@@ -5,7 +5,7 @@ import "./CreateGroupBtn.css";
 // That way we don't have to define them all individually
 const CreateGroupBtn = props => (
   <form action="/newgroup">
-    <input type="submit" value="Create Group" className="group-btn" />
+    <input type="submit" value="Create New Group" className="group-btn" />
   </form>
 );
 
