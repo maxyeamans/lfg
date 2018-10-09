@@ -4,6 +4,7 @@ h1 {
     letter-spacing: 2px;
     text-align:center;
     font-size:80px;
+    
    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
   }
 
@@ -12,7 +13,9 @@ h1 {
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
+  
     font-size:50px;
+
    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
   }
 
@@ -20,7 +23,9 @@ h1 {
     text-align:center;
     color:rgb(196, 196, 196);
      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    
   }
+
 
   
   .button1, .button2{

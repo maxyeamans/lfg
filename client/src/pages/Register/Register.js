@@ -51,7 +51,7 @@ class Register extends Component {
             <div id="register-form">
             <form className="m-5">
             <div id="register-text">
-            <h7>Sign up now </h7>
+            <h7>Sign up </h7>
             
             </div>
             <p> fill out the form below</p>
