@@ -4,7 +4,9 @@ import "./SearchBar.css";
 
  
 
-const SearchBar = props =>
+const SearchBar = props =>{
+
+return(
 
 <div className="container">
 <div className="search-box">
@@ -40,32 +42,11 @@ const SearchBar = props =>
 
   <br/><br/>
 
-  <div className="row">
-      <div className="col-lg-12">
-        <div className="panel panel-primary">
-          <div className="panel-heading">
-            <h3 className="panel-title">
-              <strong>
-                <i className="fa fa-newspaper-o" aria-hidden="true"></i> Results
-              </strong>
-            </h3>
-          </div>
-          <div className="panel-body">
-			{/* {props.renderSearchedGroups()} */}
-			
-          </div>
-        </div>
-      </div>
-    </div>
-    <br/><br/>
-  
-
-
- 
+   
  
  </div>
 
 
-
+)}
   
 export default SearchBar;
