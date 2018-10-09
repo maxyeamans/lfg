@@ -1,4 +1,30 @@
 #search-results {
     border: 2px;
+    padding-bottom:150px;
+    width:60%;
+    margin:auto;
   }
+
+  #search-groups{
+    width:60%;
+    margin:auto;
+  }
+  
+  h4{
+    color:rgb(250, 246, 246);
+    font-family:"bignoodletoo"; 
+    letter-spacing: 2px;
+    text-align:center;
+    font-size:50px;
+    margin-bottom:50px;
+  }
+
+  h5{
+    font-size:80px;
+    color:rgb(250, 246, 246);
+    text-align:center;
+    margin-bottom:30px;
+  }
+
+
   

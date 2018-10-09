@@ -1,7 +1,10 @@
 #Footer{
-    background-color:rgb(236, 236, 236);
-    height:100px;
+    background-color:rgb(24, 23, 23, 0.2);
     text-align:center;
+    width: 100%;
+    color:rgb(185, 182, 182);
+
+  
 }
 
 #menu-outer {
@@ -25,7 +28,7 @@ ul#horizontal-list {
     }
     a{
         padding:30px;
-        color:rgb(46, 45, 45);
+        color:rgb(153, 151, 151);
     }
 
     a:hover{

@@ -1,8 +1,8 @@
  .navbar {
     width: 100%;
     border: .5px solid;
-    background-color:#161616;
-    color: #161616;
+    background-color:rgb(24, 23, 23, 0.2);
+    color: rgb(24,23,23);
     height:30px;
     
  } 
