@@ -1,0 +1,33 @@
+#Footer{
+    background-color:rgb(236, 236, 236);
+    height:100px;
+    text-align:center;
+}
+
+#menu-outer {
+	height: 84px;
+	background: url("") repeat-x;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+    }
+    
+	ul#horizontal-list li {
+		display: inline;
+    }
+    a{
+        padding:30px;
+        color:rgb(46, 45, 45);
+    }
+
+    a:hover{
+        color:#f09731;
+    }

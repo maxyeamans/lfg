@@ -1,0 +1,33 @@
+.manage-groups-btn {
+    border-radius: 4px;
+    background-color: #aed3e0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height:50px;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    font-size:30px;
+  }
+  
+  .manage-groups-btn:hover {
+    background-color: rgb(44, 43, 43);; 
+    color: #f09731;
+  }
+
+  .list-group-item{
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+  }
+
+  #group-name{
+    color:#f09731;
+    font-size:20px;
+  }
+.card{
+  border: 1px solid rgb(155, 154, 154);
+  margin-top:5%;
+}

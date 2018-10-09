@@ -1,0 +1,20 @@
+.search-btn {
+  border-radius: 4px;
+  background-color: #aed3e0;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 35px;
+  padding: 20px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family:"bignoodletoo";
+  letter-spacing: 2px;
+}
+
+.search-btn:hover {
+  background-color: rgb(44, 43, 43); /* Green */
+  color: #f09731;
+}

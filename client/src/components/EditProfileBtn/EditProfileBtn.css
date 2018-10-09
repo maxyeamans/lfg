@@ -1,0 +1,15 @@
+.edit-profile-btn{
+border-radius: 4px;
+background-color: #f4511e;
+border: none;
+color: #FFFFFF;
+text-align: center;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.edit-profile-btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
