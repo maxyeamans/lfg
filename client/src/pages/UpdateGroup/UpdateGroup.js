@@ -3,13 +3,11 @@ import { Col, Row, Container } from "../../components/Grid";
 import SearchBtn from "../../components/SearchBtn";
 import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
-// import MainProfile from "../../components/MainProfile";
 import Footer from "../../components/Footer";
-// import ProfileModal from "../../components/ProfileModal";
 import API from "../../utils/API";
-import "./main.css";
+import "./UpdateGroup.css";
 
-class Main extends Component {
+class UpdateGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -144,4 +142,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default UpdateGroup;
