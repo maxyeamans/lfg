@@ -14,12 +14,33 @@ class ManageGroupModal extends React.Component {
     this.state = {
       show: false,
 
-      username: "",
-      password: "",
-      email: "",
-      id: "5bb5619e6cb97b6830ca34c8"
+      groupName: "",
+      platform: "",
+      rank: "",
+      time: "",
+      groupId: ""
     };
   }
+
+  createUpdatedGroup = (groupName, platform, rank, time, groupId) => { 
+    API.updateGroup({
+      _id: groupId, // select what you want updated
+      groupName: groupName,
+      platform: platform,
+      rank: rank,
+      time: time,
+      
+    })
+      //.then(res => this.loadGroups())
+      .catch(err => console.log(err));
+  }
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    this.updateCurrentGroup(this.state.id, this.state.groupName, this.state.platform, this.state.rank, this.state.time);
+    
+  };
 
   //this is a template for how we will change user info after editing:
   //   handleUserNameChange = e => {
@@ -76,13 +97,13 @@ class ManageGroupModal extends React.Component {
   //     .catch(err => console.log(err));
   // };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
 
-    this.updateCurrentUser(
+  //   this.updateCurrentUser(
 
-    );
-  };
+  //   );
+  // };
 
   render() {
     return (

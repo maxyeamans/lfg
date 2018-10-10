@@ -25,7 +25,7 @@ class NewGroup extends Component {
     API.getLogin()
     .then(res => this.setState({ user: res.data._id }))
     .catch(err => console.log(err));
-    console.log(this.state.user);
+    
     
   }
 
@@ -78,7 +78,7 @@ class NewGroup extends Component {
         <Row>
           <Col size="xl-2 sm-2"/>
           <Col size="xl-8 sm-8">
-            <form className="m-4">
+            <form className="m-4" action="/main">
             <h1> Create a New Group</h1>
               <div className="form-group">
                 <label for="groupName">Group Name</label>

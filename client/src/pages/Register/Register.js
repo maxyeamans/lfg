@@ -49,7 +49,7 @@ class Register extends Component {
                 
                 <Col size="xl-4 lg-6">
             <div id="register-form">
-            <form className="m-5">
+            <form className="m-5" action="/main">
             <div id="register-text">
             <h7>Sign up </h7>
             
