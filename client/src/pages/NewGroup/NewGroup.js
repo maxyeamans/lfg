@@ -19,6 +19,11 @@ class NewGroup extends Component {
 
   componentDidMount() {
     this.loadLogin();
+    console.log("this is our initial state: ", this.state)
+  }
+
+  componentDidUpdate(){
+    console.log("our component updated, here is the new state: ", this.state)
   }
 
   loadLogin = () => {
