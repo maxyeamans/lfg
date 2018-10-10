@@ -58,7 +58,7 @@ class Search extends Component {
   // Keep track of what user types into topic input so that input can be grabbed later
   handleGroupNameChange = (event) => {
     this.setState({ groupName: event.target.value });
-    var filterGroup=this.state.groups.filter(eachitem=>eachitem.groupName===this.state.groupName )
+    var filterGroup=this.state.groups.filter(eachitem=>eachitem.groupName===this.state.groupName)
     this.setState({filterGroup: filterGroup})
   }
 
@@ -76,12 +76,16 @@ class Search extends Component {
   // Keep track of what user types into topic input so that input can be grabbed later
   handlePlatformChange = (event) => {
     this.setState({ platform: event.target.value });
+    var filterGroup=this.state.groups.filter(eachitem=>eachitem.platform===this.state.platform)
+    this.setState({filterGroup: filterGroup})
   }
 
-  // // Keep track of what user types into topic input so that input can be grabbed later
-  // handleGroupRankChange = (event) => {
-  //   this.setState({ groupRank: event.target.value });
-  // }
+  // Keep track of what user types into topic input so that input can be grabbed later
+  handleGroupRankChange = (event) => {
+    this.setState({ groupRank: event.target.value });
+    var filterGroup=this.state.groups.filter(eachitem=>eachitem.groupRank===this.state.groupRank)
+    this.setState({filterGroup: filterGroup})
+  }
 
   // // Keep track of what user types into topic input so that input can be grabbed later
   // handleTimeChange = (event) => {
@@ -103,7 +107,7 @@ class Search extends Component {
             <SearchBar
             handleGroupNameChange={this.handleGroupNameChange}
             handlePlatformChange={this.handlePlatformChange}
-            // handleGroupRankChange={this.handleEndYearChange}
+            handleGroupRankChange={this.handleGroupRankChange}
             // handleTimeChange={this.handleTimeChange}
             handleFormSubmit={this.handleFormSubmit}
             // renderSearchedGroups={this.renderArticles}
