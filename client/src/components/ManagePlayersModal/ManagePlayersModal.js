@@ -42,20 +42,6 @@ class ManagePlayersModal extends React.Component {
     // this.searchPlayers();
   }
 
-  searchPlayers() {
-    console.log(this.state.group);
-    let myGroup = [];
-    // let currentGroup = this.state.currentGroup;
-    // const filteredGroup = currentGroup.filter(player => player.state != 0);
-    // this.state.currentGroup.forEach(function(player) {
-    //   if (player.state == 2) {
-    //     this.setState({ group: [...this.state.group, player] });
-    //   }
-    // });
-
-    console.log(this.state.group);
-  }
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -93,7 +79,7 @@ class ManagePlayersModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <Container>
-              {this.state.currentGroup.map(player => (
+              {this.state.currentGroup.filter(player => (player.state != 0)).map(player => (
                 <Players
                   data={player}
                   gamertag={player.gamertag}
