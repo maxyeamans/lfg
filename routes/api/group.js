@@ -13,4 +13,8 @@ router
   .put(groupController.update)
   .delete(groupController.remove);
 
+// Matches with "/api/groups/search"
+router.route("/search")
+  .post(groupController.findByData);
+
 module.exports = router;

@@ -9,6 +9,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByData: function(req, res) {
+    db.Group
+      .find( req.query )
+      .then( groups => res.json(groups) )
+      .catch(err => res.status(422).json(err))
+  },
   findById: function(req, res) {
     db.Group
       .findById(req.params.id)
