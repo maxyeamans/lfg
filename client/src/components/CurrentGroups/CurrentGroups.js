@@ -62,7 +62,7 @@ const CurrentGroups = props => (
       </Col>
     </Row>
     <Row>
-      <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn">View Group</Link>
+      <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn" className="manage-groups-btn">View Group</Link>
     </Row>
   </div>
 );

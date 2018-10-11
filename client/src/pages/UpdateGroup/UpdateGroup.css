@@ -12,8 +12,11 @@ h2 {
     letter-spacing: 2px;
     text-align:center;
     font-size:40px;
-
    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+  }
+
+  #page-div{
+    margin-top:100px;
   }
 
 .mygroups {

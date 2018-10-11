@@ -1,5 +1,4 @@
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
+
 
 h1 {
     font-family:"bignoodletoo"; 
@@ -50,18 +49,43 @@ h1 {
   body{
 
     background-image: url("../../images/background2.jpg");
-   
-  
-
-     
+    
   }
   
 .mygroups{
     margin-bottom:300px;
     margin-top:100px;
-   
+
 }
-}
+
+/* @media only screen and (max-width: 1024px) and (min-width: 426px)  {
+    .mygroups{
+        margin-bottom:300px;
+        margin-top:100px;
+        margin-left:25%;
+        width:100%
+    }
+
+    h1 {
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:80px;
+        margin-top:100px;
+        margin-left:50%;
+        width:100%;
+        
+      
+      }
+      h3{
+        text-align:center;
+        color:rgb(196, 196, 196);
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        margin-left:50%;
+        width:100%;
+      }
+} */
+
 
 @media only screen and (max-width: 425px) {
     /* For mobile phones: */

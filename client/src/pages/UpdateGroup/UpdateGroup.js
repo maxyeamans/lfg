@@ -76,6 +76,7 @@ class UpdateGroup extends Component {
       // NAV IS RIGHT HERE
 
       <Container fluid>
+      <div id="page-div">
         <h2>GROUP INFORMATION ▼</h2>
         <div className="card">
           <Row>
@@ -122,6 +123,7 @@ class UpdateGroup extends Component {
               ))}
           </Col>
         </Row>
+        </div>
       </Container>
     );
   }
