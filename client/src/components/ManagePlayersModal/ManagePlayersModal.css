@@ -11,6 +11,7 @@
   font-family:"bignoodletoo";
   letter-spacing: 2px;
   font-size:30px;
+  float: right;
 }
 
 #manage-players-btn:hover {
@@ -19,6 +20,6 @@
 }
 
 .my-modal {
-  width: 90vw;    /* Occupy the 90% of the screen width */
+  width: 35vw;    /* Occupy the 90% of the screen width */
   max-width: 90vw;
 } 

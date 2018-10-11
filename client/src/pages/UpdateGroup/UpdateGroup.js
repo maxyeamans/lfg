@@ -5,62 +5,63 @@ import CreateGroupBtn from "../../components/CreateGroupBtn";
 import CurrentGroups from "../../components/CurrentGroups";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
+import Players from "../../components/Players";
 import "./UpdateGroup.css";
+import { runInThisContext } from "vm";
+import ManageGroupModal from "../../components/ManageGroupModal";
 
 class UpdateGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groups: [],
-      userGroups: [],
+      group: {},
+      players: [],
+      groupId: "",
       globalId: ""
-      
-
     };
   }
 
   componentDidMount() {
-    // this.loadUsers();
-    // this.loadProfiles();
-    this.loadLogin();
-    this.loadGroups();
-    this.handleGroups();
-    
-    
+    let url = window.location.pathname;
+    this.getAllUrlParams(url);
   }
 
-
-
-  loadUsers = () => {
-    // gets all users
-    API.getUsers()
-      .then(res => this.setState({ users: res.data }))
+  loadGroup = groupId => {
+    API.getGroup(groupId)
+      .then(res =>
+        this.setState({ group: res.data }, function() {
+          console.log(this.state.group + " Group loaded!! :)");
+          this.loadPlayers();
+        })
+      )
       .catch(err => console.log(err));
   };
 
-  loadLogin = () => {
-    API.getLogin()
-    .then(res => this.setState({ globalId: res.data._id }))
-    .catch(err => console.log(err));
-    
-    
-  }
+  loadPlayers = () => {
+    let players = [
+      this.state.group.player1,
+      this.state.group.player2,
+      this.state.group.player3,
+      this.state.group.player4,
+      this.state.group.player5,
+      this.state.group.player6
+    ];
 
-  // loadProfiles = () => { // gets all profiles
-  //   API.getProfiles()
-  //     .then(res => this.setState({ profiles: res.data }))
-  //     .catch(err => console.log(err));
-  // };
+    this.setState({ players: players }, function() {
+      console.log(this.state.players + " Players loaded!! :)");
+    });
+  };
 
-  // ######################################################
-  // WE WILL NEED TO UPDATE LOAD GROUPS TO ONLY LOAD GROUPS OUR USER BELONGS TO
-  // #####################################################
-  loadGroups = () => {
-    // gets all groups
-    API.getGroups()
-      .then(res => this.setState({ groups: res.data }))
-      .catch(err => console.log(err));
-      
+  getAllUrlParams = url => {
+    let queryString = url ? url.split("?")[0] : window.location.search.slice(1);
+    let groupId;
+    if (queryString) {
+      queryString = queryString.split("updategroup/")[1];
+      groupId = queryString;
+    }
+    this.setState({ groupId: groupId }, function() {
+      this.loadGroup(this.state.groupId);
+    });
   };
 
   handleInputChange = event => {
@@ -70,73 +71,57 @@ class UpdateGroup extends Component {
     });
   };
 
-  handleGroups = () => {
-    console.log("Global ID: " + this.state.globalId);
-    console.log(this.state.groups);
-    this.state.groups.map(group => {
-      if (this.state.globalId === group.player1.user || group.player2.user || group.player3.user || group.player4.user || group.player5.user || group.player6.user) {
-        this.state.userGroups.push(group);
-      }
-    });
-  }
-  // _onChange = event => {
-  //   event.preventDefault();
-  //   this.setState({ [event.target.name]: event.target.value });
-  // };
-
   render() {
     return (
       // NAV IS RIGHT HERE
 
       <Container fluid>
+        <h2>GROUP INFORMATION ▼</h2>
+        <div className="card">
+          <Row>
+            <Col size="xl-12 sm-12">
+              <ul className="list-group">
+                <li id="group-name" className="list-group-item">
+                  <strong>Group name:</strong>
+                  {this.state.group.groupName}
+                </li>
+                <li className="list-group-item">
+                  <strong>Members:</strong>
+                  {this.state.group.groupName}
+                </li>
+                <li className="list-group-item">
+                  <strong>Console:</strong>
+                  {this.state.group.platform}
+                </li>
+                <li className="list-group-item">
+                  <strong>Group Rank:</strong>
+                  {this.state.group.groupRank}
+                </li>
+                <li className="list-group-item">
+                  <strong>Times:</strong>
+                  {this.state.group.time}
+                </li>
+              </ul>
+              <ManageGroupModal />
+            </Col>
+          </Row>
+        </div>
         <Row>
-          {/* Start Column 1 */}
-          <Col size="xl-8 sm-8">
-            <div className="mygroups">
-              <h1>MY GROUPS</h1>
-
-              {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
-              {this.handleGroups()}
-              {this.state.userGroups.map(group => (
-                <CurrentGroups
-                  data={group}
-                  groupName={group.groupName}
-                  platform={group.platform}
-                  groupRank={group.groupRank}
-                  time={group.time}
-                  player1={group.player1.gamertag}
-                  player2={group.player2.gamertag}
-                  player3={group.player3.gamertag}
-                  player4={group.player4.gamertag}
-                  player5={group.player5.gamertag}
-                  player6={group.player6.gamertag}
+          <Col size="xl-12 sm-12">
+          <h2>PLAYERS IN GROUP ▼</h2>
+            {this.state.players
+              .filter(player => player.state != 0)
+              .map(player => (
+                <Players
+                  data={player}
+                  gamertag={player.gamertag}
+                  role={player.role}
+                  state={player.state}
+                  rank={player.rank}
                 />
               ))}
-            </div>
-          </Col>
-          {/* Start Column 2 */}
-
-          <Col size="xl-4 sm-4">
-            <Row>
-              {/* <container className="creategroupSearch"> */}
-              <Col size="xl-6 sm-6">
-                <Row>
-                  <div class="buttons">
-                    <CreateGroupBtn />
-                  </div>
-                </Row>
-                <Row>
-                  <div class="buttons">
-                    <SearchBtn />
-                  </div>
-                </Row>
-              </Col>
-
-              {/* </container> */}
-            </Row>
           </Col>
         </Row>
-        <Footer />
       </Container>
     );
   }

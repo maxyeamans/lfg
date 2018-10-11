@@ -15,31 +15,12 @@ class ManagePlayersModal extends React.Component {
 
     this.state = {
       show: false,
-      groupName: this.props.groupInfo.groupName,
-      platform: this.props.groupInfo.platform,
-      groupRank: this.props.groupInfo.groupRank,
-      time: this.props.groupInfo.time,
-      player1: this.props.groupInfo.player1,
-      player2: this.props.groupInfo.player2,
-      player3: this.props.groupInfo.player3,
-      player4: this.props.groupInfo.player4,
-      player5: this.props.groupInfo.player5,
-      player6: this.props.groupInfo.player6,
-      currentGroup: [
-        this.props.groupInfo.player1,
-        this.props.groupInfo.player2,
-        this.props.groupInfo.player3,
-        this.props.groupInfo.player4,
-        this.props.groupInfo.player5,
-        this.props.groupInfo.player6
-      ],
-      group: [],
       id: "5bb5619e6cb97b6830ca34c8"
     };
   }
 
   componentDidMount() {
-    // this.searchPlayers();
+
   }
 
   handleInputChange = event => {
@@ -66,7 +47,7 @@ class ManagePlayersModal extends React.Component {
           bsSize="large"
           onClick={this.handleShow}
         >
-          Manage Players
+          Manage Player
         </Button>
 
         <Modal
@@ -75,19 +56,53 @@ class ManagePlayersModal extends React.Component {
           onHide={this.handleClose}
         >
           <Modal.Header closeButton>
-            <Modal.Title> Manage Players </Modal.Title>
+            <Modal.Title> Manage Player </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Container>
-              {this.state.currentGroup.filter(player => (player.state != 0)).map(player => (
-                <Players
-                  data={player}
-                  gamertag={player.gamertag}
-                  role={player.role}
-                  state={player.state}
-                  rank={player.rank}
-                />
-              ))}
+              <form className="m-4">
+                <div className="form-group">
+                  <label for="gamertag">Gamertag: </label>
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="gamertag"
+                    placeholder="gamertag"
+                  />
+                </div>
+                <div className="form-group">
+                  <label for="role">Role: </label>
+                  <select className="form-control" name="role">
+                    <option value="">Update Platform</option>
+                    <option value="">Attack</option>
+                    <option value="">Support</option>
+                    <option value="">Tank</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label for="rank">Player Rank: </label>
+                  <select className="form-control" name="rank">
+                    <option value="">Update Rank (7)</option>
+                    <option value="">Bronze</option>
+                    <option value="">Silver</option>
+                    <option value="">Gold</option>
+                    <option value="">Platinum</option>
+                    <option value="">Diamond</option>
+                    <option value="">Master</option>
+                    <option value="">Grand Master</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={this.handleFormSubmit}
+                >
+                  Update
+                </button>
+                <button type="" className="btn btn-danger" onClick="">
+                  Leave Group
+                </button>
+              </form>
             </Container>
           </Modal.Body>
           <Modal.Footer>

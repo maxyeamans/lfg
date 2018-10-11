@@ -3,6 +3,7 @@ var login;
 
 module.exports = {
 login: function(req, res) {
+  console.log("*********** this was called")
     User
       .findOne({ username: req.body.username })
       .then( foundUser => {
@@ -32,10 +33,17 @@ login: function(req, res) {
       .catch( err => res.status(422).json(err) );
   },
   loginId: function(req, res) {
+    console.log("req.body inside loginId: ", req.body)
     console.log(login + " loginId");
     User
       .findById(login)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then(dbModel => {
+        console.log("dbModel inside loginId function: ", dbModel)
+        res.json(dbModel)
+      })
+      .catch(err => {
+        console.log("inside loginID .catch, here is our error: ", err)
+        res.status(422).json(err)
+      });
   }
 };

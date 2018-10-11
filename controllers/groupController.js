@@ -25,11 +25,22 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+
+    
+
     console.log(req.body.groupName)
+    console.log("this is req.body inside controller", req.body)
+
     db.Group
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then(dbModel => {
+        console.log("this is dbModel after db.Group.create: ", dbModels)
+        res.json(dbModel)
+      })
+      .catch(err => {
+        console.log("we are inside of .catch and our error is: ", err);
+        res.status(422).json(err)
+      });
   },
   update: function(req, res) {
     db.Group

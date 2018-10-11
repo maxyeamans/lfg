@@ -132,6 +132,7 @@ class Main extends Component {
               {this.state.userGroups.map(group => (
                 <CurrentGroups
                   data={group}
+                  _id={group._id}
                   groupName={group.groupName}
                   platform={group.platform}
                   groupRank={group.groupRank}

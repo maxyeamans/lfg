@@ -3,13 +3,17 @@ import "./CurrentGroups.css";
 import { Col, Row, Container } from "../Grid";
 import ManageGroupModal from "../ManageGroupModal";
 import ManagePlayersModal from "../ManagePlayersModal";
+import { Link } from 'react-router-dom'
+
+
+
 
 const CurrentGroups = props => (
   <div className="card current-groups">
     <Row>
       <Col size="xl-6 sm-6">
         <ul className="list-group">
-          <li id="group-name" className="list-group-item">
+          <li className="list-group-item">
             <strong>Group name:</strong>
             {props.groupName}
           </li>
@@ -50,18 +54,15 @@ const CurrentGroups = props => (
             <strong>User ID:</strong>
             {/* {props.user} */}
           </li>
+          <li hidden id={props._id} className="list-group-item">
+            
+            {/* {props._id} */}
+          </li>
         </ul>
       </Col>
     </Row>
-    {/* <button className="manage-groups-btn"
-    // onClick={() => props.saveArticles(props.data)}
-    >
-
-      Manage
-      </button> */}
     <Row>
-      <ManageGroupModal />
-      <ManagePlayersModal groupInfo={props.data}/>
+      <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn">View Group</Link>
     </Row>
   </div>
 );
