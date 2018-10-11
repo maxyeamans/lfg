@@ -49,6 +49,16 @@ class Search extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  returnSearchParams = () => {
+    let searchParams = {};
+    const s = this.state;
+    if (s.groupName) {searchParams["groupName"] = s.groupName};
+    if (s.platform) {searchParams["platform"] = s.platform};
+    if (s.groupRank) {searchParams["groupRank"] = s.groupRank};
+
+    return searchParams;
+  }
+
   // //for rendering search groups on searchgroup component
   // renderSearchedGroups = () => {
   //   return this.state.groups.map(group => (
@@ -89,8 +99,8 @@ class Search extends Component {
   
     handleFormSubmit = (event) => {
       event.preventDefault();
-      console.log( this.state.platform );
-      API.getGroups({ platform: this.state.platform })
+      // ! This is purposely defaulted to PC for now for testing purposes
+      API.getGroups( this.returnSearchParams() )
         .then( res => this.setState({ groups: res.data }));
   
       // var filterGroup=this.state.groups.filter(eachitem=>eachitem.groupName===this.state.groupName )

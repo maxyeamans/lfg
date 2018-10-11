@@ -56,7 +56,7 @@ export default {
   // Gets all groups
   // Params takes a JSON object created from the request query (e.g., /api/groups?platform=PS4)
   getGroups: function(params) {
-    return axios.get("/api/groups", params);
+    return axios.get("/api/groups", {params});
   },
   // Gets the group with the given id
   getGroup: function(id) {
