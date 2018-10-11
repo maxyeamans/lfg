@@ -62,8 +62,6 @@ const CurrentGroups = props => (
       </Col>
     </Row>
     <Row>
-      <ManageGroupModal />
-      <ManagePlayersModal groupInfo={props.data} />
       <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn">View Group</Link>
     </Row>
   </div>

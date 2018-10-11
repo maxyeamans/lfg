@@ -47,7 +47,7 @@ class ManagePlayersModal extends React.Component {
           bsSize="large"
           onClick={this.handleShow}
         >
-          Manage Players
+          Manage Player
         </Button>
 
         <Modal
@@ -56,7 +56,7 @@ class ManagePlayersModal extends React.Component {
           onHide={this.handleClose}
         >
           <Modal.Header closeButton>
-            <Modal.Title> Manage Players </Modal.Title>
+            <Modal.Title> Manage Player </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Container>

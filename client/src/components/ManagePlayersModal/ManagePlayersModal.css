@@ -11,6 +11,7 @@
   font-family:"bignoodletoo";
   letter-spacing: 2px;
   font-size:30px;
+  float: right;
 }
 
 #manage-players-btn:hover {
