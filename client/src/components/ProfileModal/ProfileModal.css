@@ -1,9 +1,11 @@
 #settings-btn{
     background-color:rgb(24, 23, 23, 0.2);
     border: none;
-    color:#afafaf;
+    color:#d4d3d3;
     font-family:"bignoodletoo";
     letter-spacing: 2px;
+    margin-top:12px;
+    margin-left:2px;
    
   }
   
@@ -11,15 +13,3 @@
     color:#ffffff;
 }
 
-/* h6{
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  color:black;
-  font-size:20px;
-  letter-spacing: 0px;
-}
-
-.form-group{
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  color:black;
-  font-size:20px;
-} */

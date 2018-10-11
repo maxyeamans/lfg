@@ -4,7 +4,7 @@ import "./SearchGroup.css";
 const SearchGroup = props => (
 
 
-  <div className="card my-3" >
+  <div id="results-box" className="card my-3" >
  
     <ul className="list-group">
       <li className="list-group-item">

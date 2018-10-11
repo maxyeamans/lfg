@@ -134,24 +134,24 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
             />
+            
           </div>
-          <h5> ▼ </h5>
+         
 
           </Col>
           
         </Row>
-
-
-        <Row>
         
-          <Col size="xl-12 lg-6">
             <div id="search-results">
-              <h4> results</h4>
+            <h5> ▼ </h5>
+          
+            <h4> results</h4>
+
               {this.state.groups.map( group => <SearchGroup group={group}/>)}
             </div>
-          </Col>
           
-        </Row>
+          
+        
         <Footer />
       </Container>
     );

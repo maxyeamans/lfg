@@ -1,10 +1,9 @@
 
 #register-form{
     border: .5px solid;
-   
     width:100%;
     background-color:rgba(53, 52, 52, 0.349);
-  margin-top:20px;
+  margin-top:100px;
 }
 
 
@@ -26,6 +25,27 @@ label{
 
   p{
     margin-bottom:20px;
-    color:rgb(196, 196, 196);
+    color:rgb(255, 255, 255);
     font-family: 'Archivo', sans-serif;
+   
+  }
+
+  #bottom-reg{
+      float:right;
+      margin-top:10px;
+  }
+
+  .reg-l-btn{
+   
+    background-color: #91cde2;
+    border: none;
+    color: #FFFFFF;
+    transition: all 0.5s;
+    text-align:center;
+   float:right;
+    width:80px;
+    height:25px;
+    border-radius: 4px;
+    font-size:15px;
+    letter-spacing: 0px;
   }

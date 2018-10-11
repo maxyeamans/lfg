@@ -62,9 +62,10 @@ class ProfileModal extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> Settings</Modal.Title>
+            <Modal.Title> <h2>Settings</h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
+
             <form className="m-4" action="" method="post" onSubmit="">
               <div className="form-group">
                 <label for="username">
