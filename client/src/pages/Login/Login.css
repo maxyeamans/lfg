@@ -4,8 +4,9 @@
   border: .5px solid;
   width:50%;
   background-color:rgba(53, 52, 52, 0.349);
-  margin-top:20px;
+  
   margin:auto;
+  margin-top:100px;
 }
 
 #login-text{
@@ -13,4 +14,24 @@
   color:rgb(196, 196, 196);
   font-family: 'Archivo', sans-serif;
   font-size: 20px;
+}
+
+#bottom-reg{
+  float:right;
+  margin-top:10px;
+}
+
+.reg-l-btn{
+
+background-color: #91cde2;
+border: none;
+color: #FFFFFF;
+transition: all 0.5s;
+text-align:center;
+float:right;
+width:80px;
+height:25px;
+border-radius: 4px;
+font-size:15px;
+letter-spacing: 0px;
 }

@@ -82,6 +82,11 @@ class Login extends Component {
           <button type="submit" className="btn btn-primary" onClick={() => this.loginUser(this.state.username, this.state.password)}>Submit</button>
         </form>
 
+         <div id="bottom-reg">
+            <p>Don't have an account?</p> 
+            <a className="reg-l-btn"  href="/register" role="button"><p>Register</p></a>
+            </div>
+
 </div>
 </Col>
         </Row>

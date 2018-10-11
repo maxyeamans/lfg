@@ -85,7 +85,15 @@ class Register extends Component {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={() => this.createNewUser(this.state.username, this.state.password, this.state.email, this.state.group)}>Submit</button>
+             
+                
             </form>
+
+            <div id="bottom-reg">
+            <p>Already have an account?</p> 
+            <a className="reg-l-btn"  href="/" role="button"><p>Log in</p></a>
+            </div>
+
             </div>
             </Col>
             

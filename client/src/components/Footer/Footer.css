@@ -1,19 +1,30 @@
 #Footer{
     background-color:rgb(24, 23, 23, 0.2);
     text-align:center;
+    
+    color:rgb(185, 182, 182); 
+   
+    margin-bottom: -100;
     width: 100%;
-    color:rgb(185, 182, 182);
-
-  
 }
 
-#menu-outer {
+a{
+   
+    color:rgb(240, 238, 238);
+}
+
+a:hover{
+    color:#f09731;
+    text-decoration:none;
+}
+
+/* #menu-outer {
 	height: 84px;
 	background: url("") repeat-x;
 }
 
 .table {
-	display: table;   /* Allow the centering to work */
+	display: table;   
 	margin: 0 auto;
 }
 
@@ -35,7 +46,7 @@ ul#horizontal-list {
         color:#f09731;
     }
 
-    body, html { /*body and html have to be 100% to push header down */
+    body, html { 
         height:100%;
         width: 100%;
-    }
+    } */
