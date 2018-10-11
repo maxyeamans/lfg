@@ -15,7 +15,7 @@ const SearchBar = props => {
 								<form>
 									<div className="form-group">
 										<label htmlFor="topic">Group Name</label>
-										<input onChange={props.handleGroupNameChange} type="text" className="form-control" id="topic" aria-describedby="emailHelp" />
+										<input onChange={props.handleInputChange} type="text" className="form-control" name="groupName" aria-describedby="emailHelp" />
 									</div>
 									{/* <div className="form-group">
 										<label htmlFor="start-year">Platform</label>
@@ -27,21 +27,21 @@ const SearchBar = props => {
 									<div className="form-group">
 									<label htmlFor="topic">Platform</label>
 									<br></br>
-										<label class="radio-inline"><input onChange={props.handlePlatformChange} value="pc" type="radio" name="optradio" />pc</label>
-										<label class="radio-inline"><input onChange={props.handlePlatformChange} value="xbox" type="radio" name="optradio" />xbox</label>
-										<label class="radio-inline"><input onChange={props.handlePlatformChange} value="playstation" type="radio" name="optradio" />playstation</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="PC" type="radio" name="platform" />PC</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="Xbox" type="radio" name="platform" />Xbox</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="PS4" type="radio" name="platform" />PS4</label>
 									</div>
 
 									<div class="form-group">
 									<label htmlFor="topic">Group Rank</label>
 									<br></br>
-									<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="bronze" type="radio" name="optradio" />bronze</label>
-										<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="silver" type="radio" name="optradio" />silver</label>
-										<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="gold" type="radio" name="optradio" />gold</label>
-										<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="platinum" type="radio" name="optradio" />platinum</label>
-										<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="diamond" type="radio" name="optradio" />diamond</label>
-										<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="master" type="radio" name="optradio" />master</label>
-										<label class="radio-inline"><input onChange={props.handleGroupRankChange} value="grandmaster" type="radio" name="optradio" />grandmaster</label>
+									<label class="radio-inline"><input onChange={props.handleInputChange} value="bronze" type="radio" name="groupRank" />bronze</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="silver" type="radio" name="groupRank" />silver</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="gold" type="radio" name="groupRank" />gold</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="platinum" type="radio" name="groupRank" />platinum</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="diamond" type="radio" name="groupRank" />diamond</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="master" type="radio" name="groupRank" />master</label>
+										<label class="radio-inline"><input onChange={props.handleInputChange} value="grandmaster" type="radio" name="groupRank" />grandmaster</label>
 									</div>
 
 									<button onClick={props.handleFormSubmit} type="submit" className="submit-button">Search</button>
