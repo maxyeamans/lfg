@@ -4,12 +4,14 @@ import { Col, Row, Container } from "../Grid";
 import ManageGroupModal from "../ManageGroupModal";
 import ManagePlayersModal from "../ManagePlayersModal";
 
+
+
 const CurrentGroups = props => (
   <div className="card current-groups">
     <Row>
       <Col size="xl-6 sm-6">
         <ul className="list-group">
-          <li id="group-name" className="list-group-item">
+          <li className="list-group-item">
             <strong>Group name:</strong>
             {props.groupName}
           </li>
@@ -50,6 +52,10 @@ const CurrentGroups = props => (
             <strong>User ID:</strong>
             {/* {props.user} */}
           </li>
+          <li hidden id={props._id} className="list-group-item">
+            
+            {/* {props._id} */}
+          </li>
         </ul>
       </Col>
     </Row>
@@ -60,7 +66,7 @@ const CurrentGroups = props => (
       Manage
       </button> */}
     <Row>
-      <ManageGroupModal />
+      <ManageGroupModal idGroup={props._id}/>
       <ManagePlayersModal groupInfo={props.data}/>
     </Row>
   </div>

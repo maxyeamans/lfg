@@ -71,8 +71,8 @@ export default {
     return axios.post("/api/groups", GroupData);
   },
   // Updates the group with the given id
-  updateGroup: function(id) {
-    return axios.update("/api/groups/" + id);
+  updateGroup: function(groupData) {
+    return axios.put("/api/groups/" + groupData._id, groupData);
   },
   
 };
