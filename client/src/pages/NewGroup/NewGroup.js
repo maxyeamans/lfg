@@ -163,7 +163,7 @@ class NewGroup extends Component {
                   value={this.state.rank}
                 />
               </div>
-              <button type="submit" className="btn btn-primary" onClick={() => this.createNewGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.gamertag, this.state.role, this.state.rank, this.state.user)}>
+              <button type="submit" className="newGroup-submit" onClick={() => this.createNewGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.gamertag, this.state.role, this.state.rank, this.state.user)}>
                 Submit
               </button>
             </form>

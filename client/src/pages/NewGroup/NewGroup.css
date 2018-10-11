@@ -2,10 +2,33 @@
     height:150px;
 }
 
+
+.newGroup-submit {
+    border-radius: 4px;
+    background-color: #aed3e0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+  }
+  
+  .newGroup-submit:hover {
+    background-color: rgb(44, 43, 43); /* Green */
+    color: #f09731;
+  }
+
 @media only screen and (max-width: 425px) {
 h1{
     font-size:30px;
     margin-bottom: 30px;
+    margin-top:60px;
 }
 
 }
