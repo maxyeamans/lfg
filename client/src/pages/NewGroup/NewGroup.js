@@ -13,7 +13,8 @@ class NewGroup extends Component {
     gamertag: "",
     role: "",
     rank: "",
-    user: ""
+    user: "",
+    groups: []
     
 };
 
@@ -37,7 +38,7 @@ class NewGroup extends Component {
   loadGroups = () => {
     // gets all users
     API.getGroups()
-      .then(res => this.setState({ users: res.data }))
+      .then(res => this.setState({ groups: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -65,7 +66,7 @@ class NewGroup extends Component {
       }
       
     })
-      .then(res => this.loadGroups())
+      .then(res => console.log(res))
       .catch(err => console.log(err));
   }
 

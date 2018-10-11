@@ -26,10 +26,11 @@ class Register extends Component {
         API.saveUser({
           username: username,
           password: password,
-          email: email
+          email: email,
+          group: group
           
         })
-          .then(res => this.loadGroups())
+          .then(res => console.log(res))
           .catch(err => console.log(err));
       }
 
@@ -83,7 +84,7 @@ class Register extends Component {
                         value={this.state.confirmPassword}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={() => this.createNewUser(this.state.username, this.state.password, this.state.email)}>Submit</button>
+                <button type="submit" className="btn btn-primary" onClick={() => this.createNewUser(this.state.username, this.state.password, this.state.email, this.state.group)}>Submit</button>
             </form>
             </div>
             </Col>

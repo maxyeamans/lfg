@@ -67,11 +67,12 @@ export default {
   },
   // Saves a group to the database
   saveGroup: function(GroupData) {
+    console.log(GroupData);
     return axios.post("/api/groups", GroupData);
   },
   // Updates the group with the given id
-  updateGroup: function(id) {
-    return axios.update("/api/groups/" + id);
+  updateGroup: function(groupData) {
+    return axios.put("/api/groups/" + groupData._id, groupData);
   },
   
 };

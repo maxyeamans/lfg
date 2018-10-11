@@ -13,11 +13,21 @@ class ManageGroupModal extends React.Component {
 
     this.state = {
       show: false,
+<<<<<<< HEAD
       username: "",
       password: "",
       email: ""
+=======
+
+      groupName: "",
+      Platform: "",
+      time: "",
+      rank: "",
+      groupId: ""
+>>>>>>> c43f80c9aa98b15838b2717a16c1c9d1d49ba85f
     };
   }
+  
 
   //this is a template for how we will change user info after editing:
   //   handleUserNameChange = e => {
@@ -27,16 +37,19 @@ class ManageGroupModal extends React.Component {
   // };
 
   componentDidMount() {
-    this.loadUsers();
+    this.handleGroupId();
   }
 
-  loadUsers = () => {
-    API.getUser(this.state.id)
+  loadGroup = () => {
+    console.log()
+    API.getGroup(this.state.groupId)
       .then(res =>
         this.setState({
-          username: res.data.username,
-          password: res.data.password,
-          email: res.data.email
+          groupName: res.data.groupName,
+          platform: res.data.platform,
+          groupRank: res.data.groupRank,
+          time: res.data.time,
+          groupId: res.data._id
         })
       )
       .catch(err => console.log(err));
@@ -49,13 +62,32 @@ class ManageGroupModal extends React.Component {
     });
   };
 
+  handleGroupId = () => {
+    this.setState({groupId: this.props.idGroup})
+  }
+
+  
   handleClose() {
     this.setState({ show: false });
   }
 
   handleShow() {
-    this.loadUsers();
+    this.loadGroup();
     this.setState({ show: true });
+  }
+
+  updateCurrentGroup = (groupName, platform, groupRank, time, groupId) => { 
+    console.log(groupId);
+    API.updateGroup({
+      groupName: groupName, // select what you want updated
+      platform: platform,
+      groupRank: groupRank,
+      time: time,
+      _id: groupId
+
+    })
+      //.then(res => this.loadGroups())
+      .catch(err => console.log(err));
   }
 
   // ###########################################################
@@ -76,7 +108,11 @@ class ManageGroupModal extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
+<<<<<<< HEAD
     this.updateCurrentUser();
+=======
+    this.updateCurrentGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.groupId);
+>>>>>>> c43f80c9aa98b15838b2717a16c1c9d1d49ba85f
   };
 
   render() {
@@ -99,42 +135,51 @@ class ManageGroupModal extends React.Component {
             <form className="m-4">
               <div className="form-group">
                 <label for="groupName">Group Name: </label>
+                <p hidden
+                name="groupId"
+                value={this.props.idGroup}
+                ></p>
                 <input
                   className="form-control"
                   type="text"
                   name="groupName"
                   placeholder="Group Name"
+                  onChange={this.handleInputChange}
+                  value={this.state.groupName}
                 />
               </div>
               <div className="form-group">
                 <label for="console">Console: </label>
                 <select className="form-control" name="console">
-                  <option value="">Update Platform</option>
-                  <option value="">PC</option>
-                  <option value="">Xbox</option>
-                  <option value="">Playstation</option>
+                  <option value={this.state.platform}>Update Platform</option>
+                  <option value={this.state.platform}>PC</option>
+                  <option value={this.state.platform}>Xbox</option>
+                  <option value={this.state.platform}>Playstation</option>
+                  
                 </select>
               </div>
               <div className="form-group">
                 <label for="rank">Rank: </label>
                 <select className="form-control" name="rank">
-                  <option value="">Update Rank (7)</option>
-                  <option value="">Bronze</option>
-                  <option value="">Silver</option>
-                  <option value="">Gold</option>
-                  <option value="">Platinum</option>
-                  <option value="">Diamond</option>
-                  <option value="">Master</option>
-                  <option value="">Grand Master</option>
+                  <option value={this.state.rank}>Update Rank (7)</option>
+                  <option value={this.state.rank}>Bronze</option>
+                  <option value={this.state.rank}>Silver</option>
+                  <option value={this.state.rank}>Gold</option>
+                  <option value={this.state.rank}>Platinum</option>
+                  <option value={this.state.rank}>Diamond</option>
+                  <option value={this.state.rank}>Master</option>
+                  <option value={this.state.rank}>Grand Master</option>
                 </select>
               </div>
               <div className="form-group">
                 <label for="time">Game Time</label>
                 <input
-                  type="time"
+                  type="gametime"
                   className="form-control"
                   name="time"
                   placeholder="Game Time"
+                  onChange={this.handleInputChange}
+                  value={this.state.time}
                 />
               </div>
               <button

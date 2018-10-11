@@ -16,8 +16,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+
+    
+
     console.log(req.body.groupName)
     console.log("this is req.body inside controller", req.body)
+
     db.Group
       .create(req.body)
       .then(dbModel => {
