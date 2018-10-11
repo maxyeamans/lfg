@@ -13,7 +13,6 @@ class ManageGroupModal extends React.Component {
 
     this.state = {
       show: false,
-
       groupName: "",
       Platform: "",
       time: "",
@@ -86,7 +85,6 @@ class ManageGroupModal extends React.Component {
 
   // ###########################################################
   // Function below will need to update current group, not user
-
 
   // updateCurrentUser = (id, username, password, email) => {
   //   console.log(id, username);

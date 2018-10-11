@@ -1,38 +1,45 @@
 .manage-groups-btn {
-    border-radius: 4px;
-    background-color: #aed3e0;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    height:50px;
-    font-family:"bignoodletoo";
-    letter-spacing: 2px;
-    font-size:30px;
-  }
-  
-  .manage-groups-btn:hover {
-    background-color: rgb(44, 43, 43);; 
-    color: #f09731;
-  }
+  border-radius: 4px;
+  background-color: #aed3e0;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 50px;
+  font-family: "bignoodletoo";
+  letter-spacing: 2px;
+  font-size: 30px;
+}
 
-  .player-item{
-    font-family:"bignoodletoo";
-    text-align: center;
-    font-size:40px;
-    letter-spacing: 2px;
-  }
+.manage-groups-btn:hover {
+  background-color: rgb(44, 43, 43);
+  color: #f09731;
+}
 
-  #player-name{
-    text-align: center;
-    color:#f09731;
-    font-size:40px;
-    font-family:"bignoodletoo";
-    letter-spacing: 2px;
-  }
+.player-item {
+  font-family: "bignoodletoo";
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
 
-.card{
+#player-name {
+  text-align: center;
+  color: #f09731;
+  font-size: 40px;
+  font-family: "bignoodletoo";
+  letter-spacing: 2px;
+}
+
+.card {
   border: 1px solid rgb(155, 154, 154);
+}
+
+textarea {
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+  outline: none;
 }

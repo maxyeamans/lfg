@@ -2,6 +2,7 @@ import React from "react";
 import "./Players.css";
 import { Col, Row, Container } from "../Grid";
 import DeleteBtn from "../DeleteBtn/DeleteBtn";
+import ManagePlayerModal from "../../components/ManagePlayersModal";
 
 const Players = props => (
   <div className="card">
@@ -21,7 +22,7 @@ const Players = props => (
           <Col size="xl-6 sm-6">
             <div class="player-item">
               {props.rank}
-              <DeleteBtn />
+              <ManagePlayerModal />
             </div>
           </Col>
         </Row>
