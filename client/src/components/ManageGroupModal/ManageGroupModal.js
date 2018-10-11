@@ -13,11 +13,9 @@ class ManageGroupModal extends React.Component {
 
     this.state = {
       show: false,
-
       username: "",
       password: "",
-      email: "",
-      id: "5bb5619e6cb97b6830ca34c8"
+      email: ""
     };
   }
 
@@ -63,7 +61,6 @@ class ManageGroupModal extends React.Component {
   // ###########################################################
   // Function below will need to update current group, not user
 
-
   // updateCurrentUser = (id, username, password, email) => {
   //   console.log(id, username);
   //   API.updateUser({
@@ -79,9 +76,7 @@ class ManageGroupModal extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.updateCurrentUser(
-
-    );
+    this.updateCurrentUser();
   };
 
   render() {

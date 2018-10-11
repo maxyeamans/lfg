@@ -3,6 +3,8 @@ import "./CurrentGroups.css";
 import { Col, Row, Container } from "../Grid";
 import ManageGroupModal from "../ManageGroupModal";
 import ManagePlayersModal from "../ManagePlayersModal";
+import { Link } from 'react-router-dom'
+
 
 const CurrentGroups = props => (
   <div className="card current-groups">
@@ -53,15 +55,10 @@ const CurrentGroups = props => (
         </ul>
       </Col>
     </Row>
-    {/* <button className="manage-groups-btn"
-    // onClick={() => props.saveArticles(props.data)}
-    >
-
-      Manage
-      </button> */}
     <Row>
       <ManageGroupModal />
-      <ManagePlayersModal groupInfo={props.data}/>
+      <ManagePlayersModal groupInfo={props.data} />
+      <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn">View Group</Link>
     </Row>
   </div>
 );
