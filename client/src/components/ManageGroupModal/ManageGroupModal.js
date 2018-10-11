@@ -13,18 +13,11 @@ class ManageGroupModal extends React.Component {
 
     this.state = {
       show: false,
-<<<<<<< HEAD
-      username: "",
-      password: "",
-      email: ""
-=======
-
       groupName: "",
       Platform: "",
       time: "",
       rank: "",
       groupId: ""
->>>>>>> c43f80c9aa98b15838b2717a16c1c9d1d49ba85f
     };
   }
   
@@ -108,11 +101,7 @@ class ManageGroupModal extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-<<<<<<< HEAD
-    this.updateCurrentUser();
-=======
     this.updateCurrentGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.groupId);
->>>>>>> c43f80c9aa98b15838b2717a16c1c9d1d49ba85f
   };
 
   render() {
