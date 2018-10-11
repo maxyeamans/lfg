@@ -34,3 +34,8 @@ ul#horizontal-list {
     a:hover{
         color:#f09731;
     }
+
+    body, html { /*body and html have to be 100% to push header down */
+        height:100%;
+        width: 100%;
+    }

@@ -48,7 +48,7 @@ class Register extends Component {
             <Container fluid>
             <Row>
                 
-                <Col size="xl-4 lg-6">
+                <Col size="xl-12 lg-6">
             <div id="register-form">
             <form className="m-5">
             <div id="register-text">

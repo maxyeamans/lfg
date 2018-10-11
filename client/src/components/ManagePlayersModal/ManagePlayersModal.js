@@ -47,7 +47,9 @@ class ManagePlayersModal extends React.Component {
           bsSize="large"
           onClick={this.handleShow}
         >
+        
           Manage Player
+          
         </Button>
 
         <Modal
@@ -56,7 +58,7 @@ class ManagePlayersModal extends React.Component {
           onHide={this.handleClose}
         >
           <Modal.Header closeButton>
-            <Modal.Title> Manage Player </Modal.Title>
+            <Modal.Title> <h2>Manage Player</h2> </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Container>
@@ -94,12 +96,12 @@ class ManagePlayersModal extends React.Component {
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="update-btn"
                   onClick={this.handleFormSubmit}
                 >
                   Update
                 </button>
-                <button type="" className="btn btn-danger" onClick="">
+                <button type="" className="leaveGroup-btn" onClick="">
                   Leave Group
                 </button>
               </form>

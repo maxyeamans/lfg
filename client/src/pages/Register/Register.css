@@ -1,7 +1,6 @@
 
 #register-form{
     border: .5px solid;
-   
     width:100%;
     background-color:rgba(53, 52, 52, 0.349);
   margin-top:20px;
@@ -29,3 +28,5 @@ label{
     color:rgb(196, 196, 196);
     font-family: 'Archivo', sans-serif;
   }
+
+

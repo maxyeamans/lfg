@@ -118,7 +118,7 @@ class ManageGroupModal extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> Manage Group </Modal.Title>
+            <Modal.Title> <h2>Manage Group </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form className="m-4">
@@ -173,7 +173,7 @@ class ManageGroupModal extends React.Component {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="mg-btn"
                 onClick={this.handleFormSubmit}
               >
                 Update

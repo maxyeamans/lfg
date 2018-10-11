@@ -1,5 +1,5 @@
 h1 {
-  color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
   font-family: "bignoodletoo";
   letter-spacing: 2px;
   text-align: center;
@@ -11,8 +11,7 @@ h2 {
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
-  
-    font-size:50px;
+    font-size:40px;
 
    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
   }
