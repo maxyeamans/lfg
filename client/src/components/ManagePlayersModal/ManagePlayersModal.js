@@ -6,6 +6,7 @@ import Players from "../../components/Players";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 
+
 class ManagePlayersModal extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -34,7 +35,7 @@ class ManagePlayersModal extends React.Component {
         this.props.groupInfo.player6
       ],
       group: [],
-      id: "5bb5619e6cb97b6830ca34c8"
+      id: this.props.groupInfo._id
     };
   }
 
@@ -86,6 +87,8 @@ class ManagePlayersModal extends React.Component {
                   role={player.role}
                   state={player.state}
                   rank={player.rank}
+                  user={player.user}
+                  id={this.state.id}
                 />
               ))}
             </Container>

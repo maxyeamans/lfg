@@ -27,7 +27,7 @@
 
   #player-name{
     text-align: center;
-    color:#f09731;
+    /* color:#f09731; */
     font-size:40px;
     font-family:"bignoodletoo";
     letter-spacing: 2px;

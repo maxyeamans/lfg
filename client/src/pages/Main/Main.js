@@ -143,6 +143,8 @@ class Main extends Component {
                   player4={group.player4.gamertag}
                   player5={group.player5.gamertag}
                   player6={group.player6.gamertag}
+                  player1Role={group.player1.role}
+                  player1Rank={group.player1.rank}
                 />
               ))}
             </div>
