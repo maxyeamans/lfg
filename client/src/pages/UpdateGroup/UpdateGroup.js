@@ -76,6 +76,7 @@ class UpdateGroup extends Component {
       // NAV IS RIGHT HERE
 
       <Container fluid>
+        <h2>GROUP INFORMATION ▼</h2>
         <div className="card">
           <Row>
             <Col size="xl-12 sm-12">
@@ -101,21 +102,25 @@ class UpdateGroup extends Component {
                   {this.state.group.time}
                 </li>
               </ul>
+              <ManageGroupModal />
             </Col>
           </Row>
         </div>
         <Row>
-          {this.state.players
-            .filter(player => player.state != 0)
-            .map(player => (
-              <Players
-                data={player}
-                gamertag={player.gamertag}
-                role={player.role}
-                state={player.state}
-                rank={player.rank}
-              />
-            ))}
+          <Col size="xl-12 sm-12">
+          <h2>PLAYERS IN GROUP ▼</h2>
+            {this.state.players
+              .filter(player => player.state != 0)
+              .map(player => (
+                <Players
+                  data={player}
+                  gamertag={player.gamertag}
+                  role={player.role}
+                  state={player.state}
+                  rank={player.rank}
+                />
+              ))}
+          </Col>
         </Row>
       </Container>
     );

@@ -6,6 +6,17 @@ h1 {
   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
 }
 
+h2 {
+    color:rgb(228, 226, 226);
+    font-family:"bignoodletoo"; 
+    letter-spacing: 2px;
+    text-align:center;
+  
+    font-size:50px;
+
+   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+  }
+
 .mygroups {
   margin-top: 2%;
 }
