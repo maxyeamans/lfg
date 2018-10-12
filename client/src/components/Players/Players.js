@@ -5,9 +5,10 @@ import DeleteBtn from "../DeleteBtn/DeleteBtn";
 import UpdatePlayerBtn from "../UpdatePlayerBtn";
 import API from "../../utils/API";
 
+
 class Players extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     // this.handleShow = this.handleShow.bind(this);
     // this.handleClose = this.handleClose.bind(this);
@@ -21,10 +22,9 @@ class Players extends React.Component {
       user: this.props.user,
       player: this.props.data,
       playerInfo: {},
-      state: this.props.state,
-      
 
-      
+      state: this.props.state
+
     };
   }
 
@@ -50,8 +50,9 @@ class Players extends React.Component {
     API.getGroup(this.state._id)
       .then(res =>
         this.setState({
-          playerInfo: res.data,
-          
+
+          playerInfo: res.data
+
         })
       )
       .catch(err => console.log(err));
@@ -60,9 +61,9 @@ class Players extends React.Component {
   readPlayer = () => {
     console.log(this.state.player);
     console.log(this.state.playerInfo);
-  }
+  };
 
-  updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => { 
+  updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => {
     console.log(this.state.playerInfo);
     if (this.state.playerInfo.player1.user === this.state.user) {
       API.updateGroup({
@@ -77,8 +78,7 @@ class Players extends React.Component {
       })
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
-    }
-    else if (this.state.playerInfo.player2.user === this.state.user) {
+    } else if (this.state.playerInfo.player2.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player2: {
@@ -91,8 +91,7 @@ class Players extends React.Component {
       })
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
-    }
-    else if (this.state.playerInfo.player3.user === this.state.user) {
+    } else if (this.state.playerInfo.player3.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player3: {
@@ -105,8 +104,7 @@ class Players extends React.Component {
       })
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
-    }
-    else if (this.state.playerInfo.player4.user === this.state.user) {
+    } else if (this.state.playerInfo.player4.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player4: {
@@ -119,8 +117,7 @@ class Players extends React.Component {
       })
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
-    }
-    else if (this.state.playerInfo.player5.user === this.state.user) {
+    } else if (this.state.playerInfo.player5.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player5: {
@@ -133,8 +130,7 @@ class Players extends React.Component {
       })
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
-    }
-    else if (this.state.playerInfo.player6.user === this.state.user) {
+    } else if (this.state.playerInfo.player6.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player6: {
@@ -148,8 +144,9 @@ class Players extends React.Component {
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
     }
-    
-  }
+
+  };
+
 
   handleFormSubmit = event => {
     event.preventDefault();

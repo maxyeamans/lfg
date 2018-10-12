@@ -68,6 +68,7 @@ const CurrentGroups = props => (
     <Row>
       <ManageGroupModal idGroup={props._id}/>
       <ManagePlayersModal groupInfo={props.data} idGroup={props._id}/>
+
     </Row>
   </div>
 );

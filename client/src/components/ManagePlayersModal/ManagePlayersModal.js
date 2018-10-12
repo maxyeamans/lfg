@@ -91,6 +91,7 @@ class ManagePlayersModal extends React.Component {
                   id={this.state.id}
                 />
               ))}
+
             </Container>
           </Modal.Body>
           <Modal.Footer>

@@ -3,7 +3,10 @@ import "./ProfileModal.css";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
-import Login from "../../pages/Login/Login";
+import Login from "../../pages/Login/Login";//trying to bring in current username and pass
+
+
+// We need to pass in the User ID prop so that we can include it in our post request
 
 class ProfileModal extends React.Component {
   constructor(props, context) {
@@ -59,7 +62,11 @@ class ProfileModal extends React.Component {
       email: email
 
     })
+
       // .then(res => console.log(res))
+
+     
+
       .catch(err => console.log(err));
   }
 
@@ -89,7 +96,7 @@ class ProfileModal extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> <h2>Settings</h2></Modal.Title>
+            <Modal.Title> <h2>Settings </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
@@ -138,6 +145,7 @@ class ProfileModal extends React.Component {
             <Button id="pmodal-button" onClick={this.handleClose}>
               Close
             </Button>
+            <a className="btn btn-primary"  href="/" role="button"><p>switch account</p></a>
           </Modal.Footer>
         </Modal>
       </div>
