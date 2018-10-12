@@ -20,7 +20,9 @@ class Players extends React.Component {
       _id: this.props.id,
       user: this.props.user,
       player: this.props.data,
-      playerInfo: {}
+      playerInfo: {},
+      state: this.props.state,
+      
 
       
     };
@@ -60,15 +62,17 @@ class Players extends React.Component {
     console.log(this.state.playerInfo);
   }
 
-  updateCurrentPlayer = (_id, gamertag, role, rank) => { 
+  updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => { 
     console.log(this.state.playerInfo);
     if (this.state.playerInfo.player1.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player1: {
+          state: state,
           gamertag: gamertag,
           role: role,
-          rank: rank
+          rank: rank,
+          user: user
         }
       })
         //.then(res => this.loadGroups())
@@ -78,9 +82,11 @@ class Players extends React.Component {
       API.updateGroup({
         _id: _id,
         player2: {
+          state: state,
           gamertag: gamertag,
           role: role,
-          rank: rank
+          rank: rank,
+          user: user
         }
       })
         //.then(res => this.loadGroups())
@@ -90,9 +96,11 @@ class Players extends React.Component {
       API.updateGroup({
         _id: _id,
         player3: {
+          state: state,
           gamertag: gamertag,
           role: role,
-          rank: rank
+          rank: rank,
+          user: user
         }
       })
         //.then(res => this.loadGroups())
@@ -102,9 +110,11 @@ class Players extends React.Component {
       API.updateGroup({
         _id: _id,
         player4: {
+          state: state,
           gamertag: gamertag,
           role: role,
-          rank: rank
+          rank: rank,
+          user: user
         }
       })
         //.then(res => this.loadGroups())
@@ -114,9 +124,11 @@ class Players extends React.Component {
       API.updateGroup({
         _id: _id,
         player5: {
+          state: state,
           gamertag: gamertag,
           role: role,
-          rank: rank
+          rank: rank,
+          user: user
         }
       })
         //.then(res => this.loadGroups())
@@ -126,9 +138,11 @@ class Players extends React.Component {
       API.updateGroup({
         _id: _id,
         player6: {
+          state: state,
           gamertag: gamertag,
           role: role,
-          rank: rank
+          rank: rank,
+          user: user
         }
       })
         //.then(res => this.loadGroups())
@@ -140,7 +154,7 @@ class Players extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     
-    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank);
+    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank, this.state.state, this.state.user);
   };
 
   render() {
@@ -187,6 +201,7 @@ class Players extends React.Component {
                   <option value={this.state.rank}>Diamond</option>
                   <option value={this.state.rank}>Master</option>
                   <option value={this.state.rank}>Grand Master</option>
+                  
                 </select>
               <DeleteBtn />
               
