@@ -24,7 +24,9 @@ class Players extends React.Component {
       user: this.props.user,
       player: this.props.data,
       playerInfo: {},
+
       state: this.props.state
+
     };
   }
 
@@ -50,7 +52,9 @@ class Players extends React.Component {
     API.getGroup(this.state._id)
       .then(res =>
         this.setState({
+
           playerInfo: res.data
+
         })
       )
       .catch(err => console.log(err));
@@ -142,10 +146,13 @@ class Players extends React.Component {
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
     }
+
   };
+
 
   handleFormSubmit = event => {
     event.preventDefault();
+
 
     this.updateCurrentPlayer(
       this.state._id,
@@ -155,15 +162,18 @@ class Players extends React.Component {
       this.state.state,
       this.state.user
     );
+
   };
 
   render() {
     return (
+
       <Container>
         <div className="card">
           <Row>
             <Col size="xl-12 sm-12">
               <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
+
               <div id="player-name">
                 <input
                   className="form-control"
@@ -174,6 +184,7 @@ class Players extends React.Component {
                   value={this.state.gamertag}
                 />
               </div>
+
               <div class="player-item">
                 <input
                   className="form-control"
@@ -205,3 +216,4 @@ class Players extends React.Component {
 }
 
 export default Players;
+
