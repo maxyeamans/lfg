@@ -151,7 +151,7 @@ class Players extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     
-    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank);
+    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank, this.state.state, this.state.user);
   };
 
   render() {
