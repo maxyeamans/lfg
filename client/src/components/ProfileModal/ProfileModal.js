@@ -69,10 +69,10 @@ class ProfileModal extends React.Component {
                 {this.state.pictures}
                 Change current Username:</label>
                 <input
-                  type="name"
+                  type="text"
                   className="form-control"
                   id="username"
-                  placeholder="New Username"
+                  placeholder=""
                   onChange={this.handleInputChange}
                   value={this.state.username}
                 />
@@ -91,7 +91,7 @@ class ProfileModal extends React.Component {
               <div className="form-group">
                 <label for="email">Change current Email:</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   id="email"
                   placeholder="New Email"

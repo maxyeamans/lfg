@@ -35,3 +35,39 @@ border-radius: 4px;
 font-size:15px;
 letter-spacing: 0px;
 }
+
+.reg-l-btn:hover{
+  background-color: #548496;
+}
+
+#ha-text{
+  margin-bottom:20px;
+  color:rgb(255, 255, 255);
+  font-family: 'Archivo', sans-serif;
+  font-size:15px;
+  letter-spacing: 0px;
+  transition: all 0.5s;
+}
+
+#ha-text:hover{
+    color:rgb(131, 198, 216);
+}
+
+.submit-button1{
+  font-family: 'Archivo', sans-serif;
+      background-color: #f09731;
+      border: none;
+      color: #FFFFFF;
+      transition: all 0.5s;
+      text-align:center;
+      width:80px;
+      height:25px;
+      border-radius: 4px;
+      font-size:15px;
+      letter-spacing: 0px;
+    
+}
+
+.submit-button1:hover{
+  background-color: #7c4b19;
+}
