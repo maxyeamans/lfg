@@ -149,10 +149,7 @@ class Main extends Component {
               ))}
             </div>
           </Col>
-          {/* Start Column 2 */}
         </Row>
-
-
         <Footer />
     
       </Container>
