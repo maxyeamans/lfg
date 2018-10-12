@@ -49,6 +49,11 @@ h1 {
   body{
 
     background-image: url("../../images/background2.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
     
   }
   
