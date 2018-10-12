@@ -73,7 +73,6 @@ class UpdateGroup extends Component {
 
   render() {
     return (
-      // NAV IS RIGHT HERE
 
       <Container fluid>
         <h2>GROUP INFORMATION ▼</h2>
