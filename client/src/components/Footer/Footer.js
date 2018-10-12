@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => (
-  <div id="Footer" className="footer-copyright py-3 ">
+  <div id="Footer" className="footer-copyright  ">
   {/* can add fixed-bottom to className for fixed footer */}
     © 2018 Copyright:
     <a href="https://github.com/maxyeamans/lfg"> LFG </a>

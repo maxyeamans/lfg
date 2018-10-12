@@ -26,9 +26,9 @@ class Players extends React.Component {
       player: this.props.data,
       playerInfo: {},
       state: this.props.state,
-      
 
-      
+
+
     };
   }
 
@@ -55,7 +55,7 @@ class Players extends React.Component {
       .then(res =>
         this.setState({
           playerInfo: res.data,
-          
+
         })
       )
       .catch(err => console.log(err));
@@ -66,7 +66,7 @@ class Players extends React.Component {
     console.log(this.state.playerInfo);
   }
 
-  updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => { 
+  updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => {
     console.log(this.state.playerInfo);
     if (this.state.playerInfo.player1.user === this.state.user) {
       API.updateGroup({
@@ -152,28 +152,28 @@ class Players extends React.Component {
         //.then(res => this.loadGroups())
         .catch(err => console.log(err));
     }
-    
+
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    
+
     this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank, this.state.state, this.state.user);
   };
 
   render() {
     return (
-  <div className="card">
-    <Row>
+      <div className="card">
+        <Row>
 
-    
-      <Col size="xl-4 sm-4">
-      <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit}/>
 
-      <Col size="xl-3 sm-3">
+          <Col size="xl-4 sm-4">
+            <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
 
-        <div id="player-name">
-        <input
+            
+
+              <div id="player-name">
+                <input
                   className="form-control"
                   type="text"
                   name="gamertag"
@@ -181,58 +181,61 @@ class Players extends React.Component {
                   onChange={this.handleInputChange}
                   value={this.state.gamertag}
                 />
-        </div>
-      </Col>
-      <Col size="xl-6 sm-6">
-        <Row>
-          <Col size="xl-6 sm-6">
-
-            <div class="player-item">
-            <input
-                  className="form-control"
-                  type="text"
-                  name="role"
-                  placeholder={this.props.role}
-                  onChange={this.handleInputChange}
-                  value={this.state.role}
-                />
-        
-            </div>
-          </Col>
-          <Col size="xl-6 sm-6">
-            <div class="player-item">
-            <select className="form-control" name="rank">
-                  <option value={this.state.rank}>Update Rank (7)</option>
-                  <option value={this.state.rank}>Bronze</option>
-                  <option value={this.state.rank}>Silver</option>
-                  <option value={this.state.rank}>Gold</option>
-                  <option value={this.state.rank}>Platinum</option>
-                  <option value={this.state.rank}>Diamond</option>
-                  <option value={this.state.rank}>Master</option>
-                  <option value={this.state.rank}>Grand Master</option>
-                  
-                </select>
-              <DeleteBtn />
-              
-            </div>
+              </div>
+            </Col>
             
+              <Row>
+                <Col size="xl-6 sm-6">
 
-            <div class="player-item">{props.role}</div>
-          </Col>
-          <Col size="xl-6 sm-6">
-            <div class="player-item">{props.rank}</div>
+                  <div class="player-item">
+                    <input
+                      className="form-control"
+                      type="text"
+                      name="role"
+                      placeholder={this.props.role}
+                      onChange={this.handleInputChange}
+                      value={this.state.role}
+                    />
 
-          </Col>
-        </Row>
-      </Col>
-      <Col size="xl-3 sm-3">
-        <ManagePlayersModal />
-      </Col>
+                  </div>
+                </Col>
+                <Col size="xl-6 sm-6">
+                  <div class="player-item">
+                    <select className="form-control" name="rank">
+                      <option value={this.state.rank}>Update Rank (7)</option>
+                      <option value={this.state.rank}>Bronze</option>
+                      <option value={this.state.rank}>Silver</option>
+                      <option value={this.state.rank}>Gold</option>
+                      <option value={this.state.rank}>Platinum</option>
+                      <option value={this.state.rank}>Diamond</option>
+                      <option value={this.state.rank}>Master</option>
+                      <option value={this.state.rank}>Grand Master</option>
+
+                    </select>
+                    <DeleteBtn />
+
+                  </div>
+
+
+                  {/* <div class="player-item">{props.role}</div> */}
+                </Col>
+                {/* <Col size="xl-6 sm-6">
+                  <div class="player-item">{props.rank}</div>
+
+                </Col> */}
+              </Row>
+           
+
+            <Col size="xl-3 sm-3">
+
+              <ManagePlayersModal />
+            </Col>
+            
     </Row>
   </div>
-);
-  
-}
-}
-
-export default Players;
+        );
+          
+        }
+        }
+        
+        export default Players;
