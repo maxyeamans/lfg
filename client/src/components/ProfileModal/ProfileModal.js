@@ -16,7 +16,8 @@ class ProfileModal extends React.Component {
       show: false,
       username:"",
       password:"",
-      email:""
+      email:"",
+      _id: this.props.id
     };
   }
 
@@ -35,16 +36,45 @@ class ProfileModal extends React.Component {
     this.setState({ show: true });
   }
 
-  createUpdatedUser = (username, password, email) => { 
+  componentDidMount() {
+    
+    this.loadLogin();
+    
+  }
+
+  loadLogin = () => {
+    API.getLogin()
+      .then(res => this.setState({ _id: res.data._id }))
+      .catch(err => console.log(err));
+
+
+  }
+
+  createUpdatedUser = (_id, username, password, email) => { 
+    console.log(username, password, email)
     API.updateUser({
+      _id: _id,
       username: username, // select what you want updated
       password: password,
       email: email
 
     })
-      .then(res => console.log(res))
+      // .then(res => console.log(res))
       .catch(err => console.log(err));
   }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    this.createUpdatedUser(this.state._id, this.state.username, this.state.password, this.state.email);
+  };
 
 
 
@@ -63,15 +93,15 @@ class ProfileModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
 
-            <form className="m-4" action="" method="post" onSubmit="">
+            <form className="m-4">
               <div className="form-group">
                 <label for="username">
-                {this.state.pictures}
+                {/* {this.state.pictures} */}
                 Change current Username:</label>
                 <input
                   type="name"
                   className="form-control"
-                  id="username"
+                  name="username"
                   placeholder="New Username"
                   onChange={this.handleInputChange}
                   value={this.state.username}
@@ -82,7 +112,7 @@ class ProfileModal extends React.Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="password"
+                  name="password"
                   placeholder="New Password"
                   onChange={this.handleInputChange}
                   value={this.state.password}
@@ -93,13 +123,13 @@ class ProfileModal extends React.Component {
                 <input
                   type="email"
                   className="form-control"
-                  id="email"
+                  name="email"
                   placeholder="New Email"
                   onChange={this.handleInputChange}
                   value={this.state.email}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button className="btn btn-primary" onClick={this.handleFormSubmit}>
                 Update
               </button>
             </form>

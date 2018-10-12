@@ -21,6 +21,11 @@ userSchema.pre("save", function(next) {
   next();
 });
 
+// userSchema.pre("findOneAndUpdate", function(next) {
+//   this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10));
+//   next();
+// });
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;

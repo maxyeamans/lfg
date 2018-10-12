@@ -1,4 +1,5 @@
 const User = require("./../models/User");
+const bcrypt = require("bcrypt");
 // import API from "./../client/src/utils/API";
 
 
@@ -36,6 +37,8 @@ module.exports = {
   update: function(req, res) {
     console.log("update user controller");
     console.log(req.params);
+    // console.log(req.body);
+    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     console.log(req.body);
     User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
