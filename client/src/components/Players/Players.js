@@ -2,12 +2,8 @@ import React from "react";
 import "./Players.css";
 import { Col, Row, Container } from "../Grid";
 import DeleteBtn from "../DeleteBtn/DeleteBtn";
-
 import UpdatePlayerBtn from "../UpdatePlayerBtn";
 import API from "../../utils/API";
-
-import ManagePlayersModal from "../../components/ManagePlayersModal";
-
 
 class Players extends React.Component {
   constructor(props, context) {
@@ -19,8 +15,8 @@ class Players extends React.Component {
     this.state = {
       show: false,
       gamertag: "",
-      role: "",
-      rank: "",
+      role: this.props.role,
+      rank: this.props.rank,
       _id: this.props.id,
       user: this.props.user,
       player: this.props.data,
@@ -158,20 +154,16 @@ class Players extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     
-    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank, this.state.state, this.state.user);
+    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank);
   };
 
   render() {
     return (
   <div className="card">
     <Row>
-
     
       <Col size="xl-4 sm-4">
       <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit}/>
-
-      <Col size="xl-3 sm-3">
-
         <div id="player-name">
         <input
                   className="form-control"
@@ -183,10 +175,9 @@ class Players extends React.Component {
                 />
         </div>
       </Col>
-      <Col size="xl-6 sm-6">
+      <Col size="xl-8 sm-8">
         <Row>
           <Col size="xl-6 sm-6">
-
             <div class="player-item">
             <input
                   className="form-control"
@@ -210,23 +201,13 @@ class Players extends React.Component {
                   <option value={this.state.rank}>Diamond</option>
                   <option value={this.state.rank}>Master</option>
                   <option value={this.state.rank}>Grand Master</option>
-                  
                 </select>
               <DeleteBtn />
               
             </div>
             
-
-            <div class="player-item">{props.role}</div>
-          </Col>
-          <Col size="xl-6 sm-6">
-            <div class="player-item">{props.rank}</div>
-
           </Col>
         </Row>
-      </Col>
-      <Col size="xl-3 sm-3">
-        <ManagePlayersModal />
       </Col>
     </Row>
   </div>
