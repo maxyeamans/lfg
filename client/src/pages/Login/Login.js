@@ -79,11 +79,11 @@ class Login extends Component {
               value={this.state.password}
             />
           </div>
-          <button type="submit" className="btn btn-primary" onClick={() => this.loginUser(this.state.username, this.state.password)}>Submit</button>
+          <button type="submit" className="submit-button1" onClick={() => this.loginUser(this.state.username, this.state.password)}>Submit</button>
         </form>
 
          <div id="bottom-reg">
-            <p>Don't have an account?</p> 
+         <a id="ha-text" href="/register"> Don't have an account? </a>
             <a className="reg-l-btn"  href="/register" role="button"><p>Register</p></a>
             </div>
 
