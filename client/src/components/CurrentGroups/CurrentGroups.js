@@ -40,19 +40,19 @@ const CurrentGroups = props => (
         <ul className="list-group">
           <li className="list-group-item">
             <strong>Gamer Tag:</strong>
-            {/* {props.gamertag} */}
+            {props.player1}
           </li>
           <li className="list-group-item">
             <strong>My Role:</strong>
-            {/* {props.role} */}
+            {props.player1Role}
           </li>
           <li className="list-group-item">
             <strong>My Rank:</strong>
-            {/* {props.rank} */}
+            {props.player1Rank}
           </li>
-          <li className="list-group-item">
-            <strong>User ID:</strong>
-            {/* {props.user} */}
+          <li hidden id={props.user} className="list-group-item">
+            
+            
           </li>
           <li hidden id={props._id} className="list-group-item">
             
@@ -62,7 +62,12 @@ const CurrentGroups = props => (
       </Col>
     </Row>
     <Row>
+
+      <ManageGroupModal idGroup={props._id}/>
+      <ManagePlayersModal groupInfo={props.data} idGroup={props._id}/>
+
       <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn" className="manage-groups-btn">View Group</Link>
+
     </Row>
   </div>
 );

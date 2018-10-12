@@ -18,12 +18,22 @@
   color: #f09731;
 }
 
+
+  #player-name{
+    text-align: center;
+    /* color:#f09731; */
+    font-size:40px;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+  }
+
 .player-item {
   font-family: "bignoodletoo";
   text-align: center;
   font-size: 40px;
   letter-spacing: 2px;
 }
+
 
 #player-name {
   text-align: center;

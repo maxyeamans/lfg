@@ -6,6 +6,7 @@ import Players from "../../components/Players";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 
+
 class ManagePlayersModal extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -15,7 +16,28 @@ class ManagePlayersModal extends React.Component {
 
     this.state = {
       show: false,
-      id: "5bb5619e6cb97b6830ca34c8"
+
+      groupName: this.props.groupInfo.groupName,
+      platform: this.props.groupInfo.platform,
+      groupRank: this.props.groupInfo.groupRank,
+      time: this.props.groupInfo.time,
+      player1: this.props.groupInfo.player1,
+      player2: this.props.groupInfo.player2,
+      player3: this.props.groupInfo.player3,
+      player4: this.props.groupInfo.player4,
+      player5: this.props.groupInfo.player5,
+      player6: this.props.groupInfo.player6,
+      currentGroup: [
+        this.props.groupInfo.player1,
+        this.props.groupInfo.player2,
+        this.props.groupInfo.player3,
+        this.props.groupInfo.player4,
+        this.props.groupInfo.player5,
+        this.props.groupInfo.player6
+      ],
+      group: [],
+      id: this.props.groupInfo._id
+
     };
   }
 
@@ -62,6 +84,19 @@ class ManagePlayersModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <Container>
+
+              {this.state.currentGroup.filter(player => (player.state != 0)).map(player => (
+                <Players
+                  data={player}
+                  gamertag={player.gamertag}
+                  role={player.role}
+                  state={player.state}
+                  rank={player.rank}
+                  user={player.user}
+                  id={this.state.id}
+                />
+              ))}
+
               <form className="m-4">
                 <div className="form-group">
                   <label for="gamertag">Gamertag: </label>
@@ -105,6 +140,7 @@ class ManagePlayersModal extends React.Component {
                   Leave Group
                 </button>
               </form>
+
             </Container>
           </Modal.Body>
           <Modal.Footer>
