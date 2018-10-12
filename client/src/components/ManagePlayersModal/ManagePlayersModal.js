@@ -16,7 +16,6 @@ class ManagePlayersModal extends React.Component {
 
     this.state = {
       show: false,
-
       groupName: this.props.groupInfo.groupName,
       platform: this.props.groupInfo.platform,
       groupRank: this.props.groupInfo.groupRank,
@@ -37,12 +36,11 @@ class ManagePlayersModal extends React.Component {
       ],
       group: [],
       id: this.props.groupInfo._id
-
     };
   }
 
   componentDidMount() {
-
+    // this.searchPlayers();
   }
 
   handleInputChange = event => {
@@ -69,9 +67,7 @@ class ManagePlayersModal extends React.Component {
           bsSize="large"
           onClick={this.handleShow}
         >
-        
-          Manage Player
-          
+          Manage Players
         </Button>
 
         <Modal
@@ -80,11 +76,10 @@ class ManagePlayersModal extends React.Component {
           onHide={this.handleClose}
         >
           <Modal.Header closeButton>
-            <Modal.Title> <h2>Manage Player</h2> </Modal.Title>
+            <Modal.Title> Manage Players </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Container>
-
               {this.state.currentGroup.filter(player => (player.state != 0)).map(player => (
                 <Players
                   data={player}
@@ -96,50 +91,6 @@ class ManagePlayersModal extends React.Component {
                   id={this.state.id}
                 />
               ))}
-
-              {/* // <form className="m-4">
-              //   <div className="form-group">
-              //     <label for="gamertag">Gamertag: </label>
-              //     <input
-              //       className="form-control"
-              //       type="text"
-              //       name="gamertag"
-              //       placeholder="gamertag"
-              //     />
-              //   </div>
-              //   <div className="form-group">
-              //     <label for="role">Role: </label>
-              //     <select className="form-control" name="role">
-              //       <option value="">Update Platform</option>
-              //       <option value="">Attack</option>
-              //       <option value="">Support</option>
-              //       <option value="">Tank</option>
-              //     </select>
-              //   </div>
-              //   <div className="form-group">
-              //     <label for="rank">Player Rank: </label>
-              //     <select className="form-control" name="rank">
-              //       <option value="">Update Rank (7)</option>
-              //       <option value="">Bronze</option>
-              //       <option value="">Silver</option>
-              //       <option value="">Gold</option>
-              //       <option value="">Platinum</option>
-              //       <option value="">Diamond</option>
-              //       <option value="">Master</option>
-              //       <option value="">Grand Master</option>
-              //     </select>
-              //   </div>
-              //   <button
-              //     type="submit"
-              //     className="update-btn"
-              //     onClick={this.handleFormSubmit}
-              //   >
-              //     Update
-              //   </button>
-              //   <button type="" className="leaveGroup-btn" onClick="">
-              //     Leave Group
-              //   </button>
-              // </form> */}
 
             </Container>
           </Modal.Body>

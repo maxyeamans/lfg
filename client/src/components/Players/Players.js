@@ -2,11 +2,9 @@ import React from "react";
 import "./Players.css";
 import { Col, Row, Container } from "../Grid";
 import DeleteBtn from "../DeleteBtn/DeleteBtn";
-
 import UpdatePlayerBtn from "../UpdatePlayerBtn";
 import API from "../../utils/API";
 
-import ManagePlayersModal from "../../components/ManagePlayersModal";
 
 class Players extends React.Component {
   constructor(props) {
@@ -18,8 +16,8 @@ class Players extends React.Component {
     this.state = {
       show: false,
       gamertag: "",
-      role: "",
-      rank: "",
+      role: this.props.role,
+      rank: this.props.rank,
       _id: this.props.id,
       user: this.props.user,
       player: this.props.data,
@@ -152,30 +150,19 @@ class Players extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
-
-    this.updateCurrentPlayer(
-      this.state._id,
-      this.state.gamertag,
-      this.state.role,
-      this.state.rank,
-      this.state.state,
-      this.state.user
-    );
-
+    
+    this.updateCurrentPlayer(this.state._id, this.state.gamertag, this.state.role, this.state.rank);
   };
 
   render() {
     return (
-
-      <Container>
-        <div className="card">
-          <Row>
-            <Col size="xl-12 sm-12">
-              <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
-
-              <div id="player-name">
-                <input
+  <div className="card">
+    <Row>
+    
+      <Col size="xl-4 sm-4">
+      <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit}/>
+        <div id="player-name">
+        <input
                   className="form-control"
                   type="text"
                   name="gamertag"
@@ -183,10 +170,13 @@ class Players extends React.Component {
                   onChange={this.handleInputChange}
                   value={this.state.gamertag}
                 />
-              </div>
-
-              <div class="player-item">
-                <input
+        </div>
+      </Col>
+      <Col size="xl-8 sm-8">
+        <Row>
+          <Col size="xl-6 sm-6">
+            <div class="player-item">
+            <input
                   className="form-control"
                   type="text"
                   name="role"
@@ -194,9 +184,12 @@ class Players extends React.Component {
                   onChange={this.handleInputChange}
                   value={this.state.role}
                 />
-              </div>
-              <div class="player-item">
-                <select className="form-control" name="rank">
+        
+            </div>
+          </Col>
+          <Col size="xl-6 sm-6">
+            <div class="player-item">
+            <select className="form-control" name="rank">
                   <option value={this.state.rank}>Update Rank (7)</option>
                   <option value={this.state.rank}>Bronze</option>
                   <option value={this.state.rank}>Silver</option>
@@ -206,14 +199,18 @@ class Players extends React.Component {
                   <option value={this.state.rank}>Master</option>
                   <option value={this.state.rank}>Grand Master</option>
                 </select>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </Container>
-    );
-  }
+              <DeleteBtn />
+              
+            </div>
+            
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+  </div>
+);
+  
+}
 }
 
 export default Players;
-

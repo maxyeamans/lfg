@@ -3,8 +3,6 @@ import "./CurrentGroups.css";
 import { Col, Row, Container } from "../Grid";
 import ManageGroupModal from "../ManageGroupModal";
 import ManagePlayersModal from "../ManagePlayersModal";
-import { Link } from 'react-router-dom'
-
 
 
 
@@ -61,12 +59,15 @@ const CurrentGroups = props => (
         </ul>
       </Col>
     </Row>
-    <Row>
+    {/* <button className="manage-groups-btn"
+    // onClick={() => props.saveArticles(props.data)}
+    >
 
+      Manage
+      </button> */}
+    <Row>
       <ManageGroupModal idGroup={props._id}/>
       <ManagePlayersModal groupInfo={props.data} idGroup={props._id}/>
-
-      {/* <Link to={`/updategroup/${props.data._id}`} activeClassName="manage-groups-btn" className="manage-groups-btn">View Group</Link> */}
 
     </Row>
   </div>
