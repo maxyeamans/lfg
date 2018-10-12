@@ -13,7 +13,6 @@ class ManageGroupModal extends React.Component {
 
     this.state = {
       show: false,
-
       groupName: "",
       Platform: "",
       time: "",
@@ -87,7 +86,6 @@ class ManageGroupModal extends React.Component {
   // ###########################################################
   // Function below will need to update current group, not user
 
-
   // updateCurrentUser = (id, username, password, email) => {
   //   console.log(id, username);
   //   API.updateUser({
@@ -120,7 +118,7 @@ class ManageGroupModal extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> Manage Group </Modal.Title>
+            <Modal.Title> <h2>Manage Group </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form className="m-4">
@@ -175,7 +173,7 @@ class ManageGroupModal extends React.Component {
               </div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="mg-btn"
                 onClick={this.handleFormSubmit}
               >
                 Update

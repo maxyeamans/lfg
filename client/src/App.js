@@ -19,7 +19,7 @@ const App = () => (
         <Route exact path="/main" component={Main} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/newgroup" component={NewGroup} />
-        <Route exact path="/updategroup" component={UpdateGroup} />
+        <Route path="/updategroup/:id" component={UpdateGroup} />
         <Route component={NoPage} />
       </Switch>
     </div>

@@ -1,3 +1,5 @@
+
+
 #manage-groups-btn {
   border-radius: 4px;
   background-color: #aed3e0;
@@ -17,3 +19,25 @@
   background-color: rgb(44, 43, 43);; 
   color: #f09731;
 }
+
+.form-control{
+ font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+ color: rgb(148, 147, 147);; 
+}
+
+.mg-btn{
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  background-color: #aed3e0;
+  border: none;
+  color: #FFFFFF;
+  transition: all 0.5s;
+  padding:5px;
+  width:110px;
+  border-radius: 4px;
+}
+
+.mg-btn:hover {
+  background-color: rgb(133, 224, 145); 
+  color: #ffffff;
+}
+

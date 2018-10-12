@@ -2,7 +2,7 @@
   border-radius: 4px;
   background-color: #aed3e0;
   border: none;
-  color: #FFFFFF;
+  
   text-align: center;
   transition: all 0.5s;
   cursor: pointer;
@@ -11,6 +11,7 @@
   font-family:"bignoodletoo";
   letter-spacing: 2px;
   font-size:30px;
+  float: right;
 }
 
 #manage-players-btn:hover {
@@ -19,6 +20,36 @@
 }
 
 .my-modal {
-  width: 90vw;    /* Occupy the 90% of the screen width */
+  width: 35vw;    /* Occupy the 90% of the screen width */
   max-width: 90vw;
 } 
+
+.update-btn, .leaveGroup-btn{
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  background-color: #aed3e0;
+  border: none;
+  color: #FFFFFF;
+  transition: all 0.5s;
+  padding:5px;
+  width:110px;
+  border-radius: 4px;
+}
+
+.update-btn{
+  margin-right:20px;
+}
+
+.update-btn:hover {
+  background-color: rgb(133, 224, 145); 
+  color: #ffffff;
+}
+
+.leaveGroup-btn:hover{
+  background-color: rgb(236, 104, 104); 
+  color: #ffffff;
+}
+
+#pmodal-button{
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: rgb(70, 70, 70);
+}

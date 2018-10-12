@@ -48,7 +48,7 @@ class Register extends Component {
             <Container fluid>
             <Row>
                 
-                <Col size="xl-4 lg-6">
+                <Col size="xl-12 lg-6">
             <div id="register-form">
             <form className="m-5">
             <div id="register-text">
@@ -85,7 +85,15 @@ class Register extends Component {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={() => this.createNewUser(this.state.username, this.state.password, this.state.email, this.state.group)}>Submit</button>
+             
+                
             </form>
+
+            <div id="bottom-reg">
+            <p>Already have an account?</p> 
+            <a className="reg-l-btn"  href="/" role="button"><p>Log in</p></a>
+            </div>
+
             </div>
             </Col>
             

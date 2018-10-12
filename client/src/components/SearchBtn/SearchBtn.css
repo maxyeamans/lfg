@@ -18,3 +18,31 @@
   background-color: rgb(44, 43, 43); /* Green */
   color: #f09731;
 }
+
+@media only screen and (max-width: 425px) {
+  .search-btn {
+    border-radius: 4px;
+    background-color: #aed3e0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+    width: 220px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    margin:0 auto;
+    display:block;
+    margin-top:30px;
+    margin-bottom:50px;
+  }
+  
+  .search-btn:hover {
+    background-color: rgb(44, 43, 43); /* Green */
+    color: #f09731;
+  }
+}
+
