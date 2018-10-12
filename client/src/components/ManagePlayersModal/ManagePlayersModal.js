@@ -97,49 +97,49 @@ class ManagePlayersModal extends React.Component {
                 />
               ))}
 
-              <form className="m-4">
-                <div className="form-group">
-                  <label for="gamertag">Gamertag: </label>
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="gamertag"
-                    placeholder="gamertag"
-                  />
-                </div>
-                <div className="form-group">
-                  <label for="role">Role: </label>
-                  <select className="form-control" name="role">
-                    <option value="">Update Platform</option>
-                    <option value="">Attack</option>
-                    <option value="">Support</option>
-                    <option value="">Tank</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label for="rank">Player Rank: </label>
-                  <select className="form-control" name="rank">
-                    <option value="">Update Rank (7)</option>
-                    <option value="">Bronze</option>
-                    <option value="">Silver</option>
-                    <option value="">Gold</option>
-                    <option value="">Platinum</option>
-                    <option value="">Diamond</option>
-                    <option value="">Master</option>
-                    <option value="">Grand Master</option>
-                  </select>
-                </div>
-                <button
-                  type="submit"
-                  className="update-btn"
-                  onClick={this.handleFormSubmit}
-                >
-                  Update
-                </button>
-                <button type="" className="leaveGroup-btn" onClick="">
-                  Leave Group
-                </button>
-              </form>
+              {/* // <form className="m-4">
+              //   <div className="form-group">
+              //     <label for="gamertag">Gamertag: </label>
+              //     <input
+              //       className="form-control"
+              //       type="text"
+              //       name="gamertag"
+              //       placeholder="gamertag"
+              //     />
+              //   </div>
+              //   <div className="form-group">
+              //     <label for="role">Role: </label>
+              //     <select className="form-control" name="role">
+              //       <option value="">Update Platform</option>
+              //       <option value="">Attack</option>
+              //       <option value="">Support</option>
+              //       <option value="">Tank</option>
+              //     </select>
+              //   </div>
+              //   <div className="form-group">
+              //     <label for="rank">Player Rank: </label>
+              //     <select className="form-control" name="rank">
+              //       <option value="">Update Rank (7)</option>
+              //       <option value="">Bronze</option>
+              //       <option value="">Silver</option>
+              //       <option value="">Gold</option>
+              //       <option value="">Platinum</option>
+              //       <option value="">Diamond</option>
+              //       <option value="">Master</option>
+              //       <option value="">Grand Master</option>
+              //     </select>
+              //   </div>
+              //   <button
+              //     type="submit"
+              //     className="update-btn"
+              //     onClick={this.handleFormSubmit}
+              //   >
+              //     Update
+              //   </button>
+              //   <button type="" className="leaveGroup-btn" onClick="">
+              //     Leave Group
+              //   </button>
+              // </form> */}
 
             </Container>
           </Modal.Body>
