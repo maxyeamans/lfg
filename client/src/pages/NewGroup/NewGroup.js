@@ -99,25 +99,26 @@ class NewGroup extends Component {
               </div>
               <div className="form-group">
                 <label for="platform">Platform</label>
-                <input
-                  type="platform"
-                  className="form-control"
-                  name="platform"
-                  placeholder="Platform"
-                  onChange={this.handleInputChange}
-                  value={this.state.platform}
-                />
+                <select className="form-control" name="platform" value={this.state.platform} onChange={this.handleInputChange}>
+                  <option value="">Update Platform</option>
+                  <option value="PC">PC</option>
+                  <option value="Xbox">Xbox</option>
+                  <option value="Playstation">Playstation</option>
+                  
+                </select>
               </div>
               <div className="form-group">
                 <label for="groupRank">Group Rank</label>
-                <input
-                  type="groupRank"
-                  className="form-control"
-                  name="groupRank"
-                  placeholder="Group Rank"
-                  onChange={this.handleInputChange}
-                  value={this.state.groupRank}
-                />
+                <select className="form-control" name="groupRank" value={this.state.groupRank} onChange={this.handleInputChange}>
+                  <option value="">Update Rank (7)</option>
+                  <option value="Bronze">Bronze</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Platinum">Platinum</option>
+                  <option value="Diamond">Diamond</option>
+                  <option value="Master">Master</option>
+                  <option value="Grand Master">Grand Master</option>
+                </select>
               </div>
               <div className="form-group">
                 <label for="time">Game Time</label>
@@ -154,14 +155,16 @@ class NewGroup extends Component {
               </div>
               <div className="form-group">
                 <label for="rank">Player Rank</label>
-                <input
-                  type="rank"
-                  className="form-control"
-                  name="rank"
-                  placeholder="Player Rank"
-                  onChange={this.handleInputChange}
-                  value={this.state.rank}
-                />
+                <select className="form-control" name="rank" value={this.state.rank} onChange={this.handleInputChange}>
+                  <option value="">Update Rank (7)</option>
+                  <option value="Bronze">Bronze</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Platinum">Platinum</option>
+                  <option value="Diamond">Diamond</option>
+                  <option value="Master">Master</option>
+                  <option value="Grand Master">Grand Master</option>
+                </select>
               </div>
               <button type="submit" className="newGroup-submit" onClick={() => this.createNewGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.gamertag, this.state.role, this.state.rank, this.state.user)}>
                 Submit
