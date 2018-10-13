@@ -3,4 +3,16 @@
   color: #e74944;
   font-size:40px;
   font-family:"bignoodletoo";
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.delete-btn:hover {
+  color: #f09731;
+  background-color: rgb(44, 43, 43);
+}
+
+.delete-btn:active { 
+  background-color: #aed3e0;
+  color: #ffffff;
 }
