@@ -84,6 +84,16 @@ class ManageGroupModal extends React.Component {
       .catch(err => console.log(err));
   }
 
+  deleteCurrentGroup = () => { 
+    console.log(this.state.groupId);
+    API.deleteGroup({
+     _id: this.state.groupId
+
+    })
+      // .then(this.loadGroup())
+      .catch(err => console.log(err));
+  }
+
   // ###########################################################
   // Function below will need to update current group, not user
 
@@ -104,6 +114,12 @@ class ManageGroupModal extends React.Component {
     event.preventDefault();
 
     this.updateCurrentGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.groupId);
+  };
+
+  handleFormDelete = event => {
+    event.preventDefault();
+
+    this.deleteCurrentGroup();
   };
 
   render() {
@@ -179,6 +195,13 @@ class ManageGroupModal extends React.Component {
                 onClick={this.handleFormSubmit}
               >
                 Update
+              </button>
+              <button
+                type="submit"
+                className="btn btn-danger"
+                onClick={this.handleFormDelete}
+              >
+                Delete
               </button>
             </form>
           </Modal.Body>
