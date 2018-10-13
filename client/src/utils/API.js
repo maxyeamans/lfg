@@ -64,7 +64,7 @@ export default {
   },
   // Deletes the group with the given id
   deleteGroup: function(id) {
-    return axios.delete("/api/groups/" + id);
+    return axios.delete("/api/groups/" + id._id);
   },
   // Saves a group to the database
   saveGroup: function(GroupData) {
