@@ -118,6 +118,7 @@ class UpdateGroup extends Component {
                   role={player.role}
                   state={player.state}
                   rank={player.rank}
+                  group={this.props.groupInfo}
                 />
               ))}
           </Col>

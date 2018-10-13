@@ -15,7 +15,6 @@ class ManagePlayersModal extends React.Component {
 
     this.state = {
       show: false,
-
       groupName: this.props.groupInfo.groupName,
       platform: this.props.groupInfo.platform,
       groupRank: this.props.groupInfo.groupRank,
@@ -40,6 +39,7 @@ class ManagePlayersModal extends React.Component {
   }
 
   componentDidMount() {}
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -75,8 +75,7 @@ class ManagePlayersModal extends React.Component {
         >
           <Modal.Header closeButton>
             <Modal.Title>
-              {" "}
-              <h2>Manage Players</h2>{" "}
+              <h2>Manage Players</h2>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -94,6 +93,7 @@ class ManagePlayersModal extends React.Component {
                     id={this.state.id}
                   />
                 ))}
+
             </Container>
           </Modal.Body>
           <Modal.Footer>
