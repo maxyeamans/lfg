@@ -3,7 +3,10 @@ import "./ProfileModal.css";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
-import Login from "../../pages/Login/Login";
+import Login from "../../pages/Login/Login";//trying to bring in current username and pass
+
+
+// We need to pass in the User ID prop so that we can include it in our post request
 
 class ProfileModal extends React.Component {
   constructor(props, context) {
@@ -16,7 +19,8 @@ class ProfileModal extends React.Component {
       show: false,
       username:"",
       password:"",
-      email:""
+      email:"",
+      _id: this.props.id
     };
   }
 
@@ -35,16 +39,49 @@ class ProfileModal extends React.Component {
     this.setState({ show: true });
   }
 
-  createUpdatedUser = (username, password, email) => { 
+  componentDidMount() {
+    
+    this.loadLogin();
+    
+  }
+
+  loadLogin = () => {
+    API.getLogin()
+      .then(res => this.setState({ _id: res.data._id }))
+      .catch(err => console.log(err));
+
+
+  }
+
+  createUpdatedUser = (_id, username, password, email) => { 
+    console.log(username, password, email)
     API.updateUser({
+      _id: _id,
       username: username, // select what you want updated
       password: password,
       email: email
 
     })
-      .then(res => console.log(res))
+
+      // .then(res => console.log(res))
+
+     
+
       .catch(err => console.log(err));
   }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    this.createUpdatedUser(this.state._id, this.state.username, this.state.password, this.state.email);
+  };
 
 
 
@@ -59,20 +96,20 @@ class ProfileModal extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> <h2>Settings</h2></Modal.Title>
+            <Modal.Title> <h2>Settings </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
 
-            <form className="m-4" action="" method="post" onSubmit="">
+            <form className="m-4">
               <div className="form-group">
                 <label for="username">
-                {this.state.pictures}
+                {/* {this.state.pictures} */}
                 Change current Username:</label>
                 <input
-                  type="text"
+                  type="name"
                   className="form-control"
-                  id="username"
-                  placeholder=""
+                  name="username"
+                  placeholder="New Username"
                   onChange={this.handleInputChange}
                   value={this.state.username}
                 />
@@ -82,7 +119,7 @@ class ProfileModal extends React.Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="password"
+                  name="password"
                   placeholder="New Password"
                   onChange={this.handleInputChange}
                   value={this.state.password}
@@ -91,15 +128,15 @@ class ProfileModal extends React.Component {
               <div className="form-group">
                 <label for="email">Change current Email:</label>
                 <input
-                  type="text"
+                  type="email"
                   className="form-control"
-                  id="email"
+                  name="email"
                   placeholder="New Email"
                   onChange={this.handleInputChange}
                   value={this.state.email}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button className="btn btn-primary" onClick={this.handleFormSubmit}>
                 Update
               </button>
             </form>
@@ -108,6 +145,7 @@ class ProfileModal extends React.Component {
             <Button id="pmodal-button" onClick={this.handleClose}>
               Close
             </Button>
+            <a className="btn btn-primary"  href="/" role="button"><p>switch account</p></a>
           </Modal.Footer>
         </Modal>
       </div>

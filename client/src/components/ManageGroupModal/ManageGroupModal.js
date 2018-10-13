@@ -13,10 +13,11 @@ class ManageGroupModal extends React.Component {
 
     this.state = {
       show: false,
+      
       groupName: "",
-      Platform: "",
+      platform: "",
       time: "",
-      rank: "",
+      groupRank: "",
       groupId: ""
     };
   }
@@ -86,6 +87,7 @@ class ManageGroupModal extends React.Component {
   // ###########################################################
   // Function below will need to update current group, not user
 
+
   // updateCurrentUser = (id, username, password, email) => {
   //   console.log(id, username);
   //   API.updateUser({
@@ -118,7 +120,7 @@ class ManageGroupModal extends React.Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> <h2>Manage Group </h2></Modal.Title>
+            <Modal.Title> Manage Group </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form className="m-4">
@@ -139,25 +141,25 @@ class ManageGroupModal extends React.Component {
               </div>
               <div className="form-group">
                 <label for="console">Console: </label>
-                <select className="form-control" name="console">
-                  <option value={this.state.platform}>Update Platform</option>
-                  <option value={this.state.platform}>PC</option>
-                  <option value={this.state.platform}>Xbox</option>
-                  <option value={this.state.platform}>Playstation</option>
+                <select className="form-control" name="platform" value={this.state.platform} onChange={this.handleInputChange}>
+                  <option value="">Update Platform</option>
+                  <option value="PC">PC</option>
+                  <option value="Xbox">Xbox</option>
+                  <option value="Playstation">Playstation</option>
                   
                 </select>
               </div>
               <div className="form-group">
-                <label for="rank">Rank: </label>
-                <select className="form-control" name="rank">
-                  <option value={this.state.rank}>Update Rank (7)</option>
-                  <option value={this.state.rank}>Bronze</option>
-                  <option value={this.state.rank}>Silver</option>
-                  <option value={this.state.rank}>Gold</option>
-                  <option value={this.state.rank}>Platinum</option>
-                  <option value={this.state.rank}>Diamond</option>
-                  <option value={this.state.rank}>Master</option>
-                  <option value={this.state.rank}>Grand Master</option>
+                <label for="groupRank">Rank: </label>
+                <select className="form-control" name="groupRank" value={this.state.groupRank} onChange={this.handleInputChange}>
+                  <option value="">Update Rank (7)</option>
+                  <option value="Bronze">Bronze</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Platinum">Platinum</option>
+                  <option value="Diamond">Diamond</option>
+                  <option value="Master">Master</option>
+                  <option value="Grand Master">Grand Master</option>
                 </select>
               </div>
               <div className="form-group">
@@ -173,7 +175,7 @@ class ManageGroupModal extends React.Component {
               </div>
               <button
                 type="submit"
-                className="mg-btn"
+                className="btn btn-primary"
                 onClick={this.handleFormSubmit}
               >
                 Update
