@@ -64,7 +64,7 @@ class Players extends React.Component {
   };
 
   updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => {
-    console.log(this.state.playerInfo);
+    console.log(this.state.rank);
     if (this.state.playerInfo.player1.user === this.state.user) {
       API.updateGroup({
         _id: _id,
@@ -147,6 +147,10 @@ class Players extends React.Component {
 
   };
 
+  // handleChange(event) {
+  //   this.setState({ [event.target.name]: event.target.value });
+  // }
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -189,15 +193,15 @@ class Players extends React.Component {
           </Col>
           <Col size="xl-6 sm-6">
             <div class="player-item">
-            <select className="form-control" name="rank">
-                  <option value={this.state.rank}>Update Rank (7)</option>
-                  <option value={this.state.rank}>Bronze</option>
-                  <option value={this.state.rank}>Silver</option>
-                  <option value={this.state.rank}>Gold</option>
-                  <option value={this.state.rank}>Platinum</option>
-                  <option value={this.state.rank}>Diamond</option>
-                  <option value={this.state.rank}>Master</option>
-                  <option value={this.state.rank}>Grand Master</option>
+            <select className="form-control" name="rank" value={this.state.rank} onChange={this.handleInputChange}>
+                  <option value="">Update Rank (7)</option>
+                  <option value="Bronze">Bronze</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Platinum">Platinum</option>
+                  <option value="Diamond">Diamond</option>
+                  <option value="Master">Master</option>
+                  <option value="Grand Master">Grand Master</option>
                 </select>
               <DeleteBtn />
               
