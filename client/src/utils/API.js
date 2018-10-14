@@ -24,12 +24,18 @@ export default {
     return axios.put("/api/users/" + userData._id, userData); // was update instead of post
   },
   loginUser: function(userData) {
-    console.log("api", userData);
+    console.log("API", userData);
     return axios.post("/api/login", userData);
   },
-  getLogin: function() {
-    return axios.get("/api/login");
+  getUserName: function(username) {
+    console.log(username);
+    return axios.get("/api/users/" + username);
+      
   },
+  // deleteLogin: function() {
+  //   console.log("util api delete login")
+  //   return axios.delete("/api/login");
+  // },
   
   /////////////////////////////////////////////////////////////////////////
   // // Gets all profiles
