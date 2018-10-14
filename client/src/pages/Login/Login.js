@@ -38,7 +38,10 @@ class Login extends Component {
       username: username,
       password: password
     })
-      .then( res => console.log(res + "login.js page") )
+      .then( res => {
+        console.log(res + "login.js page");
+        localStorage.setItem("response", res);
+      })
       .catch(err => console.log(err));
   }
 
