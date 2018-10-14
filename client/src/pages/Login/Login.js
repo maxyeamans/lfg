@@ -19,9 +19,10 @@ class Login extends Component {
   state = {
     username: "",
     password: ""
+    
   };
 
-
+  
   componentDidMount() { }
 
   handleInputChange = event => {
@@ -32,13 +33,21 @@ class Login extends Component {
 
   };
 
-  loginUser = (username, password) => {
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    this.logUser(this.state.username, this.state.password);
+  };
+
+  logUser = (username, password) => {
     console.log(username, password);
+    localStorage.setItem("username", username);
+    
     API.loginUser({
       username: username,
       password: password
     })
-      .then( res => console.log(res + "login.js page") )
+      .then(res => localStorage.setItem("globalId", res.data._id))
       .catch(err => console.log(err));
   }
 
@@ -46,7 +55,7 @@ class Login extends Component {
   //   event.preventDefault();
   //   this.setState({ [event.target.name]: event.target.value });
   // };
-
+  // action="/main"
   render() {
     return (
 
@@ -67,19 +76,19 @@ class Login extends Component {
             <br></br>
           <div className="form-group">
             <label for="username" className="login-text">Username</label>
-            <input type="text" className="form-control" name="username" placeholder="Username"
+            <input type="text" className="form-control" name="username"  placeholder="Username"
               onChange={this.handleInputChange}
               value={this.state.username}
             />
           </div>
           <div className="form-group">
             <label for="password" className="login-text">Password</label>
-            <input type="password" className="form-control" name="password" placeholder="Password"
-              onChange={this.handleInputChange}
-              value={this.state.password}
+            <input type="password" className="form-control" name="password"  placeholder="Password"
+            onChange={this.handleInputChange}
+            value={this.state.password}
             />
           </div>
-          <button type="submit" className="submit-button1" onClick={() => this.loginUser(this.state.username, this.state.password)}>Submit</button>
+          <button type="submit" className="submit-button1" onClick={() => this.logUser(this.state.username, this.state.password)}>Submit</button>
         </form>
 
          <div id="bottom-reg">

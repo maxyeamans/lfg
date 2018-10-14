@@ -20,7 +20,7 @@ class ProfileModal extends React.Component {
       username:"",
       password:"",
       email:"",
-      _id: this.props.id
+      _id: localStorage.getItem("globalId")
     };
   }
 
@@ -46,11 +46,32 @@ class ProfileModal extends React.Component {
   }
 
   loadLogin = () => {
-    API.getLogin()
-      .then(res => this.setState({ _id: res.data._id }))
+    API.getUser()
+      .then(res => this.setState({
+        // _id: res.data._id,
+        username: res.data.username,
+        password: res.data.password,
+        email: res.data.email }))
       .catch(err => console.log(err));
 
 
+  }
+
+  // logoutUser = () => {
+  //   console.log("logout user");
+  //   API.deleteLogin()
+  //     .then( res => console.log(res + "logout profile modal") )
+  //     .catch(err => console.log(err));
+  // }
+
+  // loginDelete = () => {
+  //   API.deleteLogin();
+  // }
+
+  handleLogout = () => {
+    localStorage.setItem("globalId", "");
+    localStorage.setItem("username", "");
+      
   }
 
   createUpdatedUser = (_id, username, password, email) => { 
@@ -109,7 +130,7 @@ class ProfileModal extends React.Component {
                   type="name"
                   className="form-control"
                   name="username"
-                  placeholder="New Username"
+                  placeholder={this.state.username}
                   onChange={this.handleInputChange}
                   value={this.state.username}
                 />
@@ -117,10 +138,10 @@ class ProfileModal extends React.Component {
               <div className="form-group">
                 <label for="password">Change current Password:</label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   name="password"
-                  placeholder="New Password"
+                  placeholder={this.state.password}
                   onChange={this.handleInputChange}
                   value={this.state.password}
                 />
@@ -131,7 +152,7 @@ class ProfileModal extends React.Component {
                   type="email"
                   className="form-control"
                   name="email"
-                  placeholder="New Email"
+                  placeholder={this.state.email}
                   onChange={this.handleInputChange}
                   value={this.state.email}
                 />
@@ -144,8 +165,8 @@ class ProfileModal extends React.Component {
           <Modal.Footer>
             <Button id="pmodal-button" onClick={this.handleClose}>
               Close
-            </Button>
-            <a className="btn btn-primary"  href="/" role="button"><p>switch account</p></a>
+            </Button >
+            <a className="btn btn-primary"  href="/" role="button" onClick={this.handleLogout}><p>Logout</p></a>
           </Modal.Footer>
         </Modal>
       </div>
