@@ -26,7 +26,7 @@ module.exports = {
   },
   create: function(req, res) {
 
-    
+     
 
     console.log(req.body.groupName)
     console.log("this is req.body inside controller", req.body)
@@ -54,5 +54,14 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  join: function(req, res) {
+    let openPlayer;
+    db.Group
+      .findById({ _id: req.params.id})
+      .then( group => {
+        const groupPlayers =  [player2, player3, player4, player5, player6];
+        groupPlayers.filter( group.player => )
+      })
   }
 };

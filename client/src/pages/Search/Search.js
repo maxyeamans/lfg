@@ -59,10 +59,10 @@ class Search extends Component {
   // ! TODO: Needs a way to get user info.
   handleGroupJoin = (event) => {
     event.preventDefault();
-    console.log("Request to Join was clicked.");
     this.setState({
       joinGroup: event.target.id
     })
+    console.log("Request to Join was clicked.", this.state.joinGroup);
   }
 
   componentDidMount() {
