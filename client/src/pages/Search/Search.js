@@ -13,9 +13,11 @@ class Search extends Component {
     super(props);
     this.state = {
       groups: [],
+      currentGroups: [],
       groupName: "",
       platform: "",
-      groupRank: ""
+      groupRank: "",
+      joinGroup: ""
     };
   }
 
@@ -58,6 +60,14 @@ class Search extends Component {
   handleGroupJoin = (event) => {
     event.preventDefault();
     console.log("Request to Join was clicked.");
+    this.setState({
+      joinGroup: event.target.id
+    })
+  }
+
+  componentDidMount() {
+    // TODO: Insert code to set state.currentGroups to an array of groupIDs to which the logged in user currently belongs.
+    // I think we'll need this info to do a client-side check to make sure the user isn't joining a group to which they already belong.
   }
 
   render() {
