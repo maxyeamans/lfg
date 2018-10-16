@@ -116,7 +116,9 @@ class ProfileModal extends React.Component {
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header 
+          // closeButton
+          >
             <Modal.Title> <h2>Settings </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -157,16 +159,18 @@ class ProfileModal extends React.Component {
                   value={this.state.email}
                 />
               </div>
-              <button className="btn btn-primary" onClick={this.handleFormSubmit}>
+              <button className="pmodal-update-btn" onClick={this.handleFormSubmit}>
                 Update
               </button>
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <Button id="pmodal-button" onClick={this.handleClose}>
+          <a className="pmodal-logout"  href="/" role="button" onClick={this.handleLogout}>
+            Logout</a>
+            <Button className="pmodal-button" onClick={this.handleClose}>
               Close
             </Button >
-            <a className="btn btn-primary"  href="/" role="button" onClick={this.handleLogout}><p>Logout</p></a>
+            
           </Modal.Footer>
         </Modal>
       </div>

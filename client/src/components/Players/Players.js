@@ -259,7 +259,7 @@ class Players extends React.Component {
  
            <Row>
 
-           <Col size="xl-3 lg-6">
+           <Col size="xl-2 lg-6">
                  <div class="player-item">
                 <input
                   className="form-control"
@@ -313,11 +313,13 @@ class Players extends React.Component {
                   </div>
                   </Col>
 
-                  <Col size="xl-3 lg-6">
+                  <Col size="xl-2 lg-6">
                   <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
+                   
+                   </Col>
+                   <Col size="xl-2 lg-6">
                    <DeleteBtn type="" onClick={this.handleDelete} />
                    </Col>
-
                 </Row>
 
                 

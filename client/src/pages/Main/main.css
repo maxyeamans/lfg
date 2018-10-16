@@ -12,7 +12,7 @@ h1 {
   }
 
   h2 {
-    color:rgb(228, 226, 226);
+  
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
@@ -56,12 +56,29 @@ h1 {
     background-color: #999;
     
   }
+
+  #overwatch-char{
+    background-image: url("../../images/sombra.png"); 
+    background-repeat:no-repeat;
+    height:500px;
+   
+  }
+
+  #overwatch-char2{
+    background-image: url("../../images/char6.png"); 
+    background-repeat:no-repeat;
+    height:500px;
+  
+  }
   
 .mygroups{
-    margin-bottom:300px;
-    margin-top:100px;
+    margin-bottom:200px;
+    
+margin-left:10%;
 
 }
+
+
 
 /* @media only screen and (max-width: 1024px) and (min-width: 426px)  {
     .mygroups{
