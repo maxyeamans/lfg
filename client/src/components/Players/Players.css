@@ -10,7 +10,7 @@
     height:50px;
     font-family:"bignoodletoo";
     letter-spacing: 2px;
-    font-size:30px;
+    font-size:20px;
   }
   
   .manage-groups-btn:hover {
@@ -23,15 +23,10 @@
     text-align: center;
     font-size:40px;
     letter-spacing: 2px;
+  
   }
 
-  #player-name{
-    text-align: center;
-    /* color:#f09731; */
-    font-size:40px;
-    font-family:"bignoodletoo";
-    letter-spacing: 2px;
-  }
+  
 
 .card{
   border: 1px solid rgb(155, 154, 154);
