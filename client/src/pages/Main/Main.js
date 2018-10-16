@@ -113,17 +113,17 @@ class Main extends Component {
 
       <Container fluid>
         
-        <Row>
         
-          <Col size="xl-12 lg-6">
+        
+          
           <div id="mainpage-content">
           <h1> Looking For Group</h1>
           
           
           <h3>Create and join groups with other Overwatch players!</h3>
           </div>
-          </Col>
-        </Row>
+          
+       
 
         <Row>
           {/* <container className="creategroupSearch"> */}

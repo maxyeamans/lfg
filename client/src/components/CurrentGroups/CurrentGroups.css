@@ -20,17 +20,21 @@
 
   .list-group-item{
     font-family:"bignoodletoo";
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     background-color:rgba(44, 43, 43, 0);
-    color:white;
-  }
-
-  #group-name{
-    color:#f09731;
+    color:rgb(255, 255, 255);
     font-size:20px;
   }
+
+  /* #group-name{
+    color:#f09731;
+    font-size:25px;
+  } */
+
+
 .card{
   border: 1px solid rgb(155, 154, 154);
   margin-top:5%;
   background-color:rgba(44, 43, 43, 0);
 }
+

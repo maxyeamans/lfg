@@ -116,7 +116,9 @@ class ProfileModal extends React.Component {
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header 
+          // closeButton
+          >
             <Modal.Title> <h2>Settings </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>

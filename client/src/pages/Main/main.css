@@ -12,7 +12,7 @@ h1 {
   }
 
   h2 {
-    color:rgb(228, 226, 226);
+  
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
@@ -72,8 +72,8 @@ h1 {
   }
   
 .mygroups{
-    margin-bottom:300px;
-    margin-top:100px;
+    margin-bottom:200px;
+    
 margin-left:10%;
 
 }
