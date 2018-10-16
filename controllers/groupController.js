@@ -68,10 +68,12 @@ module.exports = {
       // Use the groupPlayers[] above to filter over the group and return open player spots
       .then( group => groupPlayers.filter( player => group[player].state === 0) )
       // Do a check of the number of open players, and send back the first open slot
-      .then( openPlayers => openPlayers.length === 0 ? res.json({error: "Error"}) : openPlayers[0] )
+      .then( openPlayers => console.log("Open player slots", openPlayers) && openPlayers.length === 0 ? res.json({error: "Error"}) : openPlayers[0] )
       // Add the user to the open player spot and 
-      .then( openPlayer => res.send( openPlayer ))
-
+      // .then( openPlayer => db.Group.findOneAndUpdate({ _id: req.body.id }, { [openPlayer]: { state: 1, user: req.body.user} }))
+      .then( openPlayer => db.Group.findOneAndUpdate({ _id: req.body.id }, { [openPlayer]: { state: 1, user: req.body.user} }, {new: true}))
+      .then( dbModel => res.json(dbModel))
+      // .then( openPlayer => res.json({openPlayer: openPlayer}))
       .catch( err => res.status(422).json(err));
   }
 };
