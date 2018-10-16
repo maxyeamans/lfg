@@ -12,6 +12,10 @@ router
   .get(groupController.findById)
   .put(groupController.update)
   .delete(groupController.remove);
+  
+// Matches with "/api/groups/join/:id"
+router.route("/join/:id")
+  .put(groupController.join);
 
 // Matches with "/api/groups/search"
 router.route("/search")

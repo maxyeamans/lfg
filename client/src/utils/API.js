@@ -81,5 +81,8 @@ export default {
   updateGroup: function(groupData) {
     return axios.put("/api/groups/" + groupData._id, groupData);
   },
+  joinGroup: function(groupData) {
+    return axios.put("/api/groups/join/" + groupData._id, groupData);
+  }
   
 };
