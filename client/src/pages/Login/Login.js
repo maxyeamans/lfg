@@ -12,17 +12,17 @@ import API from "../../utils/API";
 //   left: 0,
 //   top: 0,
 //   zIndex: 10,
-  
+
 // }
 
 class Login extends Component {
   state = {
     username: "",
     password: ""
-    
+
   };
 
-  
+
   componentDidMount() { }
 
   handleInputChange = event => {
@@ -42,7 +42,7 @@ class Login extends Component {
   logUser = (username, password) => {
     console.log(username, password);
     localStorage.setItem("username", username);
-    
+
     API.loginUser({
       username: username,
       password: password
@@ -59,46 +59,41 @@ class Login extends Component {
   render() {
     return (
 
-      <Container fluid 
+      <Container fluid
       // style={styles}
       >
-      <Row>
 
-        <Col size="xl-12 lg-6">
-            <div id="login-form">
-            
-        <form className="m-5" action="/main">
+        <div id="login-form">
+          <form className="m-5" action="/main">
+            <div id="login-text">
 
-        <div id="login-text">
-
-            <h7>Log in </h7>
+              <h7>Login </h7>
             </div>
             <br></br>
-          <div className="form-group">
-            <label for="username" className="login-text">Username</label>
-            <input type="text" className="form-control" name="username"  placeholder="Username"
-              onChange={this.handleInputChange}
-              value={this.state.username}
-            />
-          </div>
-          <div className="form-group">
-            <label for="password" className="login-text">Password</label>
-            <input type="password" className="form-control" name="password"  placeholder="Password"
-            onChange={this.handleInputChange}
-            value={this.state.password}
-            />
-          </div>
-          <button type="submit" className="submit-button1" onClick={() => this.logUser(this.state.username, this.state.password)}>Submit</button>
-        </form>
-
-         <div id="bottom-reg">
-         <a id="ha-text" href="/register"> Don't have an account? </a>
-            <a className="reg-l-btn"  href="/register" role="button"><p>Register</p></a>
+            <div className="form-group">
+              <label for="username" className="login-text">Username</label>
+              <input type="text" className="form-control" name="username" placeholder="Username"
+                onChange={this.handleInputChange}
+                value={this.state.username}
+              />
             </div>
+            <div className="form-group">
+              <label for="password" className="login-text">Password</label>
+              <input type="password" className="form-control" name="password" placeholder="Password"
+                onChange={this.handleInputChange}
+                value={this.state.password}
+              />
+            </div>
+            <button type="submit" className="submit-button1" onClick={() => this.logUser(this.state.username, this.state.password)}>Login</button>
+          </form>
 
-</div>
-</Col>
-        </Row>
+          <div id="bottom-reg">
+            <a id="ha-text" href="/register"> Don't have an account? </a>
+            <a className="reg-l-btn" href="/register" role="button"><p>Register</p></a>
+          </div>
+
+        </div>
+
       </Container>
     );
   }
