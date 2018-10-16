@@ -82,7 +82,7 @@ export default {
     return axios.put("/api/groups/" + groupData._id, groupData);
   },
   joinGroup: function(groupData) {
-    return axios.put("/api/groups/join/" + groupData._id, groupData);
+    return axios.put("/api/groups/join/" + groupData.id, groupData);
   }
   
 };

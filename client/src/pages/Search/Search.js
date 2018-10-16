@@ -64,8 +64,8 @@ class Search extends Component {
     });
     console.log("Group ID getting sent to API.joinGroup", this.state.joinGroup);
     API.joinGroup({
-      _id: event.target.id
-      // ! TODO: Add the logged in user id here
+      id: event.target.id,
+      user: localStorage.getItem("globalId")
     })
     console.log("Request to Join was clicked.", this.state.joinGroup);
   }
