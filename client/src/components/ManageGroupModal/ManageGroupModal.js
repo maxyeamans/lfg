@@ -159,9 +159,9 @@ class ManageGroupModal extends React.Component {
                 <label for="console">Console: </label>
                 <select className="form-control" name="platform" value={this.state.platform} onChange={this.handleInputChange}>
                   <option value="">Update Platform</option>
-                  <option value="PC">PC</option>
-                  <option value="Xbox">Xbox</option>
-                  <option value="Playstation">Playstation</option>
+                  <option value="PC" name="platform">PC</option>
+                  <option value="Xbox" name="platform">Xbox</option>
+                  <option value="Playstation" name="platform">Playstation</option>
                   
                 </select>
               </div>
@@ -191,8 +191,11 @@ class ManageGroupModal extends React.Component {
               </div>
               <button
                 type="submit"
+                value="submit"
                 className="btn btn-primary"
+               href="/"
                 onClick={this.handleFormSubmit}
+                
               >
                 Update
               </button>
@@ -204,12 +207,16 @@ class ManageGroupModal extends React.Component {
                 Delete
               </button>
             </form>
+         
+
+              
           </Modal.Body>
           <Modal.Footer>
-            <Button id="pmodal-button" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
+          
+            <a className="btn btn-primary"  href="/main" role="button"><p>close</p></a>
+            {/* onClick={this.handleClose} */}
+
+           </Modal.Footer>
         </Modal>
       </div>
     );
