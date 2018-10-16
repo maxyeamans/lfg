@@ -73,7 +73,9 @@ class ManagePlayersModal extends React.Component {
           onHide={this.handleClose}
         >
 
-          <Modal.Header closeButton>
+          <Modal.Header 
+          // closeButton
+          >
 
             <Modal.Title>
               <h2>Manage Players</h2>

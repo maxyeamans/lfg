@@ -14,13 +14,15 @@
   }
   
   .manage-groups-btn:hover {
-    background-color: rgb(44, 43, 43);; 
+    background-color: rgb(44, 43, 43); 
     color: #f09731;
   }
 
   .list-group-item{
     font-family:"bignoodletoo";
     letter-spacing: 2px;
+    background-color:rgba(44, 43, 43, 0);
+    color:white;
   }
 
   #group-name{
@@ -30,4 +32,5 @@
 .card{
   border: 1px solid rgb(155, 154, 154);
   margin-top:5%;
+  background-color:rgba(44, 43, 43, 0);
 }

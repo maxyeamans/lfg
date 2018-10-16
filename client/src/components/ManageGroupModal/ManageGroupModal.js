@@ -124,7 +124,7 @@ class ManageGroupModal extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="mg-modal">
         <Button
           id="manage-groups-btn"
           bsStyle="primary"
@@ -135,7 +135,9 @@ class ManageGroupModal extends React.Component {
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header 
+          // closeButton
+          >
             <Modal.Title> Manage Group </Modal.Title>
           </Modal.Header>
           <Modal.Body>

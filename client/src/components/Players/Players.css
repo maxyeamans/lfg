@@ -1,6 +1,6 @@
-.manage-groups-btn {
+/* .manage-groups-btn {
     border-radius: 4px;
-    background-color: #aed3e0;
+    background-color: #e0c4ae;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -16,18 +16,19 @@
   .manage-groups-btn:hover {
     background-color: rgb(44, 43, 43);; 
     color: #f09731;
-  }
+  } */
 
   .player-item{
     font-family:"bignoodletoo";
     text-align: center;
     font-size:40px;
     letter-spacing: 2px;
-  
+   margin-top:5%;
   }
 
   
 
 .card{
   border: 1px solid rgb(155, 154, 154);
+  width:90%;;
 }
