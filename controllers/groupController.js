@@ -55,13 +55,23 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  /*
+  * To join a group, we have to look up the group by id, find out if the group has any open player spots,
+  * then update the first open player spot to include the current user's objectID and set the state to 1.
+  */
   join: function(req, res) {
-    let openPlayer;
+    const groupPlayers =  ["player2", "player3", "player4", "player5", "player6"];
+    
     db.Group
+      // Find group based on the id in the request body
       .findById({ _id: req.params.id})
-      .then( group => {
-        const groupPlayers =  [player2, player3, player4, player5, player6];
-        groupPlayers.filter( group.player => )
-      })
+      // Use the groupPlayers[] above to filter over the group and return open player spots
+      .then( group => groupPlayers.filter( player => group[player].state === 0) )
+      // Do a check of the number of open players, and send back the first open slot
+      .then( openPlayers => openPlayers.length === 0 ? res.json({error: "Error"}) : openPlayers[0] )
+      // Add the user to the open player spot and 
+      .then( openPlayer => res.send( openPlayer ))
+
+      .catch( err => res.status(422).json(err));
   }
 };

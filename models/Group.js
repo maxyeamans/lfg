@@ -51,9 +51,11 @@ const groupSchema = new Schema({
   }
 });
 
+// This is a post-update hook that will reset the player count of the group.
+// The player count will eventually be used to make sure full groups don't display on the group search page.
 groupSchema.post("update", function(next) {
   const playerArray = [this.player1, this.player2, this.player3, this.player4, this.player5, this.player6];
-  const count = playerArray.filter( player => player.user =! "");
+  const count = playerArray.filter( player => player.state !== 0).length;
   this.count = count;
 });
 

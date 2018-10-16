@@ -61,6 +61,11 @@ class Search extends Component {
     event.preventDefault();
     this.setState({
       joinGroup: event.target.id
+    });
+    console.log("Group ID getting sent to API.joinGroup", this.state.joinGroup);
+    API.joinGroup({
+      _id: event.target.id
+      // ! TODO: Add the logged in user id here
     })
     console.log("Request to Join was clicked.", this.state.joinGroup);
   }
