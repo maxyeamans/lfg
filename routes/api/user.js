@@ -13,6 +13,10 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
+router
+  .route("/:username")
+  .get(userController.findByName)
+  
   // Matches with "/api/users/login"
 // router.route("/login")
 //   .post(userController.login)

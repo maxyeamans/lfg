@@ -24,12 +24,18 @@ export default {
     return axios.put("/api/users/" + userData._id, userData); // was update instead of post
   },
   loginUser: function(userData) {
-    console.log("api", userData);
+    console.log("API", userData);
     return axios.post("/api/login", userData);
   },
-  getLogin: function() {
-    return axios.get("/api/login");
+  getUserName: function(username) {
+    console.log(username);
+    return axios.get("/api/users/" + username);
+      
   },
+  // deleteLogin: function() {
+  //   console.log("util api delete login")
+  //   return axios.delete("/api/login");
+  // },
   
   /////////////////////////////////////////////////////////////////////////
   // // Gets all profiles
@@ -64,7 +70,7 @@ export default {
   },
   // Deletes the group with the given id
   deleteGroup: function(id) {
-    return axios.delete("/api/groups/" + id);
+    return axios.delete("/api/groups/" + id._id);
   },
   // Saves a group to the database
   saveGroup: function(GroupData) {
@@ -75,5 +81,8 @@ export default {
   updateGroup: function(groupData) {
     return axios.put("/api/groups/" + groupData._id, groupData);
   },
+  joinGroup: function(groupData) {
+    return axios.put("/api/groups/join/" + groupData._id, groupData);
+  }
   
 };

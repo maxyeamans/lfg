@@ -10,7 +10,6 @@ const SearchBar = props => {
 				<div className="row" >
 					<div className="col-lg-12" id="search-bar">
 						<div className="panel panel-primary">
-
 							<div className="panel-body">
 								<form>
 									<div className="form-group">

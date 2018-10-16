@@ -13,7 +13,7 @@ class NewGroup extends Component {
     gamertag: "",
     role: "",
     rank: "",
-    user: "",
+    user: localStorage.getItem("globalId"),
     groups: []
     
 };
@@ -27,13 +27,13 @@ class NewGroup extends Component {
     console.log("our component updated, here is the new state: ", this.state)
   }
 
-  loadLogin = () => {
-    API.getLogin()
-    .then(res => this.setState({ user: res.data._id }))
-    .catch(err => console.log(err));
-    console.log(this.state.user);
+  // loadLogin = () => {
+  //   API.getLogin()
+  //   .then(res => this.setState({ user: res.data._id }))
+  //   .catch(err => console.log(err));
+  //   console.log(this.state.user);
     
-  }
+  // }
 
   loadGroups = () => {
     // gets all users

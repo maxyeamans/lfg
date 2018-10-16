@@ -16,35 +16,56 @@ class Main extends Component {
     this.state = {
       groups: [],
       userGroups: [],
-      globalId: ""
+      globalId: "",
+      dataArray: []
 
     };
   }
 
   componentDidMount() {
-    // this.loadUsers();
+    this.loadUser();
     // this.loadProfiles();
-    this.loadLogin();
+    // this.loadLogin();
     this.loadGroups();
-    this.handleGroups();
+    // this.handleGroups();
   }
 
 
 
-  loadUsers = () => {
-    // gets all users
+  loadUser = () => {
+    let username = localStorage.getItem("username");
+    console.log(username);
     API.getUsers()
-      .then(res => this.setState({ users: res.data }))
+      // .then(res => this.setState({ globalId: res.data._id }))
+      // .then(res => localStorage.setItem("globalId", res.data._id))
+      .then(res => res.data.map(group => {
+        if (username === group.username) {
+          this.setState({ globalId: group._id });
+          localStorage.setItem("globalId", group._id);
+        }
+      }),
+      )
+      .then(this.handleGroups())
       .catch(err => console.log(err));
+
   };
 
-  loadLogin = () => {
-    API.getLogin()
-      .then(res => this.setState({ globalId: res.data._id }))
-      .catch(err => console.log(err));
+  // loadUser = () => {
+  //   let username = localStorage.getItem("username");
+  //   console.log(username);
+  //   API.getUserName(username)
+  //     .then(res => this.setState({ globalId: res.data._id }))
+  //     .then(res => localStorage.setItem("globalId", res.data._id))
+      
+  //     .then(this.handleGroups())
+  //     .catch(err => console.log(err));
+
+  // };
+
+  
 
 
-  }
+ 
 
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
