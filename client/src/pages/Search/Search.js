@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import "./Search.css";
 import API from "../../utils/API";
 
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -79,8 +80,8 @@ class Search extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
-        <Row>
-          <Col size="xl-12 lg-6">
+       <Nav/>
+          
             <div id="search-groups">
               <h4>Search for a group below</h4>
               <SearchBar
@@ -88,8 +89,8 @@ class Search extends Component {
                 handleFormSubmit={this.handleFormSubmit}
               />
             </div>
-          </Col>
-        </Row>
+       
+      
 
         <div id="search-results">
           <h5> ▼ </h5>

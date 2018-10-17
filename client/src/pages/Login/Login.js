@@ -63,6 +63,16 @@ class Login extends Component {
       // style={styles}
       >
 
+
+        <nav>
+          <header className="header">
+            <a href="/" className="logo">LFG</a>
+            <input className="menu-btn" type="checkbox" id="menu-btn" />
+            <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+
+          </header>
+        </nav>
+
         <div id="login-form">
           <form className="m-5" action="/main">
             <div id="login-text">
@@ -92,7 +102,10 @@ class Login extends Component {
             <a className="reg-l-btn" href="/register" role="button"><p>Register</p></a>
           </div>
 
+
         </div>
+
+
 
       </Container>
     );

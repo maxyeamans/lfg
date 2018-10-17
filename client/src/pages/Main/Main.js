@@ -9,6 +9,7 @@ import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./main.css";
 // import SearchGroup from "../../components/SearchGroup";
+import Nav from "../../components/Nav";
 
 class Main extends Component {
   constructor(props) {
@@ -109,14 +110,16 @@ class Main extends Component {
 
   render() {
     return (
-      // NAV IS RIGHT HERE
+     
+      
 
       <Container fluid>
         
-        
+        <Nav/>
         
           
           <div id="mainpage-content">
+
           <h1> Looking For Group</h1>
           
           
@@ -154,9 +157,10 @@ class Main extends Component {
 
         {/* <Row> */}
           {/* <Col size="xl-12 sm-8"> */}
+          <h2>MY CURRENT GROUPS ▼</h2>
             <div className="mygroups">
               
-            <h2>MY CURRENT GROUPS ▼</h2>
+            
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
               {this.handleGroups()}
               {this.state.userGroups.map(group => (

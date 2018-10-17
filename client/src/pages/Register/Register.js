@@ -47,6 +47,15 @@ class Register extends Component {
         return (
             <Container fluid>
 
+             <nav>
+          <header className="header">
+            <a href="/register" className="logo">LFG</a>
+            <input className="menu-btn" type="checkbox" id="menu-btn" />
+            <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+
+          </header>
+        </nav>
+
                 <div id="register-form">
                     <form className="m-5">
                         <div id="register-text">

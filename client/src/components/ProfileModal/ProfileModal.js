@@ -166,8 +166,10 @@ class ProfileModal extends React.Component {
           </Modal.Body>
           <Modal.Footer>
           <a className="pmodal-logout"  href="/" role="button" onClick={this.handleLogout}>
-            Logout</a>
-            <Button className="pmodal-button" onClick={this.handleClose}>
+           Logout
+            </a>
+
+            <Button className="pmodal-close" onClick={this.handleClose}>
               Close
             </Button >
             
