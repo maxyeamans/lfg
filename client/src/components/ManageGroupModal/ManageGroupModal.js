@@ -3,6 +3,8 @@ import "./ManageGroupModal.css";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
+import DeleteBtn from "../DeleteBtn/DeleteBtn";
+import { Col, Row, Container } from "../Grid";
 
 class ManageGroupModal extends React.Component {
   constructor(props, context) {
@@ -134,6 +136,21 @@ class ManageGroupModal extends React.Component {
   
 
   render() {
+    
+    let deleteBtn;
+    // let updateBtn;
+
+    // If user is the leader of the group, this will allow the button to delete group.
+    if (this.state.player1 === this.state.globalId) {
+      deleteBtn = <button
+                type="submit"
+                className="btn btn-danger"
+                onClick={this.handleFormDelete}
+              >
+                Delete
+              </button>
+      // deleteBtn = <DeleteBtn type="submit" onClick={this.handleFormDelete} />;
+    } 
     return (
       <div id="mg-modal">
         <Button
@@ -212,13 +229,14 @@ class ManageGroupModal extends React.Component {
               >
                 Update
               </button>
-              <button
+              {/* <button
                 type="submit"
                 className="btn btn-danger"
                 onClick={this.handleFormDelete}
               >
                 Delete
-              </button>
+              </button> */}
+              <div>{deleteBtn}</div>
             </form>
          
 
