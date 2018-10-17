@@ -39,10 +39,6 @@ class ManagePlayersModal extends React.Component {
   }
 
   componentDidMount() {}
-<<<<<<< HEAD
-=======
-
->>>>>>> ab925fa5c4ac24e2529f9e1bc64c9ae89d997957
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -77,23 +73,6 @@ class ManagePlayersModal extends React.Component {
           onHide={this.handleClose}
         >
           <Modal.Header closeButton>
-<<<<<<< HEAD
-            <Modal.Title> Manage Players </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Container>
-              {this.state.currentGroup.filter(player => (player.state != 0)).map(player => (
-                <Players
-                  data={player}
-                  gamertag={player.gamertag}
-                  role={player.role}
-                  state={player.state}
-                  rank={player.rank}
-                  user={player.user}
-                  id={this.state.id}
-                />
-              ))}
-=======
             <Modal.Title>
               <h2>Manage Players</h2>
             </Modal.Title>
@@ -113,7 +92,6 @@ class ManagePlayersModal extends React.Component {
                     id={this.state.id}
                   />
                 ))}
->>>>>>> ab925fa5c4ac24e2529f9e1bc64c9ae89d997957
 
             </Container>
           </Modal.Body>
