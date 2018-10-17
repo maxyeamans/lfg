@@ -18,7 +18,9 @@ class ManageGroupModal extends React.Component {
       platform: "",
       time: "",
       groupRank: "",
-      groupId: ""
+      groupId: "",
+      player1: "",
+      globalId: localStorage.getItem("globalId")
     };
   }
   
@@ -35,7 +37,7 @@ class ManageGroupModal extends React.Component {
   }
 
   loadGroup = () => {
-    console.log()
+    // console.log()
     API.getGroup(this.state.groupId)
       .then(res =>
         this.setState({
@@ -43,7 +45,9 @@ class ManageGroupModal extends React.Component {
           platform: res.data.platform,
           groupRank: res.data.groupRank,
           time: res.data.time,
-          groupId: res.data._id
+          groupId: res.data._id,
+          player1: res.data.player1.user
+
         })
       )
       .catch(err => console.log(err));
@@ -86,12 +90,17 @@ class ManageGroupModal extends React.Component {
 
   deleteCurrentGroup = () => { 
     console.log(this.state.groupId);
-    API.deleteGroup({
-     _id: this.state.groupId
-
-    })
-      // .then(this.loadGroup())
-      .catch(err => console.log(err));
+    if (this.state.globalId === this.state.player1) {
+      API.deleteGroup({
+        _id: this.state.groupId
+   
+       })
+         // .then(this.loadGroup())
+         .catch(err => console.log(err));
+    }
+    else {
+      console.log("not group leader");
+    }
   }
 
   // ###########################################################
@@ -121,6 +130,8 @@ class ManageGroupModal extends React.Component {
 
     this.deleteCurrentGroup();
   };
+
+  
 
   render() {
     return (
