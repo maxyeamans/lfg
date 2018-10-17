@@ -10,11 +10,11 @@ class Players extends React.Component {
   constructor(props) {
     super(props);
 
-    this.determineLeader = this.determineLeader.bind(this);
+    // this.determineLeader = this.determineLeader.bind(this);
 
     this.state = {
       show: false,
-      gamertag: "",
+      gamertag: this.props.gamertag,
       role: this.props.role,
       rank: this.props.rank,
       _id: this.props.id,
@@ -23,14 +23,16 @@ class Players extends React.Component {
       playerInfo: {},
       state: this.props.state,
       isLeader: false,
-      partyPostion: 1
-    };
+      partyPostion: 1,
+      globalId: localStorage.getItem("globalId")
+     
+    }
   }
 
   componentDidMount() {
     // this.handleGroupId();
     this.loadGroup();
-    // this.readPlayer();
+    
   }
 
   handleInputChange = event => {
@@ -40,34 +42,14 @@ class Players extends React.Component {
     });
   };
 
-  determineLeader = () => {
-    if (this.state.playerInfo.player1.user === this.state.user) {
-      this.setState({ isLeader: true });
-      console.log("User is leader of party, loading leader functionality...");
-    } else if (this.state.playerInfo.player2.user === this.state.user) {
-      this.setState({ partyPostion: 2 });
-      console.log("You are player 2 in this group!");
-    } else if (this.state.playerInfo.player3.user === this.state.user) {
-      this.setState({ partyPostion: 3 });
-      console.log("You are player 3 in this group!");
-    } else if (this.state.playerInfo.player4.user === this.state.user) {
-      this.setState({ partyPostion: 4 });
-      console.log("You are player 4 in this group!");
-    } else if (this.state.playerInfo.player5.user === this.state.user) {
-      this.setState({ partyPostion: 5 });
-      console.log("You are player 5 in this group!");
-    } else if (this.state.playerInfo.player6.user === this.state.user) {
-      this.setState({ partyPostion: 6 });
-      console.log("You are player 6 in this group!");
-    }
-  };
+  
 
   loadGroup = () => {
     API.getGroup(this.state._id)
       .then(res =>
         this.setState({ playerInfo: res.data }, function() {
           // Determine Leader function is loaded only after the playerIno state is updated.
-          this.determineLeader();
+          // this.determineLeader();
         })
       )
       .catch(err => console.log(err));
@@ -269,29 +251,78 @@ class Players extends React.Component {
     );
   };
 
-  render() {
-    const isLeader = this.state.isLeader;
-    let deleteBtn;
-    let updateBtn;
-
-    // If user is the leader of the group, this will allow the buttons to render to update players.
-    if (isLeader) {
-      updateBtn = (
-        <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
-      );
-      deleteBtn = <DeleteBtn type="submit" onClick={this.handleDeleteSubmit} />;
-    } else {
-      updateBtn = (
-        <div>
-          <p>You cannot update this player.</p>
-        </div>
-      );
-      deleteBtn = (
-        <div>
-          <p>You cannot remove this player.</p>
-        </div>
+  handleUpdateSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.user);
+    console.log(this.state.globalId);
+    if (this.state.playerInfo.player1.user === this.state.globalId) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
       );
     }
+    else if (this.state.playerInfo.player2.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player3.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player4.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player5.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player6.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else {
+      console.log("not a match");
+    }
+    
+  }
+
+  render() {
+    
     return (
       <Container>
         <div className="card">
@@ -370,8 +401,10 @@ class Players extends React.Component {
               </div>
             </Col>
 
-            <Col size="xl-2 lg-6">{updateBtn}</Col>
-            <Col size="xl-2 lg-6">{deleteBtn}</Col>
+            
+            
+            <Col size="xl-2 lg-6"><UpdatePlayerBtn type="submit" onClick={this.handleUpdateSubmit} /></Col>
+            <Col size="xl-2 lg-6"><DeleteBtn type="submit" onClick={this.handleDeleteSubmit} /></Col>
           </Row>
         </div>
       </Container>

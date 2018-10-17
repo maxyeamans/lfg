@@ -46,9 +46,9 @@ class ProfileModal extends React.Component {
   }
 
   loadLogin = () => {
-    API.getUser()
+    API.getUser(this.state._id)
       .then(res => this.setState({
-        // _id: res.data._id,
+        _id: localStorage.getItem("globalId"),
         username: res.data.username,
         password: res.data.password,
         email: res.data.email }))
