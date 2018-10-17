@@ -296,6 +296,11 @@ class Players extends React.Component {
       <Container>
         <div className="card">
           <Row>
+            <Col size="xl-12 sm-12">
+              <div id="player-gamertag">{this.state.player.gamertag}</div>
+            </Col>
+          </Row>
+          <Row>
             <Col size="xl-2 lg-6">
               <div class="player-item">
                 <input
