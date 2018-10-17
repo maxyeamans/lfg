@@ -58,14 +58,15 @@ class Search extends Component {
   }
 
   // ! TODO: Needs a way to get user info.
-  handleGroupJoin = (event) => {
-    event.preventDefault();
-    this.setState({
-      joinGroup: event.target.id
-    });
+  // handleGroupJoin = (event) => {
+  handleGroupJoin = id => {
+    // event.preventDefault();
+    // this.setState({
+    //   joinGroup: event.target.id
+    // });
     console.log("Group ID getting sent to API.joinGroup", this.state.joinGroup);
     API.joinGroup({
-      id: event.target.id,
+      id: id,
       user: localStorage.getItem("globalId")
     })
     console.log("Request to Join was clicked.", this.state.joinGroup);

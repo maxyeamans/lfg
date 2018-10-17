@@ -23,7 +23,7 @@ const SearchGroup = props => (
         <strong>Time Played:</strong>
         {props.group.time}
       </li>
-      <button className="btn btn-primary search-group-btn" id={props.group._id} onClick={props.handleGroupJoin}>Request Join</button>
+      <button className="btn btn-primary search-group-btn" id={props.group._id} onClick={ () => props.handleGroupJoin(props.group._id) }>Request Join</button>
     </ul>
   </div>
 );
