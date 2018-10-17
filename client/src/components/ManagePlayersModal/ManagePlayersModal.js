@@ -100,9 +100,11 @@ class ManagePlayersModal extends React.Component {
             </Container>
           </Modal.Body>
           <Modal.Footer>
-            <Button id="pmodal-button" onClick={this.handleClose}>
+            {/* <Button id="pmodal-button" onClick={this.handleClose}>
               Close
-            </Button>
+            </Button> */}
+
+             <a className="btn btn-primary pmodal-button"  href="/main" role="button">close</a>
           </Modal.Footer>
         </Modal>
       </div>
