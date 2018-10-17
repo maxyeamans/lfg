@@ -29,7 +29,7 @@ const CurrentGroups = props => (
             {props.groupRank}
           </li>
           <li className="list-group-item">
-            Times:
+            Next session time:
             {props.time}
           </li>
         </ul>

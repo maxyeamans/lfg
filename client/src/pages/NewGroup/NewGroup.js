@@ -19,7 +19,7 @@ class NewGroup extends Component {
 };
 
   componentDidMount() {
-    this.loadLogin();
+    // this.loadLogin();
     console.log("this is our initial state: ", this.state)
   }
 

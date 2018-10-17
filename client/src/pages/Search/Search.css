@@ -2,6 +2,8 @@
     border: 2px;
     padding-bottom:150px;
    text-align:center;
+   width:100%;
+   margin: 0 auto;
   }
 
   #search-groups{

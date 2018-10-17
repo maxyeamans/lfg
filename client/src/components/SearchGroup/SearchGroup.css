@@ -1,3 +1,11 @@
-#results-box{
-    margin:auto;
+.results-box{
+  width:50%;
+margin: auto;
+}
+
+.search-group-btn{
+    background-color: #badff5;
+    font-family:"bignoodletoo";
+    font-size:25px;
+    letter-spacing: 2px;
 }

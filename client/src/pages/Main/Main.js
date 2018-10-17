@@ -154,9 +154,10 @@ class Main extends Component {
 
         {/* <Row> */}
           {/* <Col size="xl-12 sm-8"> */}
+          <h2>MY CURRENT GROUPS ▼</h2>
             <div className="mygroups">
               
-            <h2>MY CURRENT GROUPS ▼</h2>
+            
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
               {this.handleGroups()}
               {this.state.userGroups.map(group => (

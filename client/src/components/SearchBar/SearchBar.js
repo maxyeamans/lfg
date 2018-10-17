@@ -23,37 +23,37 @@ const SearchBar = props => {
 
 
 
-									<div className="form-group">
-										<label htmlFor="topic">Platform</label>
-										<br></br>
-										<label class="radio-inline"><input onChange={props.handleInputChange} value="PC" type="radio" name="platform" />PC</label>
-										<label class="radio-inline"><input onChange={props.handleInputChange} value="Xbox" type="radio" name="platform" />Xbox</label>
-										<label class="radio-inline"><input onChange={props.handleInputChange} value="PS4" type="radio" name="platform" />PS4</label>
-									</div>
+									
 
-									<div className="form-group">
-										<label htmlFor="topic">Platform 2.0 </label>
+									{/* <div className="form-group">
+										<label htmlFor="topic">Platform 1.0 </label>
 										<br></br>
 										<div class="container">
-
-											<div class="btn-group btn-group-justified" name="platform"  onChange={props.handleInputChange}>
-												
-												<div class="btn-group">
-													<button type="button" class="btn btn-primary" value="PC"  >PC</button>
+											<div class="btn-group btn-group-justified" name="platform"  onChange={props.handleInputChange}>											
+		 									<div class="btn-group">
+													<button type="button" class="btn btn-primary" name="platform" value="PC"  >PC</button>
 												</div>
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary" value="Xbox">Xbox</button>
+													<button type="button" class="btn btn-primary" name="platform" value="Xbox">Xbox</button>
 												</div>
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary" value="PS4">PS4</button>
-												</div>
-
-											
+													<button type="button" class="btn btn-primary" name="platform" value="PS4">PS4</button>
+												</div>											
 											</div>
 										</div>
 
+									</div> */}
+									
+									<div className="form-group">
+										<label for="topic">Platform 2.0: </label>
+										<select className="form-control" name="platform" onChange={props.handleInputChange}>
+											<option value="">Choose Platform (3)</option>
+											<option value="PC">PC</option>
+											<option value="Xbox">Xbox</option>
+											<option value="PS4">PS4</option>
+											
+										</select>
 									</div>
-
 
 
 
@@ -71,7 +71,7 @@ const SearchBar = props => {
 									</div> */}
 
 									<div className="form-group">
-										<label for="groupRank">Group Rank 2.0: </label>
+										<label for="groupRank">Group Rank: </label>
 										<select className="form-control" name="groupRank" onChange={props.handleInputChange}>
 											<option value="">Choose Rank (7)</option>
 											<option value="Bronze">Bronze</option>
