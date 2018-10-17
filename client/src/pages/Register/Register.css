@@ -3,6 +3,8 @@
     border: .5px solid;
     width:100%;
     background-color:rgba(53, 52, 52, 0.349);
+ 
+  margin:auto;
   margin-top:100px;
 }
 
@@ -84,4 +86,15 @@ label{
 
   .submit-button1:hover{
     background-color: #7c4b19;
+  }
+
+
+@media only screen and (min-width: 426px) {
+
+    #register-form{
+    
+      width:50%;
+      
+    }
+    
   }

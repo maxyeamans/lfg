@@ -113,17 +113,17 @@ class Main extends Component {
 
       <Container fluid>
         
-        <Row>
         
-          <Col size="xl-12 lg-6">
+        
+          
           <div id="mainpage-content">
           <h1> Looking For Group</h1>
           
           
           <h3>Create and join groups with other Overwatch players!</h3>
           </div>
-          </Col>
-        </Row>
+          
+       
 
         <Row>
           {/* <container className="creategroupSearch"> */}
@@ -140,14 +140,23 @@ class Main extends Component {
           </Col>
         </Row>
         {/* </container> */}
+<Row>
+
+<Col size="xl-12 sm-8">
+{/* <div id="overwatch-char">
+
+</div> */}
 
 
+</Col>
+</Row>
 
-        <Row>
-          <Col size="xl-12 sm-8">
+
+        {/* <Row> */}
+          {/* <Col size="xl-12 sm-8"> */}
             <div className="mygroups">
-              <h2>MY CURRENT GROUPS ▼</h2>
-
+              
+            <h2>MY CURRENT GROUPS ▼</h2>
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
               {this.handleGroups()}
               {this.state.userGroups.map(group => (
@@ -169,8 +178,8 @@ class Main extends Component {
                 />
               ))}
             </div>
-          </Col>
-        </Row>
+          {/* </Col> */}
+        {/* </Row> */}
         <Footer />
     
       </Container>

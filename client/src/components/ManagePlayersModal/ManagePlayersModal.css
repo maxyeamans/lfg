@@ -15,10 +15,11 @@
 
 #manage-players-btn:hover {
   background-color: rgb(44, 43, 43);; 
-  color: #f09731;
+  color: #ffffff;
 }
 
 .my-modal {
   width: 90vw;    /* Occupy the 90% of the screen width */
   max-width: 90vw;
+ 
 } 
