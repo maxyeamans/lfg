@@ -79,6 +79,7 @@ export default {
   },
   // Updates the group with the given id
   updateGroup: function(groupData) {
+    console.log(groupData);
     return axios.put("/api/groups/" + groupData._id, groupData);
   },
   joinGroup: function(groupData) {
