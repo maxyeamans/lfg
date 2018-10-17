@@ -295,11 +295,13 @@ class Players extends React.Component {
     return (
       <Container>
         <div className="card">
-          <Row>
-            <Col size="xl-12 sm-12">
-              {updateBtn}
+ 
+           <Row>
+
+           <Col size="xl-2 lg-6">
+                 <div class="player-item">
+                    {updateBtn}
               {deleteBtn}
-              <div id="player-name">
                 <input
                   className="form-control"
                   type="text"
@@ -309,22 +311,28 @@ class Players extends React.Component {
                   value={this.state.gamertag}
                 />
               </div>
-            </Col>
-            <Col size="xl-8 sm-8">
-              <Row>
-                <Col size="xl-6 sm-6">
+              </Col>
+
+              <Col size="xl-3 lg-6">
                   <div class="player-item">
-                    <input
+                    <select
                       className="form-control"
-                      type="text"
                       name="role"
-                      placeholder={this.props.role}
-                      onChange={this.handleInputChange}
                       value={this.state.role}
-                    />
+                      onChange={this.handleInputChange}
+                    >
+                
+                      <option value="">Update role (7)</option>
+                      <option value="Tank" name="role">Tank</option>
+                      <option value="Support" name="role">Support</option>
+                      <option value="Attack" name="role">Attack</option>
+                      
+                    </select>
                   </div>
+
                 </Col>
-                <Col size="xl-6 sm-6">
+
+                <Col size="xl-3 lg-6">
                   <div class="player-item">
                     <select
                       className="form-control"
@@ -332,20 +340,31 @@ class Players extends React.Component {
                       value={this.state.rank}
                       onChange={this.handleInputChange}
                     >
+                
                       <option value="">Update Rank (7)</option>
-                      <option value="Bronze">Bronze</option>
-                      <option value="Silver">Silver</option>
-                      <option value="Gold">Gold</option>
-                      <option value="Platinum">Platinum</option>
-                      <option value="Diamond">Diamond</option>
-                      <option value="Master">Master</option>
-                      <option value="Grand Master">Grand Master</option>
+                      <option value="Bronze" name="rank">Bronze</option>
+                      <option value="Silver" name="rank">Silver</option>
+                      <option value="Gold" name="rank">Gold</option>
+                      <option value="Platinum" name="rank">Platinum</option>
+                      <option value="Diamond" name="rank">Diamond</option>
+                      <option value="Master" name="rank">Master</option>
+                      <option value="Grand Master" name="rank">Grand Master</option>
                     </select>
+
                   </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+                  </Col>
+
+                  <Col size="xl-2 lg-6">
+                  <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
+                   
+                   </Col>
+                   <Col size="xl-2 lg-6">
+                   <DeleteBtn type="" onClick={this.handleDelete} />
+                   </Col>
+                </Row>
+
+                
+          
         </div>
       </Container>
     );

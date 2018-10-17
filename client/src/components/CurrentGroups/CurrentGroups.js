@@ -12,24 +12,24 @@ const CurrentGroups = props => (
       <Col size="xl-6 sm-6">
         <ul className="list-group">
           <li className="list-group-item">
-            <strong>Group name:</strong>
+            Group name:
             {props.groupName}
           </li>
           <li className="list-group-item">
-            <strong>Members:</strong>
+            Members:
             {props.player1}, {props.player2}, {props.player3}, {props.player4},{" "}
             {props.player5}, {props.player6}
           </li>
           <li className="list-group-item">
-            <strong>Console:</strong>
+            Console:
             {props.platform}
           </li>
           <li className="list-group-item">
-            <strong>Group Rank:</strong>
+            Group Rank:
             {props.groupRank}
           </li>
           <li className="list-group-item">
-            <strong>Times:</strong>
+            Times:
             {props.time}
           </li>
         </ul>
@@ -37,15 +37,15 @@ const CurrentGroups = props => (
       <Col size="xl-6 sm-6">
         <ul className="list-group">
           <li className="list-group-item">
-            <strong>Gamer Tag:</strong>
+            Gamer Tag:
             {props.player1}
           </li>
           <li className="list-group-item">
-            <strong>My Role:</strong>
+            My Role:
             {props.player1Role}
           </li>
           <li className="list-group-item">
-            <strong>My Rank:</strong>
+            My Rank:
             {props.player1Rank}
           </li>
           <li hidden id={props.user} className="list-group-item">

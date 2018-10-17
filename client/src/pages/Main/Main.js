@@ -16,35 +16,56 @@ class Main extends Component {
     this.state = {
       groups: [],
       userGroups: [],
-      globalId: ""
+      globalId: "",
+      dataArray: []
 
     };
   }
 
   componentDidMount() {
-    // this.loadUsers();
+    this.loadUser();
     // this.loadProfiles();
-    this.loadLogin();
+    // this.loadLogin();
     this.loadGroups();
-    this.handleGroups();
+    // this.handleGroups();
   }
 
 
 
-  loadUsers = () => {
-    // gets all users
+  loadUser = () => {
+    let username = localStorage.getItem("username");
+    console.log(username);
     API.getUsers()
-      .then(res => this.setState({ users: res.data }))
+      // .then(res => this.setState({ globalId: res.data._id }))
+      // .then(res => localStorage.setItem("globalId", res.data._id))
+      .then(res => res.data.map(group => {
+        if (username === group.username) {
+          this.setState({ globalId: group._id });
+          localStorage.setItem("globalId", group._id);
+        }
+      }),
+      )
+      .then(this.handleGroups())
       .catch(err => console.log(err));
+
   };
 
-  loadLogin = () => {
-    API.getLogin()
-      .then(res => this.setState({ globalId: res.data._id }))
-      .catch(err => console.log(err));
+  // loadUser = () => {
+  //   let username = localStorage.getItem("username");
+  //   console.log(username);
+  //   API.getUserName(username)
+  //     .then(res => this.setState({ globalId: res.data._id }))
+  //     .then(res => localStorage.setItem("globalId", res.data._id))
+      
+  //     .then(this.handleGroups())
+  //     .catch(err => console.log(err));
+
+  // };
+
+  
 
 
-  }
+ 
 
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
@@ -92,17 +113,17 @@ class Main extends Component {
 
       <Container fluid>
         
-        <Row>
         
-          <Col size="xl-12 lg-6">
+        
+          
           <div id="mainpage-content">
           <h1> Looking For Group</h1>
           
           
           <h3>Create and join groups with other Overwatch players!</h3>
           </div>
-          </Col>
-        </Row>
+          
+       
 
         <Row>
           {/* <container className="creategroupSearch"> */}
@@ -119,14 +140,23 @@ class Main extends Component {
           </Col>
         </Row>
         {/* </container> */}
+<Row>
+
+<Col size="xl-12 sm-8">
+{/* <div id="overwatch-char">
+
+</div> */}
 
 
+</Col>
+</Row>
 
-        <Row>
-          <Col size="xl-12 sm-8">
+
+        {/* <Row> */}
+          {/* <Col size="xl-12 sm-8"> */}
             <div className="mygroups">
-              <h2>MY CURRENT GROUPS ▼</h2>
-
+              
+            <h2>MY CURRENT GROUPS ▼</h2>
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
               {this.handleGroups()}
               {this.state.userGroups.map(group => (
@@ -148,8 +178,8 @@ class Main extends Component {
                 />
               ))}
             </div>
-          </Col>
-        </Row>
+          {/* </Col> */}
+        {/* </Row> */}
         <Footer />
     
       </Container>

@@ -84,6 +84,16 @@ class ManageGroupModal extends React.Component {
       .catch(err => console.log(err));
   }
 
+  deleteCurrentGroup = () => { 
+    console.log(this.state.groupId);
+    API.deleteGroup({
+     _id: this.state.groupId
+
+    })
+      // .then(this.loadGroup())
+      .catch(err => console.log(err));
+  }
+
   // ###########################################################
   // Function below will need to update current group, not user
 
@@ -106,9 +116,15 @@ class ManageGroupModal extends React.Component {
     this.updateCurrentGroup(this.state.groupName, this.state.platform, this.state.groupRank, this.state.time, this.state.groupId);
   };
 
+  handleFormDelete = event => {
+    event.preventDefault();
+
+    this.deleteCurrentGroup();
+  };
+
   render() {
     return (
-      <div>
+      <div id="mg-modal">
         <Button
           id="manage-groups-btn"
           bsStyle="primary"
@@ -119,7 +135,9 @@ class ManageGroupModal extends React.Component {
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header 
+          // closeButton
+          >
             <Modal.Title> Manage Group </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -143,9 +161,9 @@ class ManageGroupModal extends React.Component {
                 <label for="console">Console: </label>
                 <select className="form-control" name="platform" value={this.state.platform} onChange={this.handleInputChange}>
                   <option value="">Update Platform</option>
-                  <option value="PC">PC</option>
-                  <option value="Xbox">Xbox</option>
-                  <option value="Playstation">Playstation</option>
+                  <option value="PC" name="platform">PC</option>
+                  <option value="Xbox" name="platform">Xbox</option>
+                  <option value="Playstation" name="platform">Playstation</option>
                   
                 </select>
               </div>
@@ -175,18 +193,32 @@ class ManageGroupModal extends React.Component {
               </div>
               <button
                 type="submit"
+                value="submit"
                 className="btn btn-primary"
+               href="/"
                 onClick={this.handleFormSubmit}
+                
               >
                 Update
               </button>
+              <button
+                type="submit"
+                className="btn btn-danger"
+                onClick={this.handleFormDelete}
+              >
+                Delete
+              </button>
             </form>
+         
+
+              
           </Modal.Body>
           <Modal.Footer>
-            <Button id="pmodal-button" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
+          
+            <a className="btn btn-primary"  href="/main" role="button"><p>close</p></a>
+            {/* onClick={this.handleClose} */}
+
+           </Modal.Footer>
         </Modal>
       </div>
     );
