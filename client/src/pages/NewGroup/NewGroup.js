@@ -3,6 +3,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./NewGroup.css";
+import Nav from "../../components/Nav";
 
 class NewGroup extends Component {
   state = {
@@ -81,6 +82,7 @@ class NewGroup extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
+      <Nav/>
         <Row>
           <Col size="xl-2 sm-2"/>
           <Col size="xl-8 sm-8">

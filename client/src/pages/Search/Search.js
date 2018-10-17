@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import "./Search.css";
 import API from "../../utils/API";
 
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -79,7 +80,7 @@ class Search extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
-       
+       <Nav/>
           
             <div id="search-groups">
               <h4>Search for a group below</h4>

@@ -23,7 +23,18 @@
 letter-spacing: 1px;
 border-radius:4px;
 width:80px;
-color:black;
+color:rgb(19, 163, 62);
+height:30px;
+}
+
+.pmodal-update-btn:hover{
+  font-family:"bignoodletoo";
+letter-spacing: 1px;
+border-radius:4px;
+width:80px;
+color:rgb(37, 179, 44);
+background-color:rgb(245, 244, 244);
+border: 1px solid rgb(185, 185, 185);
 height:30px;
 
 }
@@ -32,15 +43,28 @@ height:30px;
 letter-spacing: 0px;
 border-radius:4px;
 width:80px;
-color:rgb(48, 47, 47);
+color:rgb(207, 26, 26);
 height:30px;
-border: 1px solid rgb(156, 156, 156);
+border: 1px solid rgb(206, 206, 206);
 font-family:"bignoodletoo";
 font-size:15px;
 text-align:center;
-
+padding-top:5px;
 }
 
+.pmodal-logout:hover{
+  letter-spacing: 0px;
+  border-radius:4px;
+  width:80px;
+  color:rgb(228, 18, 18);
+  height:30px;
+  border: 1px solid rgb(202, 202, 202);
+  background-color:rgb(238, 238, 238);
+  font-family:"bignoodletoo";
+  font-size:15px;
+  text-align:center;
+  
+  }
 
 .pmodal-close{
 letter-spacing: 0px;
@@ -49,5 +73,6 @@ width:80px;
 color:black;
 height:30px;
 font-family:"bignoodletoo";
+padding-bottom:5px;
 }
 
