@@ -62,7 +62,7 @@ class Players extends React.Component {
 
   updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => {
     console.log(this.state.rank);
-    if (this.state.playerInfo.player1.user === this.state.user) {
+    if (this.state.playerInfo.player1.user === this.state.globalId) {
       API.updateGroup({
         _id: _id,
         player1: {
@@ -73,7 +73,7 @@ class Players extends React.Component {
           user: user
         }
       })
-        //.then(res => this.loadGroups())
+        // .then(res => this.loadGroup())
         .catch(err => console.log(err));
     } else if (this.state.playerInfo.player2.user === this.state.user) {
       API.updateGroup({
@@ -86,7 +86,7 @@ class Players extends React.Component {
           user: user
         }
       })
-        //.then(res => this.loadGroups())
+        // .then(res => this.loadGroup())
         .catch(err => console.log(err));
     } else if (this.state.playerInfo.player3.user === this.state.user) {
       API.updateGroup({
@@ -142,14 +142,17 @@ class Players extends React.Component {
         .catch(err => console.log(err));
     }
   };
-
-  handleDelete = _id => {
+/////////////////////////////////////
+  handleDelete = (_id) => {
     if (this.state.playerInfo.player1.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player1: {
-          state: "0",
-          gamertag: "Player 1"
+          state: 0,
+          gamertag: "Player 1",
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -162,14 +165,14 @@ class Players extends React.Component {
         player2: {
           state: 0,
           gamertag: "Player 2",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
-        .then(res =>
-          console.log("Sucessfully removed player from group! " + res)
-        )
+        // .then(res =>
+        //   console.log("Sucessfully removed player from group! " + res)
+        // )
         .catch(err => console.log(err));
     } else if (this.state.playerInfo.player3.user === this.state.user) {
       API.updateGroup({
@@ -177,9 +180,9 @@ class Players extends React.Component {
         player3: {
           state: 0,
           gamertag: "Player 3",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -192,9 +195,9 @@ class Players extends React.Component {
         player4: {
           state: 0,
           gamertag: "Player 4",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -207,9 +210,9 @@ class Players extends React.Component {
         player5: {
           state: 0,
           gamertag: "Player 5",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -222,9 +225,9 @@ class Players extends React.Component {
         player6: {
           state: 0,
           gamertag: "Player 6",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -236,20 +239,41 @@ class Players extends React.Component {
 
   handleDeleteSubmit = event => {
     event.preventDefault();
-    this.handleDelete(this.state._id, this.state.user);
+    
+    if (this.state.playerInfo.player1.user === this.state.globalId) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player2.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player3.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player4.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player5.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player6.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else {
+      console.log("not a match");
+    }
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.updateCurrentPlayer(
-      this.state._id,
-      this.state.gamertag,
-      this.state.role,
-      this.state.rank,
-      this.state.state,
-      this.state.user
-    );
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   this.updateCurrentPlayer(
+  //     this.state._id,
+  //     this.state.gamertag,
+  //     this.state.role,
+  //     this.state.rank,
+  //     this.state.state,
+  //     this.state.user
+  //   );
+  // };
 
   handleUpdateSubmit = event => {
     event.preventDefault();
