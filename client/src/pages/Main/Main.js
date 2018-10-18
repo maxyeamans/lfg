@@ -127,38 +127,20 @@ class Main extends Component {
         <div id="mainpage-content">
 
           <h1> Looking For Group</h1>
-          <h1>hello test</h1>
-
 
           <h3>Create and join groups with other Overwatch players!</h3>
         </div>
 
-
-
         <Row>
-          {/* <container className="creategroupSearch"> */}
-          {/* <Col size="xl-6 lg-6"> */}
+
           <div class="button1">
             <CreateGroupBtn />
           </div>
-          {/* </Col>
-          <Col size="xl-6 lg-6"> */}
+
           <div class="button2">
             <SearchBtn />
           </div>
 
-          {/* </Col> */}
-        </Row>
-        {/* </container> */}
-        <Row>
-
-          <Col size="xl-12 sm-8">
-            {/* <div id="overwatch-char">
-
-</div> */}
-
-
-          </Col>
         </Row>
 
         <div id="main-first">
@@ -185,8 +167,26 @@ class Main extends Component {
 
         <div id="main-third">
 
-         
+          <Row>
 
+            <Col size="xl-7 sm-8">
+
+              <div id="about-us">
+
+                Meet the Development Team
+                <h5>Max Yeamans</h5>
+                <h5>Daniel Grantham</h5>
+                <h5>Katri Morrison</h5>
+                <h5>Mike Schumann</h5>
+         </div>
+            </Col>
+            <Col size="xl-5 sm-8">
+
+              <div id="overwatch-char">
+              </div>
+
+            </Col>
+          </Row>
         </div>
 
         {/* <h2>MY CURRENT GROUPS ▼</h2>
