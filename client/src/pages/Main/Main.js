@@ -50,7 +50,7 @@ class Main extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         <Nav />
 
         <div id="mainpage-content">

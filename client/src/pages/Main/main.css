@@ -41,17 +41,23 @@ body {
   background-color: #999;
 }
 
+#about-us{
+    color:white;
+    text-align:center;
+    padding-top:80px;
+    font-size:50px;
+    letter-spacing: 2px;
+
+
+}
+
 #overwatch-char {
   background-image: url("../../images/sombra.png");
   background-repeat: no-repeat;
   height: 500px;
 }
 
-#overwatch-char2 {
-  background-image: url("../../images/char6.png");
-  background-repeat: no-repeat;
-  height: 500px;
-}
+
 
 
 #main-first{
@@ -60,19 +66,7 @@ body {
     margin-top:140px;
 }
 
-.mygroups{
-  margin-bottom: 200px;
-  margin-left: 0 !important;
-}
 
-
-#main-first {
-  height: 60px;
-  background-color: rgb(233, 233, 233);
-  width: 105%;
-  margin-left: -20px;
-  margin-top: 140px;
-}
 
 #main-second{
   height:400px;
