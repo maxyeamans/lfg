@@ -89,8 +89,8 @@ class Search extends Component {
 
   render() {
     return (
-      // NAV IS RIGHT HERE
-      <Container fluid>
+     
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
        <Nav/>
           
             <div id="search-groups">
