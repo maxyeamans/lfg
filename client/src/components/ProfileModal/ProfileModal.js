@@ -3,7 +3,10 @@ import "./ProfileModal.css";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
-import Login from "../../pages/Login/Login"; //trying to bring in current username
+import Login from "../../pages/Login/Login";//trying to bring in current username and pass
+
+
+// We need to pass in the User ID prop so that we can include it in our post request
 
 class ProfileModal extends React.Component {
   constructor(props, context) {
@@ -14,12 +17,10 @@ class ProfileModal extends React.Component {
 
     this.state = {
       show: false,
-
-      username: "",
-      password: "",
-      email: "",
-      id: "5bb5619e6cb97b6830ca34c8"
-
+      username:"",
+      password:"",
+      email:"",
+      _id: localStorage.getItem("globalId")
     };
   }
 
@@ -30,21 +31,65 @@ class ProfileModal extends React.Component {
   //     User.save({ UserName: e.target.value });
   // };
 
-  componentDidMount() {
-    this.loadUsers();
+  handleClose() {
+    this.setState({ show: false });
   }
 
-  loadUsers = () => {
-    API.getUser(this.state.id)
-      .then(res =>
-        this.setState({
-          username: res.data.username,
-          password: res.data.password,
-          email: res.data.email
-        })
-      )
+  handleShow() {
+    this.setState({ show: true });
+  }
+
+  componentDidMount() {
+    
+    this.loadLogin();
+    
+  }
+
+  loadLogin = () => {
+    API.getUser(this.state._id)
+      .then(res => this.setState({
+        _id: localStorage.getItem("globalId"),
+        username: res.data.username,
+        password: res.data.password,
+        email: res.data.email }))
       .catch(err => console.log(err));
-  };
+
+
+  }
+
+  // logoutUser = () => {
+  //   console.log("logout user");
+  //   API.deleteLogin()
+  //     .then( res => console.log(res + "logout profile modal") )
+  //     .catch(err => console.log(err));
+  // }
+
+  // loginDelete = () => {
+  //   API.deleteLogin();
+  // }
+
+  handleLogout = () => {
+    localStorage.setItem("globalId", "");
+    localStorage.setItem("username", "");
+      
+  }
+
+  createUpdatedUser = (_id, username, password, email) => { 
+    console.log(username, password, email)
+    API.updateUser({
+      _id: _id,
+      username: username, // select what you want updated
+      password: password,
+      email: email
+
+    })
+
+      // .then(res => console.log(res))
+
+     
+
+      .catch(err => console.log(err));
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -53,108 +98,81 @@ class ProfileModal extends React.Component {
     });
   };
 
-  handleClose() {
-    this.setState({ show: false });
-  }
-
-  handleShow() {
-    this.loadUsers();
-    this.setState({ show: true });
-  }
-
-  updateCurrentUser = (id, username, password, email) => {
-    console.log(id, username)
-    API.updateUser({
-      _id: id,
-      username: username,
-      password: password,
-      email: email
-    })
-      .then(res => this.loadUsers())
-      .catch(err => console.log(err));
-  };
-
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.updateCurrentUser(this.state.id, this.state.username, this.state.password, this.state.email);
-    
+    this.createUpdatedUser(this.state._id, this.state.username, this.state.password, this.state.email);
   };
 
 
-
-
-
-  
 
   render() {
     return (
       <div>
         {/* <p> Text above modal</p> */}
 
-        <Button
-          id="settings-btn"
-          bsStyle="primary"
-          bsSize="large"
-          onClick={this.handleShow}
-        >
+        <Button id="settings-btn" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           Settings
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title> Settings</Modal.Title>
+          <Modal.Header 
+          // closeButton
+          >
+            <Modal.Title> <h2>Settings </h2></Modal.Title>
           </Modal.Header>
           <Modal.Body>
+
             <form className="m-4">
               <div className="form-group">
-
-                <label for="username">Current username: {this.state.username} </label>
-
+                <label for="username">
+                {/* {this.state.pictures} */}
+                Change current Username:</label>
                 <input
                   type="name"
                   className="form-control"
                   name="username"
-                  placeholder="New Username"
+                  placeholder={this.state.username}
                   onChange={this.handleInputChange}
                   value={this.state.username}
                 />
               </div>
               <div className="form-group">
-                <label for="password">Change current password:</label>
+                <label for="password">Change current Password:</label>
                 <input
                   type="password"
                   className="form-control"
                   name="password"
-                  placeholder="New Password"
+                  placeholder={this.state.password}
                   onChange={this.handleInputChange}
                   value={this.state.password}
                 />
               </div>
               <div className="form-group">
-                <label for="email">Current Email: {this.state.email}</label>
+                <label for="email">Change current Email:</label>
                 <input
                   type="email"
                   className="form-control"
                   name="email"
-                  placeholder="New Email"
+                  placeholder={this.state.email}
                   onChange={this.handleInputChange}
                   value={this.state.email}
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={this.handleFormSubmit}
-              >
+              <button className="pmodal-update-btn" onClick={this.handleFormSubmit}>
                 Update
               </button>
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <Button id="pmodal-button" onClick={this.handleClose}>
+          <a className="pmodal-logout"  href="/" role="button" onClick={this.handleLogout}>
+           Logout
+            </a>
+
+            <Button className="pmodal-close" onClick={this.handleClose}>
               Close
-            </Button>
+            </Button >
+            
           </Modal.Footer>
         </Modal>
       </div>

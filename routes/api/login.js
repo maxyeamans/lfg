@@ -3,8 +3,10 @@ const loginController = require("../../controllers/loginController");
 
 // Matches with "/api/login"
 router.route("/")
-  .get(loginController.loginId)
-  .post(loginController.login);
+  // .get(loginController.loginId)
+  .post(loginController.login)
+  
+  
 
 // Matches with "/api/login/:id"
 // router

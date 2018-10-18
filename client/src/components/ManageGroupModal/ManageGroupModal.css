@@ -1,0 +1,26 @@
+#manage-groups-btn {
+  border-radius: 4px;
+  background-color: #ffffffee;
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height:50px;
+  font-family:"bignoodletoo";
+  letter-spacing: 2px;
+  font-size:30px;
+  margin-left: 20px;
+  margin-right:-15px;
+}
+
+#manage-groups-btn:hover {
+  background-color: rgba(44, 43, 43, 0); 
+  color: rgb(255, 255, 255);
+}
+
+.modal{
+  /* background-image: url("../../images/background2.jpg"); */
+background-color: rgba(44, 43, 43, 0.315);
+}

@@ -1,12 +1,88 @@
-#login {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(51,51,51,0.7);
-  z-index: 10;
-  background-image: url("../../images/background-image.jpg");
-  background-color: black;
+
+
+  
+#login-form{
+  border: .5px solid;
+  width:100%;
+  background-color:rgba(53, 52, 52, 0.349);
+  
+  margin:auto;
+  margin-top:100px;
+}
+
+#login-text{
+    
+  color:rgb(196, 196, 196);
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+}
+
+#bottom-reg{
+  float:right;
+  margin-top:10px;
+}
+
+.reg-l-btn{
+
+background-color: #91cde2;
+border: none;
+color: #FFFFFF;
+transition: all 0.5s;
+text-align:center;
+float:right;
+width:80px;
+height:25px;
+border-radius: 4px;
+font-size:15px;
+letter-spacing: 0px;
+}
+
+.reg-l-btn:hover{
+  background-color: #548496;
+}
+
+#ha-text{
+  margin-bottom:20px;
+  color:rgb(255, 255, 255);
+  font-family: 'Archivo', sans-serif;
+  font-size:15px;
+  letter-spacing: 0px;
+  transition: all 0.5s;
+}
+
+#ha-text:hover{
+    color:rgb(131, 198, 216);
+}
+
+.submit-button1{
+  font-family: 'Archivo', sans-serif;
+      background-color: #f09731;
+      border: none;
+      color: #FFFFFF;
+      transition: all 0.5s;
+      text-align:center;
+      width:80px;
+      height:25px;
+      border-radius: 4px;
+      font-size:15px;
+      letter-spacing: 0px;
+    
+}
+
+.submit-button1:hover{
+  background-color: #7c4b19;
+}
+
+
+
+
+
+@media only screen and (min-width: 426px) {
+
+  #login-form{
+  
+    width:50%;
+    
   }
   
+}

@@ -13,6 +13,7 @@ export default {
   deleteUser: function(id) {
     return axios.delete("/api/users/" + id);
   },
+  
   // Saves a user to the database
   saveUser: function(userData) {
     console.log(userData);
@@ -24,54 +25,74 @@ export default {
     return axios.put("/api/users/" + userData._id, userData); // was update instead of post
   },
   loginUser: function(userData) {
-    console.log("api", userData);
+    console.log("API", userData);
     return axios.post("/api/login", userData);
   },
-  getLogin: function() {
-    return axios.get("/api/login");
+  getUserName: function(username) {
+    console.log(username);
+    return axios.get("/api/users/" + username);
+      
   },
+  // deleteLogin: function() {
+  //   console.log("util api delete login")
+  //   return axios.delete("/api/login");
+  // },
   
   /////////////////////////////////////////////////////////////////////////
-  // // Gets all profiles
-  // getProfiles: function() {
-  //   return axios.get("/api/profiles");
-  // },
-  // // Gets the profile with the given id
-  // getProfile: function(id) {
-  //   return axios.get("/api/profiles/" + id);
-  // },
-  // // Deletes the profile with the given id
-  // deleteProfile: function(id) {
-  //   return axios.delete("/api/profiles/" + id);
-  // },
-  // // Saves a profile to the database
-  // saveProfile: function(profileData) {
-  //   return axios.post("/api/profiles", profileData);
-  // },
-  // // Updates the profile with the given id
-  // updateProfile: function(id) {
-  //   return axios.update("/api/profiles/" + id);
-  // },
+  // Gets all messages
+  getMessages: function() {
+    return axios.get("/api/messages");
+  },
+  // Gets the message with the given id
+  getMessage: function(id) {
+    return axios.get("/api/messages/" + id);
+  },
+  // Deletes the message with the given id
+  deleteMessage: function(id) {
+    return axios.delete("/api/messages/" + id);
+  },
+  // Saves a message to the database
+  saveMessage: function(messageData) {
+    console.log(messageData);
+    return axios.post("/api/messages", messageData);
+  },
+  // Updates the message with the given id
+  updateMessage: function(id) {
+    return axios.update("/api/messages/" + id._id);
+  },
   ////////////////////////////////////////////////////////////////////////////////
   // Gets all groups
-  getGroups: function() {
-    return axios.get("/api/groups");
+  // Params takes a JSON object created from the request query (e.g., /api/groups?platform=PS4)
+  getGroups: function(params) {
+    return axios.get("/api/groups", {params});
   },
+
+  getNewGroups: function() {
+    return axios.get("/api/groups/new/groups");
+  },
+
   // Gets the group with the given id
   getGroup: function(id) {
-    return axios.get("/api/groups/" + id);
+    console.log(id._id);
+    return axios.get("/api/groups/" + id._id);
   },
   // Deletes the group with the given id
   deleteGroup: function(id) {
-    return axios.delete("/api/groups/" + id);
+    return axios.delete("/api/groups/" + id._id);
   },
   // Saves a group to the database
   saveGroup: function(GroupData) {
+    console.log(GroupData);
     return axios.post("/api/groups", GroupData);
   },
   // Updates the group with the given id
-  updateGroup: function(id) {
-    return axios.update("/api/groups/" + id);
+  updateGroup: function(groupData) {
+    console.log(groupData);
+    return axios.put("/api/groups/" + groupData._id, groupData);
   },
+  joinGroup: function(groupData) {
+    return axios.put("/api/groups/join/" + groupData.id, groupData);
+  }
+
   
 };

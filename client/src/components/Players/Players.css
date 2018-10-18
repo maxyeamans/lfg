@@ -1,0 +1,38 @@
+/* .manage-groups-btn {
+    border-radius: 4px;
+    background-color: #e0c4ae;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height:50px;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    font-size:20px;
+  }
+  
+  .manage-groups-btn:hover {
+    background-color: rgb(44, 43, 43);; 
+    color: #f09731;
+  } */
+
+.player-item {
+  font-family: "bignoodletoo";
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin-top: 5%;
+}
+
+.card {
+  border: 1px solid rgb(155, 154, 154);
+  width: 90%;
+}
+
+#player-gamertag {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+}

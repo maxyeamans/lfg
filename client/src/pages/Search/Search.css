@@ -1,4 +1,64 @@
 #search-results {
     border: 2px;
+    padding-bottom:150px;
+   text-align:center;
+   width:100%;
+   margin: 0 auto;
+  }
+
+  #search-groups{
+    width:100%;
+    margin:0 auto;
+    
+  }
+  
+  h4{
+    color:rgb(250, 246, 246);
+    font-family:"bignoodletoo"; 
+    letter-spacing: 2px;
+    margin:auto;
+    font-size:50px;
+    margin-bottom:50px;
+    margin-top:100px;
+    text-align:center;
+  }
+
+
+  #text-test{
+    text-align: center;
+  }
+
+
+
+  @media only screen and (max-width: 425px) {
+    #search-results {
+      border: 2px;
+      padding-bottom:150px;
+      width:60%;
+      margin:auto;
+    }
+  
+    #search-groups{
+      width:100%;
+      margin:auto;
+    }
+    
+    h4{
+      color:rgb(250, 246, 246);
+      font-family:"bignoodletoo"; 
+      letter-spacing: 2px;
+      text-align:center;
+      font-size:30px;
+      margin-bottom:50px;
+    margin-top:60px;
+      
+    }
+  
+    h5{
+      font-size:50px;
+      color:rgb(250, 246, 246);
+      text-align:center;
+      margin-bottom:30px;
+    }
   }
   
