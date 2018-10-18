@@ -9,6 +9,7 @@ import NewGroup from "./pages/NewGroup";
 import Register from "./pages/Register";
 import UpdateGroup from "./pages/UpdateGroup";
 import Footer from "./components/Footer";
+import MyPage from "./pages/MyPage";
 
 const App = () => (
   <Router>
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path="/main" component={Main} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/newgroup" component={NewGroup} />
+        <Route exact path="/mypage" component={MyPage} />
         <Route path="/updategroup/:id" component={UpdateGroup} />
         <Route component={NoPage} />
       </Switch>
