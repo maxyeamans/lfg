@@ -104,7 +104,7 @@ class ManagePlayersModal extends React.Component {
               Close
             </Button> */}
 
-             <a className="btn btn-primary pmodal-button"  href="/main" role="button">close</a>
+             <a className="btn btn-primary pmodal-button"  href="/mypage" role="button">close</a>
           </Modal.Footer>
         </Modal>
       </div>

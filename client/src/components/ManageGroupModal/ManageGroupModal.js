@@ -166,7 +166,7 @@ class ManageGroupModal extends React.Component {
           <Modal.Header 
           // closeButton
           >
-            <Modal.Title> Manage Group </Modal.Title>
+            <Modal.Title> <h2>Manage Group</h2> </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form className="m-4">
@@ -222,7 +222,7 @@ class ManageGroupModal extends React.Component {
               <button
                 type="submit"
                 value="submit"
-                className="btn btn-primary"
+                className="gm-submit"
                href="/"
                 onClick={this.handleFormSubmit}
                 
@@ -244,9 +244,12 @@ class ManageGroupModal extends React.Component {
           </Modal.Body>
           <Modal.Footer>
           
-            <a className="btn btn-primary"  href="/main" role="button"><p>close</p></a>
-            {/* onClick={this.handleClose} */}
+            {/* <a className="btn btn-primary" id="mg-close" href="/mypage" role="button"><p>close</p></a> */}
+          
 
+            <Button className="pmodal-close" onClick={this.handleClose}>
+              Close
+            </Button >
            </Modal.Footer>
         </Modal>
       </div>

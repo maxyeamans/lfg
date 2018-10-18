@@ -104,7 +104,6 @@ class Search extends Component {
       
 
         <div id="search-results">
-          <h1> ▼ </h1>
           <h4> results</h4>
           {this.state.groups.map(group => <SearchGroup group={group} handleGroupJoin={this.handleGroupJoin}/>)}
         </div>

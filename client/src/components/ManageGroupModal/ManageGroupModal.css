@@ -24,3 +24,18 @@
   /* background-image: url("../../images/background2.jpg"); */
 background-color: rgba(44, 43, 43, 0.315);
 }
+
+.pmodal-close{
+  letter-spacing: 0px;
+border-radius:4px;
+width:80px;
+color:black;
+height:30px;
+font-family:"bignoodletoo";
+padding-bottom:5px;
+}
+
+.gm-submit{
+  color:green;
+  width:80px;
+}

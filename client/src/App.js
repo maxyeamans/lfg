@@ -9,9 +9,7 @@ import NewGroup from "./pages/NewGroup";
 import Register from "./pages/Register";
 import UpdateGroup from "./pages/UpdateGroup";
 import Footer from "./components/Footer";
-
 import MyPage from "./pages/MyPage";
-
 import Messages from "./pages/Messages";
 
 

@@ -18,6 +18,33 @@
   background-color: #ebb87e; 
   color: #ffffff;
 }
+@media only screen and (max-width: 750px) {
+  .search-btn {
+    border-radius: 4px;
+    background-color: #f09731;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 35px;
+    padding: 30px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    margin:0 auto;
+    display:block;
+    margin-top:30px;
+    margin-bottom:50px;
+  }
+  
+  .search-btn:hover {
+    background-color: #ebb87e; 
+    color: #ffffff;
+  }
+}
+
 
 @media only screen and (max-width: 425px) {
   .search-btn {

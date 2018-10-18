@@ -53,11 +53,11 @@ class JoinGroupModal extends React.Component {
       role: this.state.role,
       rank: this.state.rank,
     })
-    .catch(err => console.log(err));
+      .catch(err => console.log(err));
   }
 
   // Combined function that submits Group Join form and closes modal
-  handleJoinAndClose = (event) =>{
+  handleJoinAndClose = (event) => {
     this.handleGroupJoin(event);
     this.handleClose();
   }
@@ -83,7 +83,7 @@ class JoinGroupModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <form className="m-4">
-              <div className="form-group">
+              <div className="form-group" bsSize="large">
                 <label htmlFor="gamertag">
                   Gamertag:</label>
                 <input
@@ -95,7 +95,7 @@ class JoinGroupModal extends React.Component {
                   value={this.state.gamertag}
                 />
               </div>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label htmlFor="role">Enter your preferred role:</label>
                 <input
                   type="text"
@@ -104,9 +104,17 @@ class JoinGroupModal extends React.Component {
                   placeholder="Enter Tank, Attack, or Support"
                   onChange={this.handleInputChange}
                   value={this.state.role}
-                />
+                /> */}
+              <div className="form-group" bsSize="large">
+                <label htmlFor="role">Group Rank: </label>
+                <select className="form-control" name="role" onChange={this.handleInputChange}>
+                  <option value="">Choose Role</option>
+                  <option value="Tank">Tank</option>
+                  <option value="Attack">Attack</option>
+                  <option value="Support">Support</option>
+                </select>
               </div>
-              <div className="form-group">
+            {/* <div className="form-group">
                 <label htmlFor="rank">Enter your current rank:</label>
                 <input
                   type="text"
@@ -116,20 +124,33 @@ class JoinGroupModal extends React.Component {
                   onChange={this.handleInputChange}
                   value={this.state.rank}
                 />
-              </div>
-              {/* Button is disabled until the user enters gamertag, role, and rank */}
-              <button className="pmodal-update-btn" onClick={this.handleJoinAndClose} disabled={!(this.state.gamertag && this.state.role && this.state.rank)}>
-                Send Request
+              </div> */}
+            <div className="form-group">
+              <label htmlFor="rank">Group Rank: </label>
+              <select className="form-control" name="rank" onChange={this.handleInputChange}>
+                <option value="">Choose Rank</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Diamond">Diamond</option>
+                <option value="Master">Master</option>
+                <option value="Grand Master">Grand Master</option>
+              </select>
+            </div>
+            {/* Button is disabled until the user enters gamertag, role, and rank */}
+            <button className="pmodal-update-btn" onClick={this.handleJoinAndClose} disabled={!(this.state.gamertag && this.state.role && this.state.rank)}>
+              Send Request
               </button>
             </form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button className="pmodal-close" onClick={this.handleClose}>
-              Cancel
+        <Modal.Footer>
+          <Button className="pmodal-close" onClick={this.handleClose}>
+            Cancel
             </Button >
-          </Modal.Footer>
+        </Modal.Footer>
         </Modal>
-      </div>
+      </div >
     );
   }
 }
