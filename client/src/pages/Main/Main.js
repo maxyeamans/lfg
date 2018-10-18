@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 // import ProfileModal from "../../components/ProfileModal";
 import API from "../../utils/API";
 import "./main.css";
-import SearchGroup from "../../components/SearchGroup";
+import RecentGroups from "../../components/RecentGroups";
 import Nav from "../../components/Nav";
 
 class Main extends Component {
@@ -151,60 +151,49 @@ class Main extends Component {
 
         </Row>
 
-        {/* <div id="main-first">
+        <div id="main-first">
         </div>
 
         <div id="main-second">
 
-          Most recent groups
+          Recently added groups
 
-           {this.handleGroups()}
-              {this.state.userGroups.map(group => (
-                <CurrentGroups
-                  data={group}
-                  _id={group._id}
-                  groupName={group.groupName}
-                  platform={group.platform}
-                  groupRank={group.groupRank}
-                  time={group.time}
-                  
-                />
-              ))}
+<div className="main-groups">
+  {this.state.groups.map(group => (
+    <RecentGroups group={group} handleGroupJoin={this.handleGroupJoin} />
+  ))}
+
+</div>
+
+
+          
         </div>
 
         <div id="main-third">
-        </div> */}
-
-
-          <Row>
-
-            <Col size="xl-7 sm-8">
-
-              <div id="about-us">
-
-                Meet the Development Team
-                <h5>Max Yeamans</h5>
-                <h5>Daniel Grantham</h5>
-                <h5>Katri Morrison</h5>
-                <h5>Mike Schumann</h5>
-         </div>
-            </Col>
-            <Col size="xl-5 sm-8">
-
-              <div id="overwatch-char">
-              </div>
-
-            </Col>
-          </Row>
-
-        <h2>MOST RECENT GROUPS ▼</h2>
-
-        <div className="mygroups">
-          {this.state.groups.map(group => (
-            <SearchGroup group={group} handleGroupJoin={this.handleGroupJoin} />
-          ))}
-
         </div>
+        
+        <Row>
+
+          <Col size="xl-7 sm-8">
+
+            <div id="about-us">
+
+              Meet the Development Team
+                <h5>Max Yeamans</h5>
+              <h5>Daniel Grantham</h5>
+              <h5>Katri Morrison</h5>
+              <h5>Mike Schumann</h5>
+            </div>
+          </Col>
+          <Col size="xl-5 sm-8">
+
+            <div id="overwatch-char">
+            </div>
+
+          </Col>
+        </Row>
+
+
 
         <Footer />
       </Container>

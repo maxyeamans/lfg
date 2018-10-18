@@ -1,0 +1,26 @@
+.recent-results{
+  width:25%;
+background-color:rgb(207, 207, 241);
+float:left;
+
+}
+
+.list-group-item1{
+  font-family:"bignoodletoo";
+  letter-spacing: 4px;
+  background-color:rgba(44, 43, 43, 0);
+  color:rgb(255, 255, 255);
+  font-size:20px;
+  
+  
+}
+
+
+.card{
+border: 1px solid rgb(155, 154, 154);
+margin-top:5%;
+background-color:rgba(44, 43, 43, 0.233);
+
+
+}
+
