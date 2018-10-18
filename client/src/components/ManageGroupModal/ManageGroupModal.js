@@ -251,10 +251,10 @@ class ManageGroupModal extends React.Component {
           
             {/* <a className="btn btn-primary" id="mg-close" href="/mypage" role="button"><p>close</p></a> */}
           
-
-            <Button className="pmodal-close" onClick={this.handleClose}>
+            <a className="btn btn-primary pmodal-close"  href="/mypage" role="button">close</a>
+            {/* <Button className="pmodal-close" onClick={this.handleClose}>
               Close
-            </Button >
+            </Button > */}
            </Modal.Footer>
         </Modal>
       </div>
