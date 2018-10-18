@@ -53,10 +53,18 @@ body {
   height: 500px;
 }
 
+
+#main-first{
+    height:40px;
+    background-color:rgb(250, 249, 249);  
+    margin-top:140px;
+   
+
 .mygroups {
   margin-bottom: 200px;
   margin-left: 0 !important;
 }
+
 
 #main-first {
   height: 60px;
@@ -65,34 +73,79 @@ body {
   margin-left: -20px;
   margin-top: 140px;
 }
-#main-second {
-  height: 350px;
-  background-color: rgb(233, 233, 233);
-  width: 105%;
-  margin-left: -20px;
-  color: rgb(48, 47, 47);
-  text-align: center;
-  font-size: 50px;
+
+#main-second{
+  height:400px;
+  background-color:rgb(250, 249, 249);
+  width:100%;
+  color:rgb(58, 57, 57);
+  text-align:center;
+  font-size:50px;
+ 
 }
 
-#main-third {
-  height: 300px;
-  background-color: rgba(105, 104, 104, 0.137);
-  width: 105%;
-  margin-left: -20px;
-  margin-top: -10px;
+.main-groups{
+    color:black;
+    margin-top:30px;
+}
+
+#main-next{
+    height:60px;
+    background-color:rgb(250, 249, 249);
+  text-align:center;
+  border:none;
+  
+}
+
+.see-all-btn{
+    background-color:rgb(139, 201, 241);
+    border: none;
+    color:#ffffff;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    padding:10px;
+    font-size: 20px;
+    border-radius:4px;   
+}
+
+.see-all-btn:hover { 
+    color:#ffffff;
+    background-color:rgb(185, 233, 245);
+}
+
+
+#main-third{
+    height:360px;
+    background-color:rgba(109, 123, 170, 0.164);
+    width:100%;
+  margin-top:0px;
+  margin-bottom:120px;
+
+
 }
 
 @media only screen and (max-width: 425px) {
   /* For mobile phones: */
 
-  h1 {
-    font-family: "bignoodletoo";
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 60px;
-    margin-top: 50px;
-    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+
+
+
+#overwatch-char{
+    background-image: url("../../images/sombra.png"); 
+    background-repeat:no-repeat;
+   margin:auto;
+   margin-top:40px;
+ 
+  }
+
+  #about-us{
+      color:white;
+      text-align:center;
+      padding-top:80px;
+      font-size:50px;
+      letter-spacing: 2px;
+
+
   }
 
   h2 {
@@ -102,27 +155,76 @@ body {
     text-align: center;
     font-size: 15px;
 
-    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
   }
+  }
+      
 
-  h3 {
-    text-align: center;
-    color: rgb(196, 196, 196);
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 15px;
-  }
 
-  .button1,
-  .button2 {
-    margin: auto;
-  }
+@media only screen and (max-width: 747px) {
+    /* For mobile phones: */
 
-  body {
-    background-image: url("../../images/background2.jpg");
-  }
+    h1 {
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:60px;
+        margin-top:50px;
+        /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+      }
+    
+      h2 {
+        color:rgb(199, 199, 199);
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:15px;
+      
+       /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+      }
+    
+      h3{
+        text-align:center;
+        color:rgb(196, 196, 196);
+         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-size:15px;
+      }
+    
+      h5{
+        font-size:5px;
+        color: blue;
+      }
+      
+      .button1, .button2{     
+          margin:auto;       
+      }
+    
+    
+    
+      body{   
+        background-image: url("../../images/background2.jpg");    
+      }
+      
+    .mygroups{
+        margin-bottom:300px;
+        margin-top:100px;      
+    }
+    
+    #main-second{
+        height:1000px;
+        background-color:rgb(255, 255, 255);
+        width:100%;
+        color:rgb(58, 57, 57);
+        text-align:center;
+        font-size:50px;
+       
+      }
 
-  .mygroups {
-    margin-bottom: 300px;
-    margin-top: 100px;
+
+  #about-us{
+    text-align:center;
+    padding-top:80px;
+    font-size:50px;
+    letter-spacing: 2px;
   }
+   
 }

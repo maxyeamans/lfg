@@ -5,7 +5,7 @@ import CreateGroupBtn from "../../components/CreateGroupBtn";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./main.css";
-import SearchGroup from "../../components/SearchGroup";
+import RecentGroups from "../../components/RecentGroups";
 import Nav from "../../components/Nav";
 
 class Main extends Component {
@@ -67,21 +67,64 @@ class Main extends Component {
             <SearchBtn />
           </div>
         </Row>
+
+
+        <div id="main-first">
+        </div>
+
+        <div id="main-second">
+
+          Recently Created
+
+          <div className="main-groups">
+            {this.state.groups.map(group => (
+              <RecentGroups group={group} handleGroupJoin={this.handleGroupJoin} />
+            ))}
+
+          </div>
+
+        </div>
+
+        <div id="main-next">
+
+
+          <form action="/search">
+            <input type="submit" value="search all" className="see-all-btn" />
+          </form>
+        </div>
+
+
+
+        <div id="main-third">
+        
+
         <Row>
-          <Col size="xl-2 sm-0" />
-          <Col size="xl-8 sm-12">
-          <h2>MOST RECENT GROUPS ▼</h2>
-            <div className="mygroups">
-              {this.state.groups.map(group => (
-                <SearchGroup
-                  group={group}
-                  handleGroupJoin={this.handleGroupJoin}
-                />
-              ))}
+
+          <Col size="xl-7 sm-8">
+
+            <div id="about-us">
+
+              Meet the Development Team
+              <a href="url">  <h5>Max Yeamans</h5></a>
+              <a href="url">  <h5>Daniel Grantham</h5></a>
+              <a href="url"> <h5>Katri Morrison</h5></a>
+              <a href="url"> <h5>Mike Schumann</h5></a>
+             
+              
+              
             </div>
           </Col>
-          <Col size="xl-2 sm-0" />
+          <Col size="xl-5 sm-8">
+
+            <div id="overwatch-char">
+            </div>
+
+          </Col>
         </Row>
+        </div>
+
+     
+
 
         <Footer />
       </Container>
