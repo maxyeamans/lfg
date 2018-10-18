@@ -9,16 +9,14 @@ import ManagePlayersModal from "../../components/ManagePlayersModal";
 class Players extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.determineLeader = this.determineLeader.bind(this);
-
+    
     this.state = {
       show: false,
       gamertag: this.props.gamertag,
       role: this.props.role,
       rank: this.props.rank,
       _id: this.props.id,
-      user: this.props.user,
+      user: localStorage.getItem("globalId"),
       player: this.props.data,
       playerInfo: {},
       state: this.props.state,
@@ -30,7 +28,6 @@ class Players extends React.Component {
   }
 
   componentDidMount() {
-    // this.handleGroupId();
     this.loadGroup();
     
   }
@@ -50,6 +47,7 @@ class Players extends React.Component {
         this.setState({ playerInfo: res.data }, function() {
           // Determine Leader function is loaded only after the playerIno state is updated.
           // this.determineLeader();
+
         })
       )
       .catch(err => console.log(err));
@@ -423,10 +421,7 @@ class Players extends React.Component {
                   </option>
                 </select>
               </div>
-            </Col>
-
-            
-            
+            </Col>      
             <Col size="xl-2 lg-6"><UpdatePlayerBtn type="submit" onClick={this.handleUpdateSubmit} /></Col>
             <Col size="xl-2 lg-6"><DeleteBtn type="submit" onClick={this.handleDeleteSubmit} /></Col>
           </Row>
