@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 import Messages from "./../../pages/Messages";
 
 
+// comment to see if things are working with git 
 
 const CurrentGroups = props => (
   <div className="card current-groups">
