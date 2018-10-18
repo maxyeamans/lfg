@@ -15,7 +15,6 @@ class JoinGroupModal extends React.Component {
 
     this.state = {
       show: false,
-      // Figure out how the group ID is coming in through props
       id: props.id,
       gamertag: "",
       role: "",
@@ -24,6 +23,7 @@ class JoinGroupModal extends React.Component {
     };
   }
 
+  // Closes the modal and clears out any previous form inputs
   handleClose() {
     this.setState({
       show: false,
@@ -33,6 +33,7 @@ class JoinGroupModal extends React.Component {
     });
   }
 
+  // Display the modal
   handleShow() {
     this.setState({ show: true });
   }
@@ -41,6 +42,7 @@ class JoinGroupModal extends React.Component {
     // ! Good place to do an API call for the open player slot
   }
 
+  // Form submit function to join group
   handleGroupJoin = (event) => {
     event.preventDefault();
     // console.log(`Join Group Modal data: Group ID is ${groupID}, userID is ${userID}`)
@@ -54,6 +56,12 @@ class JoinGroupModal extends React.Component {
     .catch(err => console.log(err));
   }
 
+  // Combined function that submits Group Join form and closes modal
+  handleJoinAndClose = (event) =>{
+    this.handleGroupJoin(event);
+    this.handleClose();
+  }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -61,19 +69,14 @@ class JoinGroupModal extends React.Component {
     });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-
-    this.createUpdatedUser(this.state._id, this.state.username, this.state.password, this.state.email);
-  };
-
   render() {
     return (
       <div>
+        {/* Button displayed under Group search results */}
         <Button id="join-btn" bsStyle="primary" bsSize="large" onClick={this.handleShow}>
           Request to Join
         </Button>
-
+        {/* Modal begins here */}
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header>
             <Modal.Title><h2>Your Player Info</h2></Modal.Title>
@@ -114,7 +117,8 @@ class JoinGroupModal extends React.Component {
                   value={this.state.rank}
                 />
               </div>
-              <button className="pmodal-update-btn" onClick={this.handleGroupJoin} disabled={!(this.state.gamertag && this.state.role && this.state.rank)}>
+              {/* Button is disabled until the user enters gamertag, role, and rank */}
+              <button className="pmodal-update-btn" onClick={this.handleJoinAndClose} disabled={!(this.state.gamertag && this.state.role && this.state.rank)}>
                 Send Request
               </button>
             </form>
