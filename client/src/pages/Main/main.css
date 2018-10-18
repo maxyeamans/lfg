@@ -47,16 +47,16 @@ body {
     padding-top:80px;
     font-size:50px;
     letter-spacing: 2px;
-
-
+    float:left;
+    margin-left:10%
 }
 
 #overwatch-char {
   background-image: url("../../images/sombra.png");
   background-repeat: no-repeat;
   height: 500px;
+ margin-left:55%;
 }
-
 
 
 
@@ -118,40 +118,14 @@ body {
 
 }
 
-@media only screen and (max-width: 425px) {
-  /* For mobile phones: */
-
-
-
-
-#overwatch-char{
-    background-image: url("../../images/sombra.png"); 
-    background-repeat:no-repeat;
-   margin:auto;
-   margin-top:40px;
+/* @media only screen and (max-width: 768px) {
+  
+    .col-6 {
+        width: 100%;
+    }
+    
+} */
  
-  }
-
-  #about-us{
-      color:white;
-      text-align:center;
-      padding-top:80px;
-      font-size:50px;
-      letter-spacing: 2px;
-
-
-  }
-
-  h2 {
-    color: rgb(199, 199, 199);
-    font-family: "bignoodletoo";
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 15px;
-
-  }
-  }
-      
 
 
 @media only screen and (max-width: 747px) {
@@ -213,12 +187,17 @@ body {
        
       }
 
-
-  #about-us{
-    text-align:center;
-    padding-top:80px;
-    font-size:50px;
-    letter-spacing: 2px;
-  }
+      #about-us{
+        color:white;
+        text-align:center;
+        font-size:50px;
+        letter-spacing: 2px;
+       width:100%;
+       margin-left:0%;
+    }
+    
+    #overwatch-char {
+   width:0px;
+    }
    
 }
