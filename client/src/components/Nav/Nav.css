@@ -21,7 +21,7 @@ body {
     background-color:rgba(22, 22, 22, 0.486);
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
-   width: 100%;
+    width: 100%;
     z-index: 3;
     
 
@@ -108,7 +108,7 @@ body {
   }
   
   .header .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 300px;
   }
   
   .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -141,9 +141,12 @@ body {
       clear: none;
       float: right;
       max-height: none;
+      
     }
     .header .menu-icon {
       display: none;
     }
+
+    
   }
   

@@ -36,6 +36,11 @@ class ManageGroupModal extends React.Component {
 
   componentDidMount() {
     this.handleGroupId();
+    this.deleteGroupId();
+  }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
   }
 
   loadGroup = () => {
@@ -229,13 +234,13 @@ class ManageGroupModal extends React.Component {
               >
                 Update
               </button>
-              {/* <button
+              <button
                 type="submit"
                 className="btn btn-danger"
                 onClick={this.handleFormDelete}
               >
                 Delete
-              </button> */}
+              </button>
               <div>{deleteBtn}</div>
             </form>
          
@@ -246,10 +251,10 @@ class ManageGroupModal extends React.Component {
           
             {/* <a className="btn btn-primary" id="mg-close" href="/mypage" role="button"><p>close</p></a> */}
           
-
-            <Button className="pmodal-close" onClick={this.handleClose}>
+            <a className="btn btn-primary pmodal-close"  href="/mypage" role="button">close</a>
+            {/* <Button className="pmodal-close" onClick={this.handleClose}>
               Close
-            </Button >
+            </Button > */}
            </Modal.Footer>
         </Modal>
       </div>

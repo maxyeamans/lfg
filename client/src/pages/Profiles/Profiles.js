@@ -19,6 +19,7 @@ class Profiles extends Component {
     this.loadUsers();
     this.loadProfiles();
     this.loadGroups();
+    this.deleteGroupId();
   }
 
   loadUsers = () => {
@@ -48,10 +49,9 @@ class Profiles extends Component {
     
   };
 
-  // _onChange = event => {
-  //   event.preventDefault();
-  //   this.setState({ [event.target.name]: event.target.value });
-  // };
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+  }
 
   render() {
     return (

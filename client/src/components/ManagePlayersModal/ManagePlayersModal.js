@@ -38,7 +38,13 @@ class ManagePlayersModal extends React.Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.deleteGroupId();
+  }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
