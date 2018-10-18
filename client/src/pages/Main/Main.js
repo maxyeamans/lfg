@@ -64,7 +64,6 @@ class Main extends Component {
 
   };
 
-
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
   //     .then(res => this.setState({ profiles: res.data }))
@@ -128,7 +127,6 @@ class Main extends Component {
         <div id="mainpage-content">
 
           <h1> Looking For Group</h1>
-
           <h1>hello test</h1>
 
 
@@ -192,7 +190,6 @@ class Main extends Component {
         </div>
 
         {/* <h2>MY CURRENT GROUPS ▼</h2>
-
             <div className="mygroups">
               
               {this.handleGroups()}
@@ -217,7 +214,6 @@ class Main extends Component {
             </div> */}
 
         <Footer />
-
       </Container>
     );
   }
