@@ -74,7 +74,17 @@ module.exports = {
       .then( openPlayers => console.log("Open player slots", openPlayers) && openPlayers.length === 0 ? res.json({error: "Error"}) : openPlayers[0] )
       // Add the user to the open player spot and 
       // .then( openPlayer => db.Group.findOneAndUpdate({ _id: req.body.id }, { [openPlayer]: { state: 1, user: req.body.user} }))
-      .then( openPlayer => db.Group.findOneAndUpdate({ _id: req.body.id }, { [openPlayer]: { state: 1, user: req.body.user} }, {new: true}))
+      .then( openPlayer => db.Group.findOneAndUpdate(
+        { _id: req.body.id },
+        { [openPlayer]: {
+          state: 1,
+          user: req.body.user,
+          gamertag: req.body.gamertag,
+          role: req.body.role,
+          rank: req.body.rank
+        }},
+        {new: true}
+      ))
       .then( dbModel => res.json(dbModel))
       // .then( openPlayer => res.json({openPlayer: openPlayer}))
       .catch( err => res.status(422).json(err));
