@@ -22,7 +22,8 @@ class Messages extends React.Component {
       date: Date(Date.now()).toString,
       groupMessages: [],
       gamertag: "",
-      groupData: {}
+      groupData: {},
+      allMessages: []
       
      
       
@@ -57,7 +58,7 @@ class Messages extends React.Component {
   }
 
   loadGroup = () => {
-    this.setState({ group: localStorage.getItem("groupId") });
+    this.setState({ groupId: localStorage.getItem("groupId") });
   }
 
   
@@ -108,14 +109,21 @@ class Messages extends React.Component {
   }
 
   getGroup = () => {
-    API.getGroup(this.state.groupId)
+    API.getGroup({
+      _id: this.state.groupId
+    })
     .then(res =>
-      this.setState({
-        groupData: res.data
-        
-      }, () => {
-        this.getGamertag();
-      })
+      {
+        if (res.data._id === this.state.groupId) {
+          this.setState({
+            groupData: res.data
+            
+          }, () => {
+            this.getGamertag();
+          })
+        }
+      }
+      
     )
     
     .catch(err => console.log(err));
@@ -125,10 +133,18 @@ class Messages extends React.Component {
     // console.log()
     API.getMessages(this.state.groupId)
       .then(res =>
-        this.setState({
-          groupMessages: res.data
-          
-        })
+        {
+          console.log(res.data);
+          res.data.map(message => {
+            if (message.groupId === this.state.groupId) {
+              this.state.groupMessages.push(message);
+                
+              
+            }
+        }
+        
+      
+        )}
       )
       .catch(err => console.log(err));
   };
