@@ -72,12 +72,10 @@ const CurrentGroups = props => (
       <ManageGroupModal idGroup={props._id}/>
       <ManagePlayersModal groupInfo={props.data} idGroup={props._id}/>
       <Button
-          id="messages-btn"
-          bsStyle="primary"
-          bsSize="large"
+          className="manage-groups-btn"
           onClick={() => localStorage.setItem("groupId", props._id)}
         >
-          <a className="btn btn-primary pmodal-button"  href="/messages" role="button">View Messages</a>
+          <a id="messages-btn" href="/messages" role="button">View Messages</a>
           
         </Button>
 
