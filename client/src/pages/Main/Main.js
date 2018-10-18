@@ -165,9 +165,17 @@ class Main extends Component {
 
 </div>
 
+</div>
 
-          
-        </div>
+<div id="main-next">
+
+
+<form action="/search">
+    <input type="submit" value="search all" className="see-all-btn" />
+  </form>
+</div>
+
+        
 
         <div id="main-third">
         </div>
@@ -179,7 +187,7 @@ class Main extends Component {
             <div id="about-us">
 
               Meet the Development Team
-                <h5>Max Yeamans</h5>
+              <h5>Max Yeamans</h5>
               <h5>Daniel Grantham</h5>
               <h5>Katri Morrison</h5>
               <h5>Mike Schumann</h5>

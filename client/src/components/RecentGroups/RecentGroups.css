@@ -1,18 +1,20 @@
 .recent-results{
-  width:25%;
-background-color:rgb(207, 207, 241);
+  width:30%;
+background-color:rgba(207, 207, 241, 0.233);
 float:left;
-
+margin-left:35px;
+border: 1px solid rgb(155, 154, 154);
+border-radius:4px;
 }
 
 .list-group-item1{
   font-family:"bignoodletoo";
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   background-color:rgba(44, 43, 43, 0);
-  color:rgb(255, 255, 255);
+  color:rgb(29, 29, 29);
   font-size:20px;
-  
-  
+  padding-top:10px;
+  list-style: none;
 }
 
 
@@ -20,7 +22,6 @@ float:left;
 border: 1px solid rgb(155, 154, 154);
 margin-top:5%;
 background-color:rgba(44, 43, 43, 0.233);
-
 
 }
 

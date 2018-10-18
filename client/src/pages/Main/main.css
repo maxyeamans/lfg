@@ -61,33 +61,61 @@ h1 {
 }
 
 #main-first{
-    height:60px;
-    background-color:rgb(233, 233, 233);  
+    height:40px;
+    background-color:rgb(255, 255, 255);  
     margin-top:140px;
    
 
     
 }
 #main-second{
-  height:350px;
-  background-color:rgb(31, 30, 30);
+  height:400px;
+  background-color:rgb(255, 255, 255);
   width:100%;
-  
-  color:rgb(219, 216, 216);
+  color:rgb(58, 57, 57);
   text-align:center;
   font-size:50px;
+ 
 }
 
 .main-groups{
     color:black;
+    margin-top:30px;
 }
+
+#main-next{
+    height:60px;
+    background-color:rgb(255, 255, 255);
+  text-align:center;
+  
+}
+
+.see-all-btn{
+    background-color:rgb(139, 201, 241);
+    border: none;
+    color:#ffffff;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    padding:10px;
+    font-size: 20px;
+    border-radius:4px;   
+}
+
+.see-all-btn:hover { 
+    color:#ffffff;
+    background-color:rgb(185, 233, 245);
+}
+
+
 #main-third{
     height:360px;
-    background-color:rgba(105, 104, 104, 0.137);
+    background-color:rgba(241, 240, 240, 0.137);
     width:100%;
   margin-top:0px;
   margin-bottom:200px;
 }
+
+
 
 
 #overwatch-char{
