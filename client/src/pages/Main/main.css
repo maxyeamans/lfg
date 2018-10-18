@@ -41,22 +41,7 @@ body {
   background-color: #999;
 }
 
-#about-us{
-    color:white;
-    text-align:center;
-    padding-top:60px;
-    font-size:50px;
-    letter-spacing: 2px;
-    float:left;
-    margin-left:10%
-}
 
-#overwatch-char {
-  background-image: url("../../images/sombra.png");
-  background-repeat: no-repeat;
- margin-left:55%;
-
-}
 
 
 #main-first{
@@ -116,6 +101,24 @@ body {
   margin-top:0px;
   margin-bottom:120px;
 padding-top:30px;
+
+}
+
+#about-us{
+    color:white;
+    text-align:center;
+    padding-top:60px;
+    font-size:50px;
+    letter-spacing: 2px;
+    float:left;
+    margin-left:20%
+}
+
+#overwatch-char {
+  background-image: url("../../images/sombra.png");
+  background-repeat: no-repeat;
+ margin-left:55%;
+ height:400px;
 
 }
 
