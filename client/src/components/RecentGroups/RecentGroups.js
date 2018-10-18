@@ -8,8 +8,8 @@ const RecentGroups = props => (
   <div data-id={props.group._id} className="recent-results" >
  
     <ul className="list-group">
-      <li className="list-group-item1">
-     <h5> Name:
+      <li className="list-group-item-a">
+     <h5> 
         {props.group.groupName}
         </h5>
       </li>

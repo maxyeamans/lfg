@@ -98,29 +98,20 @@ class Main extends Component {
         <div id="main-third">
         
 
-        <Row>
-
-          <Col size="xl-7 sm-8">
-
+      
             <div id="about-us">
 
               Meet the Development Team
               <a href="https://www.linkedin.com/in/maxyeamans/">  Max Yeamans</a>
               <a href="https://www.linkedin.com/in/daniel-grantham-7852a4a0/"> Daniel Grantham</a>
-              <a href="https://www.linkedin.com/in/katri-morrison-goulias/"> Katri Morrison</a>
+              <a href="https://www.linkedin.com/in/katri-morrison-goulias/"> Katri Morrison-Goulias</a>
               <a href="https://www.linkedin.com/in/michael-schumann-0a39991/"> Mike Schumann</a>
-             
-              
-              
-            </div>
-          </Col>
-          <Col size="xl-5 sm-8">
 
+            </div>
+         
             <div id="overwatch-char">
             </div>
-
-          </Col>
-        </Row>
+        
         </div>
 
      

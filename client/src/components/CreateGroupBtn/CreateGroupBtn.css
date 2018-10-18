@@ -20,6 +20,35 @@
   color: white;
 }
 
+
+@media only screen and (max-width: 750px) {
+  .group-btn {
+    border-radius: 4px;
+    background-color: #f09731;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 35px;
+    padding: 30px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    margin-top:40px;
+    margin:0 auto;
+    display:block;
+    margin-top:50px;
+    margin-bottom:30px;
+  }
+  
+  .group-btn:hover {
+    background-color: rgb(44, 43, 43); 
+    color: #f09731;
+  }
+
+}
+
 @media only screen and (max-width: 425px) {
   .group-btn {
     border-radius: 4px;
