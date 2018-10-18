@@ -1,0 +1,44 @@
+#manage-players-btn {
+  border-radius: 4px;
+  background-color: #ffffffee;
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height:50px;
+  font-family:"bignoodletoo";
+  letter-spacing: 2px;
+  font-size:30px;
+  margin-left: 20px;
+}
+
+#manage-players-btn:hover {
+  background-color: rgb(44, 43, 43);; 
+  color: #ffffff;
+}
+
+.my-modal {
+  width: 90vw;    /* Occupy the 90% of the screen width */
+  max-width: 90vw;
+ 
+} 
+
+.pmodal-button{
+height:30px;
+letter-spacing: 0px;
+background-color:rgb(255, 255, 255);
+color:black;
+cursor: pointer;
+font-family:"bignoodletoo";
+border: solid 1px rgb(192, 191, 191);
+}
+
+.pmodal-button:hover{
+  height:30px;
+  letter-spacing: 0px;
+  background-color:rgb(233, 232, 232);
+  color: black;
+  border: solid 1px rgb(158, 157, 157);
+  }

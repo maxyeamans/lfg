@@ -1,12 +1,84 @@
+
+
 #settings-btn{
-    background-color:#161616;
+    background-color:rgb(250, 142, 0);
     border: none;
-    color:#afafaf;
+    color:#ffffff;
     font-family:"bignoodletoo";
     letter-spacing: 2px;
-   
+    margin-top:10px;
+    margin-left:5px;
+    font-size: 20px;
+    border-radius:2px;
+    margin-right:20px;
+  
   }
   
   #settings-btn:hover { 
     color:#ffffff;
+    background-color:rgb(252, 198, 98);
+}
+
+
+.pmodal-update-btn{
+  font-family:"bignoodletoo";
+letter-spacing: 1px;
+border-radius:4px;
+width:80px;
+color:rgb(19, 163, 62);
+height:30px;
+background-color:rgb(255, 255, 255);
+}
+
+.pmodal-update-btn:hover{
+  font-family:"bignoodletoo";
+letter-spacing: 1px;
+border-radius:4px;
+width:80px;
+color:rgb(37, 179, 44);
+background-color:rgb(245, 244, 244);
+border: 1px solid rgb(185, 185, 185);
+height:30px;
+
+}
+
+.pmodal-logout{
+letter-spacing: 0px;
+border-radius:4px;
+width:80px;
+color:rgb(207, 26, 26);
+height:30px;
+border: 1px solid rgb(206, 206, 206);
+font-family:"bignoodletoo";
+font-size:15px;
+text-align:center;
+padding-top:5px;
+}
+
+.pmodal-logout:hover{
+  letter-spacing: 0px;
+  border-radius:4px;
+  width:80px;
+  color:rgb(228, 18, 18);
+  height:30px;
+  border: 1px solid rgb(202, 202, 202);
+  background-color:rgb(238, 238, 238);
+  font-family:"bignoodletoo";
+  font-size:15px;
+  text-align:center;
+  
+  }
+
+.pmodal-close{
+letter-spacing: 0px;
+border-radius:4px;
+width:80px;
+color:black;
+height:30px;
+font-family:"bignoodletoo";
+padding-bottom:5px;
+}
+
+button{
+  border-radius:4px;
 }

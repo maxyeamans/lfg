@@ -1,0 +1,20 @@
+.update-groups-btn {
+  border-radius: 4px;
+  background-color: #aed3e0;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height:50px;
+  font-family:"bignoodletoo";
+  letter-spacing: 2px;
+  font-size:30px;
+
+}
+
+.update-groups-btn:hover {
+  background-color: rgb(44, 43, 43);; 
+  color: #f09731;
+}

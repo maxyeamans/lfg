@@ -1,28 +1,204 @@
 h1 {
-    color:rgb(34, 34, 34);
-    font-family:"bignoodletoo"; 
-    letter-spacing: 2px;
-   text-align:center;
-   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-  }
+  font-family: "bignoodletoo";
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 100px;
 
-  .mygroups{
-    margin-top:2%;
-  }
+  /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+}
 
-  .creategroupSearch{
-      background-color:blue;
-      width:100%;
-  }
+h2 {
+  font-family: "bignoodletoo";
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 30px;
+  /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+}
 
-  .buttons{
-      padding:20px;
-      margin:auto;
-      width:50%;
-      margin-top:20%;
-  }
+h3 {
+  text-align: center;
+  color: rgb(196, 196, 196);
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
 
-  body{
-      background-color:rgb(223, 219, 219);
-  }
+#mainpage-content {
+  margin-top: 200px;
+  margin-bottom: 110px;
+
+}
+
+.button1,
+.button2 {
+  margin: auto;
+}
+
+body {
+  background-image: url("../../images/background2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+}
+
+
+
+
+#main-first{
+    height:40px;
+    background-color:rgba(51, 51, 51, 0.322);  
+    margin-top:140px;
+   
+}
+
+
+
+#main-second{
+  height:430px;
+  background-color:rgba(51, 51, 51, 0.322);
+  width:100%;
+  color:rgb(255, 255, 255);
+  text-align:center;
+  font-size:50px;
+ 
+}
+
+.main-groups{
+    color:black;
+    margin-top:30px;
+    
+}
+
+#main-next{
+    height:100px;
+    background-color:rgba(51, 51, 51, 0.322);
+  text-align:center;
+  border:none;
   
+}
+
+.see-all-btn{
+    background-color:rgb(85, 157, 240);
+    border: none;
+    color:#ffffff;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    padding:10px;
+    font-size: 20px;
+    border-radius:4px;   
+}
+
+.see-all-btn:hover { 
+    color:#ffffff;
+    background-color:rgb(185, 233, 245);
+}
+
+
+#main-third{
+    height:350px;
+    background-color:rgba(109, 123, 170, 0.164);
+    width:100%;
+  margin-top:0px;
+  margin-bottom:120px;
+padding-top:30px;
+
+}
+
+#about-us{
+    color:white;
+    text-align:center;
+    padding-top:60px;
+    font-size:50px;
+    letter-spacing: 2px;
+    float:left;
+    margin-left:20%
+}
+
+#overwatch-char {
+  background-image: url("../../images/sombra.png");
+  background-repeat: no-repeat;
+ margin-left:55%;
+ height:400px;
+
+}
+
+ 
+
+
+@media only screen and (max-width: 747px) {
+    /* For mobile phones: */
+    #mainpage-content {
+        margin-top: 100px;
+        
+      }
+
+    h1 {
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:60px;
+        margin-top:30px;
+        /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+      }
+    
+      h2 {
+        color:rgb(199, 199, 199);
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:15px;
+      
+       /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+      }
+    
+      h3{
+        text-align:center;
+        color:rgb(196, 196, 196);
+         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-size:15px;
+      }
+    
+     
+      
+      .button1, .button2{     
+          margin:auto;    
+          width:100%;   
+      }
+    
+    
+    
+      body{   
+        background-image: url("../../images/background2.jpg");    
+      }
+      
+    .mygroups{
+        margin-bottom:300px;
+        margin-top:100px;      
+    }
+    
+    #main-second{
+        height:980px;
+        background-color:rgba(51, 51, 51, 0.322);
+        width:100%;
+        color:rgb(58, 57, 57);
+        text-align:center;
+        font-size:50px;
+       
+      }
+
+      #about-us{
+        color:white;
+        text-align:center;
+        font-size:50px;
+        letter-spacing: 2px;
+       width:100%;
+       margin-left:0%;
+      padding-top:40px;
+    }
+    
+    #overwatch-char {
+   width:0px;
+    }
+   
+}

@@ -1,0 +1,32 @@
+
+
+.player-item {
+  font-family: "bignoodletoo";
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin-top: 5%;
+}
+
+.card1 {
+  border: 1px solid rgb(228, 225, 225);
+  border-radius:4px;
+  background-color:rgb(255, 255, 255);
+  width: 90%;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:20px;
+}
+
+#player-gamertag {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+#player-name{
+  height:40px;
+  padding-bottom:5px;
+  font-size:20px;
+  margin-top:12px;
+}
