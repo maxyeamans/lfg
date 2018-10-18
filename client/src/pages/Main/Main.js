@@ -156,30 +156,30 @@ class Main extends Component {
 
         <div id="main-second">
 
-          Recently added groups
+          Recently Created
 
-<div className="main-groups">
-  {this.state.groups.map(group => (
-    <RecentGroups group={group} handleGroupJoin={this.handleGroupJoin} />
-  ))}
+          <div className="main-groups">
+            {this.state.groups.map(group => (
+              <RecentGroups group={group} handleGroupJoin={this.handleGroupJoin} />
+            ))}
 
-</div>
+          </div>
 
-</div>
+        </div>
 
-<div id="main-next">
+        <div id="main-next">
 
 
-<form action="/search">
-    <input type="submit" value="search all" className="see-all-btn" />
-  </form>
-</div>
+          <form action="/search">
+            <input type="submit" value="search all" className="see-all-btn" />
+          </form>
+        </div>
 
-        
+
 
         <div id="main-third">
-        </div>
         
+
         <Row>
 
           <Col size="xl-7 sm-8">
@@ -187,10 +187,13 @@ class Main extends Component {
             <div id="about-us">
 
               Meet the Development Team
-              <h5>Max Yeamans</h5>
-              <h5>Daniel Grantham</h5>
-              <h5>Katri Morrison</h5>
-              <h5>Mike Schumann</h5>
+              <a href="url">  <h5>Max Yeamans</h5></a>
+              <a href="url">  <h5>Daniel Grantham</h5></a>
+              <a href="url"> <h5>Katri Morrison</h5></a>
+              <a href="url"> <h5>Mike Schumann</h5></a>
+             
+              
+              
             </div>
           </Col>
           <Col size="xl-5 sm-8">
@@ -200,7 +203,7 @@ class Main extends Component {
 
           </Col>
         </Row>
-
+        </div>
 
 
         <Footer />

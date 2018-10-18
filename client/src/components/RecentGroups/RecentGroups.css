@@ -1,11 +1,13 @@
 .recent-results{
-  width:30%;
+width:30%;
 background-color:rgba(207, 207, 241, 0.233);
 float:left;
 margin-left:35px;
 border: 1px solid rgb(155, 154, 154);
 border-radius:4px;
 }
+
+
 
 .list-group-item1{
   font-family:"bignoodletoo";
@@ -22,6 +24,33 @@ border-radius:4px;
 border: 1px solid rgb(155, 154, 154);
 margin-top:5%;
 background-color:rgba(44, 43, 43, 0.233);
+
+}
+
+@media only screen and (max-width: 1150px) {
+  
+  .recent-results{
+    width:25%;
+    background-color:rgba(207, 207, 241, 0.233);
+    float:left;
+    margin-left:6%;
+    border: 1px solid rgb(155, 154, 154);
+    border-radius:4px;
+    }
+
+
+}
+
+@media only screen and (max-width: 747px) {
+  
+  .recent-results{
+  width:100%;
+  background-color:rgba(207, 207, 241, 0.233);
+  margin:auto;
+  border: 1px solid rgb(155, 154, 154);
+  border-radius:4px;
+  }
+
 
 }
 

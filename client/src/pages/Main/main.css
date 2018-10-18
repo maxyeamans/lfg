@@ -62,7 +62,7 @@ h1 {
 
 #main-first{
     height:40px;
-    background-color:rgb(255, 255, 255);  
+    background-color:rgb(250, 249, 249);  
     margin-top:140px;
    
 
@@ -70,7 +70,7 @@ h1 {
 }
 #main-second{
   height:400px;
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(250, 249, 249);
   width:100%;
   color:rgb(58, 57, 57);
   text-align:center;
@@ -85,8 +85,9 @@ h1 {
 
 #main-next{
     height:60px;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(250, 249, 249);
   text-align:center;
+  border:none;
   
 }
 
@@ -109,10 +110,10 @@ h1 {
 
 #main-third{
     height:360px;
-    background-color:rgba(241, 240, 240, 0.137);
+    background-color:rgba(109, 123, 170, 0.164);
     width:100%;
   margin-top:0px;
-  margin-bottom:200px;
+  margin-bottom:120px;
 }
 
 
@@ -137,12 +138,8 @@ h1 {
 
       
 
-  
 
-
-
-
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 747px) {
     /* For mobile phones: */
 
     h1 {
@@ -191,7 +188,15 @@ h1 {
         margin-top:100px;      
     }
     
-
+    #main-second{
+        height:1000px;
+        background-color:rgb(255, 255, 255);
+        width:100%;
+        color:rgb(58, 57, 57);
+        text-align:center;
+        font-size:50px;
+       
+      }
 
 
   #about-us{
