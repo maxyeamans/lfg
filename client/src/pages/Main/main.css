@@ -44,7 +44,7 @@ body {
 #about-us{
     color:white;
     text-align:center;
-    padding-top:80px;
+    padding-top:60px;
     font-size:50px;
     letter-spacing: 2px;
     float:left;
@@ -54,25 +54,25 @@ body {
 #overwatch-char {
   background-image: url("../../images/sombra.png");
   background-repeat: no-repeat;
-  height: 500px;
  margin-left:55%;
-}
 
+}
 
 
 #main-first{
     height:40px;
-    background-color:rgb(250, 249, 249);  
+    background-color:rgb(143, 187, 245);  
     margin-top:140px;
+   
 }
 
 
 
 #main-second{
   height:400px;
-  background-color:rgb(250, 249, 249);
+  background-color:rgb(143, 187, 245);
   width:100%;
-  color:rgb(58, 57, 57);
+  color:rgb(255, 255, 255);
   text-align:center;
   font-size:50px;
  
@@ -81,18 +81,19 @@ body {
 .main-groups{
     color:black;
     margin-top:30px;
+    
 }
 
 #main-next{
     height:60px;
-    background-color:rgb(250, 249, 249);
+    background-color:rgb(143, 187, 245);
   text-align:center;
   border:none;
   
 }
 
 .see-all-btn{
-    background-color:rgb(139, 201, 241);
+    background-color:rgb(85, 157, 240);
     border: none;
     color:#ffffff;
     font-family:"bignoodletoo";
@@ -109,34 +110,31 @@ body {
 
 
 #main-third{
-    height:360px;
+    height:350px;
     background-color:rgba(109, 123, 170, 0.164);
     width:100%;
   margin-top:0px;
   margin-bottom:120px;
-
+padding-top:30px;
 
 }
 
-/* @media only screen and (max-width: 768px) {
-  
-    .col-6 {
-        width: 100%;
-    }
-    
-} */
  
 
 
 @media only screen and (max-width: 747px) {
     /* For mobile phones: */
+    #mainpage-content {
+        margin-top: 100px;
+        
+      }
 
     h1 {
         font-family:"bignoodletoo"; 
         letter-spacing: 2px;
         text-align:center;
         font-size:60px;
-        margin-top:50px;
+        margin-top:30px;
         /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
       }
     
@@ -157,13 +155,11 @@ body {
         font-size:15px;
       }
     
-      h5{
-        font-size:5px;
-        color: blue;
-      }
+     
       
       .button1, .button2{     
-          margin:auto;       
+          margin:auto;    
+          width:100%;   
       }
     
     
@@ -178,8 +174,8 @@ body {
     }
     
     #main-second{
-        height:1000px;
-        background-color:rgb(255, 255, 255);
+        height:980px;
+        background-color:rgb(143, 187, 245);
         width:100%;
         color:rgb(58, 57, 57);
         text-align:center;
@@ -194,6 +190,7 @@ body {
         letter-spacing: 2px;
        width:100%;
        margin-left:0%;
+      padding-top:40px;
     }
     
     #overwatch-char {

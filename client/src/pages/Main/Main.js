@@ -104,7 +104,7 @@ class Main extends Component {
               Meet the Development Team
               <a href="https://www.linkedin.com/in/maxyeamans/">  Max Yeamans</a>
               <a href="https://www.linkedin.com/in/daniel-grantham-7852a4a0/"> Daniel Grantham</a>
-              <a href="https://www.linkedin.com/in/katri-morrison-goulias/"> Katri Morrison</a>
+              <a href="https://www.linkedin.com/in/katri-morrison-goulias/"> Katri Morrison-Goulias</a>
               <a href="https://www.linkedin.com/in/michael-schumann-0a39991/"> Mike Schumann</a>
 
             </div>
