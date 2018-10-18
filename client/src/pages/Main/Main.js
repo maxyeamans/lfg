@@ -51,6 +51,10 @@ class Main extends Component {
 
   };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4605f53c7cbec896b9c36a4a97abe5ab7c34adaa
   // loadUser = () => {
   //   let username = localStorage.getItem("username");
   //   console.log(username);
@@ -60,8 +64,15 @@ class Main extends Component {
 
   //     .then(this.handleGroups())
   //     .catch(err => console.log(err));
+<<<<<<< HEAD
   deleteGroupId = () => {
     localStorage.removeItem("groupId");
+=======
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+>>>>>>> 4605f53c7cbec896b9c36a4a97abe5ab7c34adaa
 
   };
 
