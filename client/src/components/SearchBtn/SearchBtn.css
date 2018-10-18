@@ -15,14 +15,14 @@
 }
 
 .search-btn:hover {
-  background-color: #ebb87e; /* Green */
+  background-color: #ebb87e; 
   color: #ffffff;
 }
 
 @media only screen and (max-width: 425px) {
   .search-btn {
     border-radius: 4px;
-    background-color: #aed3e0;
+    background-color: #f09731;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -41,8 +41,8 @@
   }
   
   .search-btn:hover {
-    background-color: rgb(44, 43, 43); /* Green */
-    color: #f09731;
+    background-color: #ebb87e; 
+    color: #ffffff;
   }
 }
 

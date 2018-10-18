@@ -130,17 +130,17 @@ class Main extends Component {
 
         <Row>
           {/* <container className="creategroupSearch"> */}
-          <Col size="xl-6 lg-6">
+          {/* <Col size="xl-6 lg-6"> */}
             <div class="button1">
               <CreateGroupBtn />
             </div>
-          </Col>
-          <Col size="xl-6 lg-6">
+          {/* </Col>
+          <Col size="xl-6 lg-6"> */}
             <div class="button2">
               <SearchBtn />
             </div>
 
-          </Col>
+          {/* </Col> */}
         </Row>
         {/* </container> */}
 <Row>

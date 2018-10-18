@@ -31,9 +31,7 @@ h1 {
 
   
   .button1, .button2{
-      padding:10px;
-      margin:auto;
-      width:50%;
+    margin:auto;
     
   }
 
@@ -122,12 +120,12 @@ margin-left:10%;
       }
     
       h2 {
-        color:rgb(228, 226, 226);
+        color:rgb(199, 199, 199);
         font-family:"bignoodletoo"; 
         letter-spacing: 2px;
         text-align:center;
         font-size:15px;
-    
+      
        /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
       }
     
@@ -144,14 +142,7 @@ margin-left:10%;
           margin:auto;       
       }
     
-    .button1{
-        margin-top: 10px;
-        margin-left:4px;
-    }
     
-      .button2{
-        margin-top:10px;
-      }
     
     
       body{   
