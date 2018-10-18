@@ -1,35 +1,22 @@
 .updatep-btn {
   float: right; 
-  /* color: #000000;
-  background-color:rgb(141, 231, 110);
-  font-size:20px;
-  font-family:"bignoodletoo";
-  -webkit-transition-duration: 0.4s; 
-  transition-duration: 0.4s;
-  border-radius: 4px;
-  border: none;
-  padding: 5px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  margin:10px;  */
-  width:35%;
+  width:80px;
   height:20px;
   font-size:16px;
   margin:10px;
- 
+  cursor: pointer;
   text-align:center;
  color:orange;
+ background-color:white;
+
 }
 
-.update-btn:hover {
-  color: #f09731;
-  background-color: rgb(44, 43, 43);
+.updatep-btn:hover {
+  color:rgb(245, 212, 153);
+ 
 }
 
-.update-btn:active { 
-  background-color: #aed3e0;
-  color: #ffffff;
-}
+
 
 
 
