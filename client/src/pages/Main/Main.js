@@ -19,7 +19,6 @@ class Main extends Component {
       userGroups: [],
       globalId: "",
       dataArray: []
-
     };
   }
 
@@ -31,24 +30,22 @@ class Main extends Component {
     // this.handleGroups();
   }
 
-
-
   loadUser = () => {
     let username = localStorage.getItem("username");
     console.log(username);
     API.getUsers()
       // .then(res => this.setState({ globalId: res.data._id }))
       // .then(res => localStorage.setItem("globalId", res.data._id))
-      .then(res => res.data.map(group => {
-        if (username === group.username) {
-          this.setState({ globalId: group._id });
-          localStorage.setItem("globalId", group._id);
-        }
-      }),
+      .then(res =>
+        res.data.map(group => {
+          if (username === group.username) {
+            this.setState({ globalId: group._id });
+            localStorage.setItem("globalId", group._id);
+          }
+        })
       )
       .then(this.handleGroups())
       .catch(err => console.log(err));
-
   };
 
   // loadUser = () => {
@@ -67,11 +64,6 @@ class Main extends Component {
 
   };
 
-  //test comment
-
-
-
-
 
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
@@ -87,7 +79,6 @@ class Main extends Component {
     API.getGroups()
       .then(res => this.setState({ groups: res.data }))
       .catch(err => console.log(err));
-
   };
 
 
@@ -102,12 +93,18 @@ class Main extends Component {
     console.log("Global ID: " + this.state.globalId);
     console.log(this.state.groups);
     this.state.groups.map(group => {
-      if (this.state.globalId === group.player1.user || group.player2.user || group.player3.user || group.player4.user || group.player5.user || group.player6.user) {
+      if (
+        this.state.globalId === group.player1.user ||
+        group.player2.user ||
+        group.player3.user ||
+        group.player4.user ||
+        group.player5.user ||
+        group.player6.user
+      ) {
         this.state.userGroups.push(group);
       }
     });
-  }
-
+  };
 
   // _onChange = event => {
   //   event.preventDefault();
@@ -131,6 +128,7 @@ class Main extends Component {
         <div id="mainpage-content">
 
           <h1> Looking For Group</h1>
+
           <h1>hello test</h1>
 
 
@@ -194,6 +192,7 @@ class Main extends Component {
         </div>
 
         {/* <h2>MY CURRENT GROUPS ▼</h2>
+
             <div className="mygroups">
               
               {this.handleGroups()}
