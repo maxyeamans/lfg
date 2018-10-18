@@ -47,7 +47,7 @@ body {
 
 #main-first{
     height:40px;
-    background-color:rgb(143, 187, 245);  
+    background-color:rgba(51, 51, 51, 0.322);  
     margin-top:140px;
    
 }
@@ -55,8 +55,8 @@ body {
 
 
 #main-second{
-  height:400px;
-  background-color:rgb(143, 187, 245);
+  height:430px;
+  background-color:rgba(51, 51, 51, 0.322);
   width:100%;
   color:rgb(255, 255, 255);
   text-align:center;
@@ -71,8 +71,8 @@ body {
 }
 
 #main-next{
-    height:60px;
-    background-color:rgb(143, 187, 245);
+    height:100px;
+    background-color:rgba(51, 51, 51, 0.322);
   text-align:center;
   border:none;
   
@@ -179,7 +179,7 @@ padding-top:30px;
     
     #main-second{
         height:980px;
-        background-color:rgb(143, 187, 245);
+        background-color:rgba(51, 51, 51, 0.322);
         width:100%;
         color:rgb(58, 57, 57);
         text-align:center;
