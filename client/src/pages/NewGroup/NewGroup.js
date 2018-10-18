@@ -20,7 +20,8 @@ class NewGroup extends Component {
 };
 
   componentDidMount() {
-    // this.loadLogin();
+    this.loadLogin();
+    this.deleteGroupId();
     console.log("this is our initial state: ", this.state)
   }
 
@@ -28,13 +29,11 @@ class NewGroup extends Component {
     console.log("our component updated, here is the new state: ", this.state)
   }
 
-  // loadLogin = () => {
-  //   API.getLogin()
-  //   .then(res => this.setState({ user: res.data._id }))
-  //   .catch(err => console.log(err));
-  //   console.log(this.state.user);
+  loadLogin = () => {
+    this.setState({ user: localStorage.getItem("globalId") });
     
-  // }
+    
+  }
 
   loadGroups = () => {
     // gets all users
@@ -70,6 +69,11 @@ class NewGroup extends Component {
       .then(res => console.log(res))
       .catch(err => console.log(err));
   }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
 
   // _onChange = event => {
   //   event.preventDefault();

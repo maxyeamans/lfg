@@ -25,7 +25,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.loadUser();
-    // this.loadProfiles();
+    this.deleteGroupId();
     // this.loadLogin();
     this.loadGroups();
     // this.handleGroups();
@@ -60,8 +60,10 @@ class Main extends Component {
 
   //     .then(this.handleGroups())
   //     .catch(err => console.log(err));
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
 
-  // };
+  };
 
 
 

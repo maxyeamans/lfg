@@ -85,13 +85,6 @@ class Main extends Component {
 
   };
 
-  loadRGroups = () => {
-    // gets all groups
-    API.getGroups()
-      .then(res => this.setState({ groups: res.data }))
-      .catch(err => console.log(err));
-
-  };
 
   handleInputChange = event => {
     const { name, value } = event.target;

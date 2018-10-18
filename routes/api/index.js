@@ -2,12 +2,12 @@ const router = require("express").Router();
 const groupRoutes = require("./group");
 const userRoutes = require("./user");
 const loginRoutes = require("./login");
-// const profileRoutes = require("./profile");
+const messageRoutes = require("./message");
 
 // User routes
 router.use("/users", userRoutes);
 // Profile routes
-// router.use("/profiles", profileRoutes);
+router.use("/messages", messageRoutes);
 // Group routes
 router.use("/groups", groupRoutes);
 // Login routes

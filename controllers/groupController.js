@@ -43,6 +43,9 @@ module.exports = {
       });
   },
   update: function(req, res) {
+    console.log("update group controller");
+    console.log(req.params);
+    console.log(req.body);
     db.Group
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))

@@ -23,7 +23,9 @@ class Login extends Component {
   };
 
 
-  componentDidMount() { }
+  componentDidMount() {
+    this.deleteGroupId();
+   }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -50,6 +52,11 @@ class Login extends Component {
       .then(res => localStorage.setItem("globalId", res.data._id))
       .catch(err => console.log(err));
   }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
 
   // _onChange = event => {
   //   event.preventDefault();
