@@ -19,9 +19,13 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   findById: function(req, res) {
+
     db.Group
       .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => {
+        console.log(dbModel)
+        res.json(dbModel)
+      })
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {

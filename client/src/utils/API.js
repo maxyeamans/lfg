@@ -57,7 +57,7 @@ export default {
   },
   // Updates the message with the given id
   updateMessage: function(id) {
-    return axios.update("/api/messages/" + id);
+    return axios.update("/api/messages/" + id._id);
   },
   ////////////////////////////////////////////////////////////////////////////////
   // Gets all groups
@@ -67,7 +67,8 @@ export default {
   },
   // Gets the group with the given id
   getGroup: function(id) {
-    return axios.get("/api/groups/" + id);
+    console.log(id._id);
+    return axios.get("/api/groups/" + id._id);
   },
   // Deletes the group with the given id
   deleteGroup: function(id) {
