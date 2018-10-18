@@ -1,64 +1,58 @@
-
 h1 {
-    font-family:"bignoodletoo"; 
-    letter-spacing: 2px;
-    text-align:center;
-    font-size:80px;
-    margin-top:100px;
-    
-    
-   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-  }
+  font-family: "bignoodletoo";
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 100px;
 
-  h2 {
-  
-    font-family:"bignoodletoo"; 
-    letter-spacing: 2px;
-    text-align:center;
-    font-size:30px;
-    
-   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-  }
-
-  h3{
-    text-align:center;
-    color:rgb(196, 196, 196);
-     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    
-  }
-
-  #mainpage-content{
-      margin-top:200px;
-      margin-bottom:50px;
-  }
-
-
-  
-  .button1, .button2{
-    margin:auto;
-    
-  }
-
-
-
-
-  body{
-
-    background-image: url("../../images/background2.jpg");
-    background-position: center center;
-    background-repeat:  no-repeat;
-    background-attachment: fixed;
-    background-size:  cover;
-    background-color: #999;
-    
-  }
-
- 
-.mygroups{
-    margin-bottom:200px;
-    margin-left:10%;
-
+  /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
 }
+
+h2 {
+  font-family: "bignoodletoo";
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 30px;
+  /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+}
+
+h3 {
+  text-align: center;
+  color: rgb(196, 196, 196);
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+#mainpage-content {
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+
+.button1,
+.button2 {
+  margin: auto;
+}
+
+body {
+  background-image: url("../../images/background2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+}
+
+#overwatch-char {
+  background-image: url("../../images/sombra.png");
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+#overwatch-char2 {
+  background-image: url("../../images/char6.png");
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
 
 #main-first{
     height:40px;
@@ -66,8 +60,20 @@ h1 {
     margin-top:140px;
    
 
-    
+.mygroups {
+  margin-bottom: 200px;
+  margin-left: 0 !important;
 }
+
+
+#main-first {
+  height: 60px;
+  background-color: rgb(233, 233, 233);
+  width: 105%;
+  margin-left: -20px;
+  margin-top: 140px;
+}
+
 #main-second{
   height:400px;
   background-color:rgb(250, 249, 249);
@@ -114,7 +120,12 @@ h1 {
     width:100%;
   margin-top:0px;
   margin-bottom:120px;
+
+
 }
+
+@media only screen and (max-width: 425px) {
+  /* For mobile phones: */
 
 
 
@@ -133,9 +144,19 @@ h1 {
       padding-top:80px;
       font-size:50px;
       letter-spacing: 2px;
+
+
   }
 
+  h2 {
+    color: rgb(199, 199, 199);
+    font-family: "bignoodletoo";
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 15px;
 
+  }
+  }
       
 
 
@@ -204,6 +225,6 @@ h1 {
     padding-top:80px;
     font-size:50px;
     letter-spacing: 2px;
-}
-
+  }
+   
 }
