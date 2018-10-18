@@ -28,6 +28,7 @@
 
 .card {
   border: 1px solid rgb(155, 154, 154);
+  margin: 0 auto;
   width: 90%;
 }
 
