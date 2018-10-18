@@ -139,24 +139,16 @@ class Main extends Component {
         </div>
 
         <Row>
-          {/* <container className="creategroupSearch"> */}
-          {/* <Col size="xl-6 lg-6"> */}
+
           <div class="button1">
             <CreateGroupBtn />
           </div>
-          {/* </Col>
-          <Col size="xl-6 lg-6"> */}
+
           <div class="button2">
             <SearchBtn />
           </div>
 
-          {/* </Col> */}
-        </Row>
-        {/* </container> */}
-        <Row>
-          <Col size="xl-12 sm-8">{/* <div id="overwatch-char">
 
-</div> */}</Col>
         </Row>
 
         {/* <div id="main-first">
@@ -183,12 +175,35 @@ class Main extends Component {
         <div id="main-third">
         </div> */}
 
+
+          <Row>
+
+            <Col size="xl-7 sm-8">
+
+              <div id="about-us">
+
+                Meet the Development Team
+                <h5>Max Yeamans</h5>
+                <h5>Daniel Grantham</h5>
+                <h5>Katri Morrison</h5>
+                <h5>Mike Schumann</h5>
+         </div>
+            </Col>
+            <Col size="xl-5 sm-8">
+
+              <div id="overwatch-char">
+              </div>
+
+            </Col>
+          </Row>
+
         <h2>MOST RECENT GROUPS ▼</h2>
 
         <div className="mygroups">
           {this.state.groups.map(group => (
             <SearchGroup group={group} handleGroupJoin={this.handleGroupJoin} />
           ))}
+
         </div>
 
         <Footer />
