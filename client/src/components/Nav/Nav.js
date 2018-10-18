@@ -10,6 +10,7 @@ const Nav = () => (
   <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
   <ul class="menu">
     <li className="nav-item"><a className="nav-link" href="/main">Home</a></li>
+    <li className="nav-item"><a className="nav-link" href="/mypage">My Groups</a></li>
     <li className="nav-item"><a href="/search">Search</a></li>
     <li className="nav-item"> <ProfileModal /> </li>
   

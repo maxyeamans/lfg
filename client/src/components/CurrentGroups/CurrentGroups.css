@@ -26,15 +26,16 @@
     font-size:20px;
   }
 
-  /* #group-name{
-    color:#f09731;
-    font-size:25px;
-  } */
-
 
 .card{
   border: 1px solid rgb(155, 154, 154);
   margin-top:5%;
-  background-color:rgba(44, 43, 43, 0);
+  background-color:rgba(44, 43, 43, 0.233);
+}
+
+
+h5{
+  font-size:20px;
+  color: blue;
 }
 
