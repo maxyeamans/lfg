@@ -1,8 +1,8 @@
 #manage-players-btn {
   border-radius: 4px;
-  background-color: #aed3e0;
+  background-color: #ffffffee;
   border: none;
-  color: #FFFFFF;
+  color: rgb(0, 0, 0);
   text-align: center;
   transition: all 0.5s;
   cursor: pointer;
@@ -11,6 +11,7 @@
   font-family:"bignoodletoo";
   letter-spacing: 2px;
   font-size:30px;
+  margin-left: 20px;
 }
 
 #manage-players-btn:hover {

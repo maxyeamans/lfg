@@ -18,7 +18,7 @@ class Players extends React.Component {
       role: this.props.role,
       rank: this.props.rank,
       _id: this.props.id,
-      user: this.props.user,
+      user: localStorage.getItem("globalId"),
       player: this.props.data,
       playerInfo: {},
       state: this.props.state,
@@ -66,7 +66,7 @@ class Players extends React.Component {
     API.getGroup(this.state._id)
       .then(res =>
         this.setState({ playerInfo: res.data }, function() {
-          // Determine Leader function is loaded only after the playerIno state is updated.
+          // Determine Leader function is loaded only after the playerInfo state is updated.
           this.determineLeader();
         })
       )
@@ -370,8 +370,12 @@ class Players extends React.Component {
               </div>
             </Col>
 
-            <Col size="xl-2 lg-6">{updateBtn}</Col>
-            <Col size="xl-2 lg-6">{deleteBtn}</Col>
+            <Col size="xl-2 lg-6">
+              {updateBtn}
+            </Col>
+            <Col size="xl-2 lg-6">
+              {deleteBtn}
+            </Col>
           </Row>
         </div>
       </Container>
