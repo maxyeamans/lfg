@@ -67,6 +67,10 @@ export default {
     return axios.get("/api/groups", {params});
   },
 
+  getNewGroups: function() {
+    return axios.get("/api/groups/new/groups");
+  },
+
   // Gets the group with the given id
   getGroup: function(id) {
     console.log(id._id);

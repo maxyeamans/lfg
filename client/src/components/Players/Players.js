@@ -347,7 +347,7 @@ class Players extends React.Component {
     
     return (
       <Container>
-        <div className="card">
+        <div className="card1">
           <Row>
             <Col size="xl-12 sm-12">
               <div id="player-gamertag">{this.state.player.gamertag}</div>
@@ -358,6 +358,7 @@ class Players extends React.Component {
               <div class="player-item">
                 <input
                   className="form-control"
+                  id="player-name"
                   type="text"
                   name="gamertag"
                   placeholder={this.props.gamertag}

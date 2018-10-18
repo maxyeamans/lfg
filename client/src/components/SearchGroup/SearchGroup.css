@@ -1,6 +1,7 @@
 .results-box{
   width:50%;
 margin: auto;
+margin-bottom:50px;
 }
 
 .search-group-btn{
@@ -8,4 +9,13 @@ margin: auto;
     font-family:"bignoodletoo";
     font-size:25px;
     letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .results-box{
+        width:100%;
+      margin: auto;
+    margin-bottom:50px;
+      }
 }
