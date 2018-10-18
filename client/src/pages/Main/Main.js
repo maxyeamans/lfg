@@ -111,6 +111,10 @@ class Main extends Component {
   //   this.setState({ [event.target.name]: event.target.value });
   // };
 
+
+
+
+  //test message to see if my git commit is working 
   render() {
     return (
 
@@ -124,6 +128,7 @@ class Main extends Component {
         <div id="mainpage-content">
 
           <h1> Looking For Group</h1>
+          <h1>hello test</h1>
 
 
           <h3>Create and join groups with other Overwatch players!</h3>
