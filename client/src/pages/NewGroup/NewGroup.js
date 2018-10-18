@@ -3,6 +3,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./NewGroup.css";
+import Nav from "../../components/Nav";
 
 class NewGroup extends Component {
   state = {
@@ -19,7 +20,8 @@ class NewGroup extends Component {
 };
 
   componentDidMount() {
-    // this.loadLogin();
+    this.loadLogin();
+    this.deleteGroupId();
     console.log("this is our initial state: ", this.state)
   }
 
@@ -27,13 +29,11 @@ class NewGroup extends Component {
     console.log("our component updated, here is the new state: ", this.state)
   }
 
-  // loadLogin = () => {
-  //   API.getLogin()
-  //   .then(res => this.setState({ user: res.data._id }))
-  //   .catch(err => console.log(err));
-  //   console.log(this.state.user);
+  loadLogin = () => {
+    this.setState({ user: localStorage.getItem("globalId") });
     
-  // }
+    
+  }
 
   loadGroups = () => {
     // gets all users
@@ -70,6 +70,11 @@ class NewGroup extends Component {
       .catch(err => console.log(err));
   }
 
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
+
   // _onChange = event => {
   //   event.preventDefault();
   //   this.setState({ [event.target.name]: event.target.value });
@@ -81,6 +86,7 @@ class NewGroup extends Component {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
+      <Nav/>
         <Row>
           <Col size="xl-2 sm-2"/>
           <Col size="xl-8 sm-8">

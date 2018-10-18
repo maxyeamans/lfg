@@ -46,9 +46,9 @@ class ProfileModal extends React.Component {
   }
 
   loadLogin = () => {
-    API.getUser()
+    API.getUser(this.state._id)
       .then(res => this.setState({
-        // _id: res.data._id,
+        _id: localStorage.getItem("globalId"),
         username: res.data.username,
         password: res.data.password,
         email: res.data.email }))
@@ -166,8 +166,10 @@ class ProfileModal extends React.Component {
           </Modal.Body>
           <Modal.Footer>
           <a className="pmodal-logout"  href="/" role="button" onClick={this.handleLogout}>
-            Logout</a>
-            <Button className="pmodal-button" onClick={this.handleClose}>
+           Logout
+            </a>
+
+            <Button className="pmodal-close" onClick={this.handleClose}>
               Close
             </Button >
             

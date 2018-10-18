@@ -38,26 +38,27 @@ export default {
   // },
   
   /////////////////////////////////////////////////////////////////////////
-  // // Gets all profiles
-  // getProfiles: function() {
-  //   return axios.get("/api/profiles");
-  // },
-  // // Gets the profile with the given id
-  // getProfile: function(id) {
-  //   return axios.get("/api/profiles/" + id);
-  // },
-  // // Deletes the profile with the given id
-  // deleteProfile: function(id) {
-  //   return axios.delete("/api/profiles/" + id);
-  // },
-  // // Saves a profile to the database
-  // saveProfile: function(profileData) {
-  //   return axios.post("/api/profiles", profileData);
-  // },
-  // // Updates the profile with the given id
-  // updateProfile: function(id) {
-  //   return axios.update("/api/profiles/" + id);
-  // },
+  // Gets all messages
+  getMessages: function() {
+    return axios.get("/api/messages");
+  },
+  // Gets the message with the given id
+  getMessage: function(id) {
+    return axios.get("/api/messages/" + id);
+  },
+  // Deletes the message with the given id
+  deleteMessage: function(id) {
+    return axios.delete("/api/messages/" + id);
+  },
+  // Saves a message to the database
+  saveMessage: function(messageData) {
+    console.log(messageData);
+    return axios.post("/api/messages", messageData);
+  },
+  // Updates the message with the given id
+  updateMessage: function(id) {
+    return axios.update("/api/messages/" + id);
+  },
   ////////////////////////////////////////////////////////////////////////////////
   // Gets all groups
   // Params takes a JSON object created from the request query (e.g., /api/groups?platform=PS4)
@@ -79,10 +80,12 @@ export default {
   },
   // Updates the group with the given id
   updateGroup: function(groupData) {
+    console.log(groupData);
     return axios.put("/api/groups/" + groupData._id, groupData);
   },
   joinGroup: function(groupData) {
     return axios.put("/api/groups/join/" + groupData.id, groupData);
   }
+
   
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import "./SearchGroup.css";
+import JoinGroupModal from "../JoinGroupModal";
 
 const SearchGroup = props => (
 
 
-  <div data-id={props.group._id} className="card my-3" >
+  <div data-id={props.group._id} className="results-box" >
  
     <ul className="list-group">
       <li className="list-group-item">
@@ -23,7 +24,8 @@ const SearchGroup = props => (
         <strong>Time Played:</strong>
         {props.group.time}
       </li>
-      <button className="btn btn-primary search-group-btn" id={props.group._id} onClick={props.handleGroupJoin}>Request Join</button>
+      {/* <button className="btn btn-primary search-group-btn" id={props.group._id} onClick={ () => props.handleGroupJoin(props.group._id) }>Request Join</button> */}
+      <JoinGroupModal id={props.group._id} />
     </ul>
   </div>
 );

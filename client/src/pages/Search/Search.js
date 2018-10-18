@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import "./Search.css";
 import API from "../../utils/API";
 
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,11 @@ class Search extends Component {
       groupRank: "",
       joinGroup: ""
     };
+  }
+
+  componentDidMount() {
+    this.deleteGroupId();
+    
   }
 
   loadGroups = () => {
@@ -57,30 +63,36 @@ class Search extends Component {
   }
 
   // ! TODO: Needs a way to get user info.
-  handleGroupJoin = (event) => {
-    event.preventDefault();
-    this.setState({
-      joinGroup: event.target.id
-    });
+  // handleGroupJoin = (event) => {
+  handleGroupJoin = id => {
+    // event.preventDefault();
+    // this.setState({
+    //   joinGroup: event.target.id
+    // });
     console.log("Group ID getting sent to API.joinGroup", this.state.joinGroup);
     API.joinGroup({
-      id: event.target.id,
+      id: id,
       user: localStorage.getItem("globalId")
     })
     console.log("Request to Join was clicked.", this.state.joinGroup);
   }
 
-  componentDidMount() {
-    // TODO: Insert code to set state.currentGroups to an array of groupIDs to which the logged in user currently belongs.
-    // I think we'll need this info to do a client-side check to make sure the user isn't joining a group to which they already belong.
-  }
+  // componentDidMount() {
+  //   // TODO: Insert code to set state.currentGroups to an array of groupIDs to which the logged in user currently belongs.
+  //   // I think we'll need this info to do a client-side check to make sure the user isn't joining a group to which they already belong.
+  // }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
 
   render() {
     return (
       // NAV IS RIGHT HERE
       <Container fluid>
-        <Row>
-          <Col size="xl-12 lg-6">
+       <Nav/>
+          
             <div id="search-groups">
               <h4>Search for a group below</h4>
               <SearchBar
@@ -88,8 +100,8 @@ class Search extends Component {
                 handleFormSubmit={this.handleFormSubmit}
               />
             </div>
-          </Col>
-        </Row>
+       
+      
 
         <div id="search-results">
           <h5> ▼ </h5>

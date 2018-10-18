@@ -23,7 +23,9 @@ class Login extends Component {
   };
 
 
-  componentDidMount() { }
+  componentDidMount() {
+    this.deleteGroupId();
+   }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -51,6 +53,11 @@ class Login extends Component {
       .catch(err => console.log(err));
   }
 
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
+
   // _onChange = event => {
   //   event.preventDefault();
   //   this.setState({ [event.target.name]: event.target.value });
@@ -62,6 +69,16 @@ class Login extends Component {
       <Container fluid
       // style={styles}
       >
+
+
+        <nav>
+          <header className="header">
+            <a href="/" className="logo">LFG</a>
+            <input className="menu-btn" type="checkbox" id="menu-btn" />
+            <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+
+          </header>
+        </nav>
 
         <div id="login-form">
           <form className="m-5" action="/main">
@@ -92,7 +109,10 @@ class Login extends Component {
             <a className="reg-l-btn" href="/register" role="button"><p>Register</p></a>
           </div>
 
+
         </div>
+
+
 
       </Container>
     );

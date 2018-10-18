@@ -24,3 +24,21 @@
   max-width: 90vw;
  
 } 
+
+.pmodal-button{
+height:30px;
+letter-spacing: 0px;
+background-color:rgb(255, 255, 255);
+color:black;
+cursor: pointer;
+font-family:"bignoodletoo";
+border: solid 1px rgb(192, 191, 191);
+}
+
+.pmodal-button:hover{
+  height:30px;
+  letter-spacing: 0px;
+  background-color:rgb(233, 232, 232);
+  color: black;
+  border: solid 1px rgb(158, 157, 157);
+  }

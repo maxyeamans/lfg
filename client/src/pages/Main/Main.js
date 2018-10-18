@@ -9,6 +9,7 @@ import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import "./main.css";
 // import SearchGroup from "../../components/SearchGroup";
+import Nav from "../../components/Nav";
 
 class Main extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.loadUser();
-    // this.loadProfiles();
+    this.deleteGroupId();
     // this.loadLogin();
     this.loadGroups();
     // this.handleGroups();
@@ -47,17 +48,10 @@ class Main extends Component {
       .catch(err => console.log(err));
   };
 
-  // loadUser = () => {
-  //   let username = localStorage.getItem("username");
-  //   console.log(username);
-  //   API.getUserName(username)
-  //     .then(res => this.setState({ globalId: res.data._id }))
-  //     .then(res => localStorage.setItem("globalId", res.data._id))
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
 
-  //     .then(this.handleGroups())
-  //     .catch(err => console.log(err));
-
-  // };
+  };
 
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
@@ -106,10 +100,16 @@ class Main extends Component {
 
   render() {
     return (
-      // NAV IS RIGHT HERE
+     
+      
 
       <Container fluid>
-        <div id="mainpage-content">
+        
+        <Nav/>
+        
+          
+          <div id="mainpage-content">
+
           <h1> Looking For Group</h1>
 
           <h3>Create and join groups with other Overwatch players!</h3>
@@ -135,30 +135,33 @@ class Main extends Component {
 </div> */}</Col>
         </Row>
         {/* <Row> */}
-        {/* <Col size="xl-12 sm-8"> */}
-        <div className="mygroups">
+          {/* <Col size="xl-12 sm-8"> */}
           <h2>MY CURRENT GROUPS ▼</h2>
-          {this.handleGroups()}
-          {this.state.userGroups.map(group => (
-            <CurrentGroups
-              data={group}
-              _id={group._id}
-              groupName={group.groupName}
-              platform={group.platform}
-              groupRank={group.groupRank}
-              time={group.time}
-              player1={group.player1.gamertag}
-              player2={group.player2.gamertag}
-              player3={group.player3.gamertag}
-              player4={group.player4.gamertag}
-              player5={group.player5.gamertag}
-              player6={group.player6.gamertag}
-              player1Role={group.player1.role}
-              player1Rank={group.player1.rank}
-            />
-          ))}
-        </div>
-        {/* </Col> */}
+            <div className="mygroups">
+              
+            
+              {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
+              {this.handleGroups()}
+              {this.state.userGroups.map(group => (
+                <CurrentGroups
+                  data={group}
+                  _id={group._id}
+                  groupName={group.groupName}
+                  platform={group.platform}
+                  groupRank={group.groupRank}
+                  time={group.time}
+                  player1={group.player1.gamertag}
+                  player2={group.player2.gamertag}
+                  player3={group.player3.gamertag}
+                  player4={group.player4.gamertag}
+                  player5={group.player5.gamertag}
+                  player6={group.player6.gamertag}
+                  player1Role={group.player1.role}
+                  player1Rank={group.player1.rank}
+                />
+              ))}
+            </div>
+          {/* </Col> */}
         {/* </Row> */}
         <Footer />
       </Container>

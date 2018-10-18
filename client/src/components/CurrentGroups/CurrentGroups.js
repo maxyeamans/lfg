@@ -3,6 +3,8 @@ import "./CurrentGroups.css";
 import { Col, Row, Container } from "../Grid";
 import ManageGroupModal from "../ManageGroupModal";
 import ManagePlayersModal from "../ManagePlayersModal";
+import { Button } from "react-bootstrap";
+import Messages from "./../../pages/Messages";
 
 
 
@@ -29,7 +31,7 @@ const CurrentGroups = props => (
             {props.groupRank}
           </li>
           <li className="list-group-item">
-            Times:
+            Next session time:
             {props.time}
           </li>
         </ul>
@@ -68,6 +70,15 @@ const CurrentGroups = props => (
     <Row>
       <ManageGroupModal idGroup={props._id}/>
       <ManagePlayersModal groupInfo={props.data} idGroup={props._id}/>
+      <Button
+          id="messages-btn"
+          bsStyle="primary"
+          bsSize="large"
+          onClick={() => localStorage.setItem("groupId", props._id)}
+        >
+          <a className="btn btn-primary pmodal-button"  href="/messages" role="button">View Messages</a>
+          
+        </Button>
 
     </Row>
   </div>

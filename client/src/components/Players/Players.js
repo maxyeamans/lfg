@@ -9,12 +9,10 @@ import ManagePlayersModal from "../../components/ManagePlayersModal";
 class Players extends React.Component {
   constructor(props) {
     super(props);
-
-    this.determineLeader = this.determineLeader.bind(this);
-
+    
     this.state = {
       show: false,
-      gamertag: "",
+      gamertag: this.props.gamertag,
       role: this.props.role,
       rank: this.props.rank,
       _id: this.props.id,
@@ -23,14 +21,15 @@ class Players extends React.Component {
       playerInfo: {},
       state: this.props.state,
       isLeader: false,
-      partyPostion: 1
-    };
+      partyPostion: 1,
+      globalId: localStorage.getItem("globalId")
+     
+    }
   }
 
   componentDidMount() {
-    // this.handleGroupId();
     this.loadGroup();
-    // this.readPlayer();
+    
   }
 
   handleInputChange = event => {
@@ -40,34 +39,15 @@ class Players extends React.Component {
     });
   };
 
-  determineLeader = () => {
-    if (this.state.playerInfo.player1.user === this.state.user) {
-      this.setState({ isLeader: true });
-      console.log("User is leader of party, loading leader functionality...");
-    } else if (this.state.playerInfo.player2.user === this.state.user) {
-      this.setState({ partyPostion: 2 });
-      console.log("You are player 2 in this group!");
-    } else if (this.state.playerInfo.player3.user === this.state.user) {
-      this.setState({ partyPostion: 3 });
-      console.log("You are player 3 in this group!");
-    } else if (this.state.playerInfo.player4.user === this.state.user) {
-      this.setState({ partyPostion: 4 });
-      console.log("You are player 4 in this group!");
-    } else if (this.state.playerInfo.player5.user === this.state.user) {
-      this.setState({ partyPostion: 5 });
-      console.log("You are player 5 in this group!");
-    } else if (this.state.playerInfo.player6.user === this.state.user) {
-      this.setState({ partyPostion: 6 });
-      console.log("You are player 6 in this group!");
-    }
-  };
+  
 
   loadGroup = () => {
     API.getGroup(this.state._id)
       .then(res =>
         this.setState({ playerInfo: res.data }, function() {
-          // Determine Leader function is loaded only after the playerInfo state is updated.
-          this.determineLeader();
+          // Determine Leader function is loaded only after the playerIno state is updated.
+          // this.determineLeader();
+
         })
       )
       .catch(err => console.log(err));
@@ -80,7 +60,7 @@ class Players extends React.Component {
 
   updateCurrentPlayer = (_id, gamertag, role, rank, state, user) => {
     console.log(this.state.rank);
-    if (this.state.playerInfo.player1.user === this.state.user) {
+    if (this.state.playerInfo.player1.user === this.state.globalId) {
       API.updateGroup({
         _id: _id,
         player1: {
@@ -91,7 +71,7 @@ class Players extends React.Component {
           user: user
         }
       })
-        //.then(res => this.loadGroups())
+        // .then(res => this.loadGroup())
         .catch(err => console.log(err));
     } else if (this.state.playerInfo.player2.user === this.state.user) {
       API.updateGroup({
@@ -104,7 +84,7 @@ class Players extends React.Component {
           user: user
         }
       })
-        //.then(res => this.loadGroups())
+        // .then(res => this.loadGroup())
         .catch(err => console.log(err));
     } else if (this.state.playerInfo.player3.user === this.state.user) {
       API.updateGroup({
@@ -160,14 +140,17 @@ class Players extends React.Component {
         .catch(err => console.log(err));
     }
   };
-
-  handleDelete = _id => {
+/////////////////////////////////////
+  handleDelete = (_id) => {
     if (this.state.playerInfo.player1.user === this.state.user) {
       API.updateGroup({
         _id: _id,
         player1: {
-          state: "0",
-          gamertag: "Player 1"
+          state: 0,
+          gamertag: "Player 1",
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -180,14 +163,14 @@ class Players extends React.Component {
         player2: {
           state: 0,
           gamertag: "Player 2",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
-        .then(res =>
-          console.log("Sucessfully removed player from group! " + res)
-        )
+        // .then(res =>
+        //   console.log("Sucessfully removed player from group! " + res)
+        // )
         .catch(err => console.log(err));
     } else if (this.state.playerInfo.player3.user === this.state.user) {
       API.updateGroup({
@@ -195,9 +178,9 @@ class Players extends React.Component {
         player3: {
           state: 0,
           gamertag: "Player 3",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -210,9 +193,9 @@ class Players extends React.Component {
         player4: {
           state: 0,
           gamertag: "Player 4",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -225,9 +208,9 @@ class Players extends React.Component {
         player5: {
           state: 0,
           gamertag: "Player 5",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -240,9 +223,9 @@ class Players extends React.Component {
         player6: {
           state: 0,
           gamertag: "Player 6",
-          role: "",
-          rank: "",
-          user: ""
+          // role: "",
+          // rank: "",
+          // user: ""
         }
       })
         // .then(res =>
@@ -254,44 +237,114 @@ class Players extends React.Component {
 
   handleDeleteSubmit = event => {
     event.preventDefault();
-    this.handleDelete(this.state._id, this.state.user);
+    
+    if (this.state.playerInfo.player1.user === this.state.globalId) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player2.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player3.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player4.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player5.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else if (this.state.playerInfo.player6.user === this.state.user) {
+      this.handleDelete(this.state._id);
+    }
+    else {
+      console.log("not a match");
+    }
   };
 
-  handleFormSubmit = event => {
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   this.updateCurrentPlayer(
+  //     this.state._id,
+  //     this.state.gamertag,
+  //     this.state.role,
+  //     this.state.rank,
+  //     this.state.state,
+  //     this.state.user
+  //   );
+  // };
+
+  handleUpdateSubmit = event => {
     event.preventDefault();
-    this.updateCurrentPlayer(
-      this.state._id,
-      this.state.gamertag,
-      this.state.role,
-      this.state.rank,
-      this.state.state,
-      this.state.user
-    );
-  };
-
-  render() {
-    const isLeader = this.state.isLeader;
-    let deleteBtn;
-    let updateBtn;
-
-    // If user is the leader of the group, this will allow the buttons to render to update players.
-    if (isLeader) {
-      updateBtn = (
-        <UpdatePlayerBtn type="submit" onClick={this.handleFormSubmit} />
-      );
-      deleteBtn = <DeleteBtn type="submit" onClick={this.handleDeleteSubmit} />;
-    } else {
-      updateBtn = (
-        <div>
-          <p>You cannot update this player.</p>
-        </div>
-      );
-      deleteBtn = (
-        <div>
-          <p>You cannot remove this player.</p>
-        </div>
+    console.log(this.state.user);
+    console.log(this.state.globalId);
+    if (this.state.playerInfo.player1.user === this.state.globalId) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
       );
     }
+    else if (this.state.playerInfo.player2.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player3.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player4.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player5.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else if (this.state.playerInfo.player6.user === this.state.user) {
+      this.updateCurrentPlayer(
+        this.state._id,
+        this.state.gamertag,
+        this.state.role,
+        this.state.rank,
+        this.state.state,
+        this.state.user
+      );
+    }
+    else {
+      console.log("not a match");
+    }
+    
+  }
+
+  render() {
+    
     return (
       <Container>
         <div className="card">
@@ -368,14 +421,9 @@ class Players extends React.Component {
                   </option>
                 </select>
               </div>
-            </Col>
-
-            <Col size="xl-2 lg-6">
-              {updateBtn}
-            </Col>
-            <Col size="xl-2 lg-6">
-              {deleteBtn}
-            </Col>
+            </Col>      
+            <Col size="xl-2 lg-6"><UpdatePlayerBtn type="submit" onClick={this.handleUpdateSubmit} /></Col>
+            <Col size="xl-2 lg-6"><DeleteBtn type="submit" onClick={this.handleDeleteSubmit} /></Col>
           </Row>
         </div>
       </Container>
