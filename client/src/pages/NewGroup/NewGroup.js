@@ -21,6 +21,7 @@ class NewGroup extends Component {
 
   componentDidMount() {
     this.loadLogin();
+    this.deleteGroupId();
     console.log("this is our initial state: ", this.state)
   }
 
@@ -68,6 +69,11 @@ class NewGroup extends Component {
       .then(res => console.log(res))
       .catch(err => console.log(err));
   }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
 
   // _onChange = event => {
   //   event.preventDefault();

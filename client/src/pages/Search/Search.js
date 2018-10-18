@@ -22,6 +22,11 @@ class Search extends Component {
     };
   }
 
+  componentDidMount() {
+    this.deleteGroupId();
+    
+  }
+
   loadGroups = () => {
     // gets all groups
     API.getGroups()
@@ -72,10 +77,15 @@ class Search extends Component {
     console.log("Request to Join was clicked.", this.state.joinGroup);
   }
 
-  componentDidMount() {
-    // TODO: Insert code to set state.currentGroups to an array of groupIDs to which the logged in user currently belongs.
-    // I think we'll need this info to do a client-side check to make sure the user isn't joining a group to which they already belong.
-  }
+  // componentDidMount() {
+  //   // TODO: Insert code to set state.currentGroups to an array of groupIDs to which the logged in user currently belongs.
+  //   // I think we'll need this info to do a client-side check to make sure the user isn't joining a group to which they already belong.
+  // }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+
+  };
 
   render() {
     return (
