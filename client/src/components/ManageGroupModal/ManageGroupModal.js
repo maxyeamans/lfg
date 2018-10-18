@@ -36,6 +36,11 @@ class ManageGroupModal extends React.Component {
 
   componentDidMount() {
     this.handleGroupId();
+    this.deleteGroupId();
+  }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
   }
 
   loadGroup = () => {
@@ -229,13 +234,13 @@ class ManageGroupModal extends React.Component {
               >
                 Update
               </button>
-              {/* <button
+              <button
                 type="submit"
                 className="btn btn-danger"
                 onClick={this.handleFormDelete}
               >
                 Delete
-              </button> */}
+              </button>
               <div>{deleteBtn}</div>
             </form>
          

@@ -171,16 +171,13 @@ class Messages extends React.Component {
     this.saveMessage(this.state.gamertag, this.state.message, this.state.groupId, this.state.globalId), () => {
       this.loadMessages();
     };
-  }
+
+    window.location.reload(true);
+  } 
+
+  
 
 
-  // handleClose() {
-  //   this.setState({ show: false });
-  // }
-
-  // handleShow() {
-  //   this.setState({ show: true });
-  // }
 
   render() {
 

@@ -54,18 +54,18 @@ module.exports = {
   },
   // Request args should be username and password
   findByName: function(req, res) {
-    console.log(req.body + " find by name");
+    console.log(req.params.username + " find by name");
     User
       .findOne(req.params.username)
       .then( foundUser => {       
           console.log(foundUser._id + "found user by name");
           
           res.json(foundUser);
-          console.log(foundUser);
+         
           
       })
       .catch( err => res.status(422).json(err)); 
-  },
+  }
   // loginId: function(req, res) {
   //   User
   //     .find(req.query)
