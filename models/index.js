@@ -1,5 +1,5 @@
 module.exports = {
   User: require("./User"),
-  // Profile: require("./Profile"),
+  Message: require("./Message"),
   Group: require("./Group")
 };

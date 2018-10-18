@@ -25,7 +25,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.loadUser();
-    // this.loadProfiles();
+    this.deleteGroupId();
     // this.loadLogin();
     this.loadGroups();
     // this.handleGroups();
@@ -51,17 +51,10 @@ class Main extends Component {
 
   };
 
-  // loadUser = () => {
-  //   let username = localStorage.getItem("username");
-  //   console.log(username);
-  //   API.getUserName(username)
-  //     .then(res => this.setState({ globalId: res.data._id }))
-  //     .then(res => localStorage.setItem("globalId", res.data._id))
-      
-  //     .then(this.handleGroups())
-  //     .catch(err => console.log(err));
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
 
-  // };
+  };
 
   
 
