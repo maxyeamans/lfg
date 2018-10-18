@@ -14,8 +14,9 @@ router
   .delete(userController.remove);
 
 router
-  .route("/:username")
+  .route("/:username") 
   .get(userController.findByName)
+  
   
   // Matches with "/api/users/login"
 // router.route("/login")
