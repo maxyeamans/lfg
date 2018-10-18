@@ -64,10 +64,6 @@ class Main extends Component {
 
   };
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 67145a7c77e9e2b44ba331abf367344285caffd9
   // loadProfiles = () => { // gets all profiles
   //   API.getProfiles()
   //     .then(res => this.setState({ profiles: res.data }))
@@ -131,10 +127,6 @@ class Main extends Component {
         <div id="mainpage-content">
 
           <h1> Looking For Group</h1>
-<<<<<<< HEAD
-=======
-
->>>>>>> 67145a7c77e9e2b44ba331abf367344285caffd9
           <h1>hello test</h1>
 
 
@@ -198,10 +190,6 @@ class Main extends Component {
         </div>
 
         {/* <h2>MY CURRENT GROUPS ▼</h2>
-<<<<<<< HEAD
-=======
-
->>>>>>> 67145a7c77e9e2b44ba331abf367344285caffd9
             <div className="mygroups">
               
               {this.handleGroups()}
@@ -226,10 +214,6 @@ class Main extends Component {
             </div> */}
 
         <Footer />
-<<<<<<< HEAD
-=======
-
->>>>>>> 67145a7c77e9e2b44ba331abf367344285caffd9
       </Container>
     );
   }
