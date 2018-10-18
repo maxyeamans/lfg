@@ -8,18 +8,10 @@ import Login from "./pages/Login";
 import NewGroup from "./pages/NewGroup";
 import Register from "./pages/Register";
 import UpdateGroup from "./pages/UpdateGroup";
-<<<<<<< HEAD
-
-import MyPage from "./pages/MyPage";
-import Messages from "./pages/Messages";
-=======
 import Footer from "./components/Footer";
-
 import MyPage from "./pages/MyPage";
-
 import Messages from "./pages/Messages";
 
->>>>>>> 4605f53c7cbec896b9c36a4a97abe5ab7c34adaa
 
 const App = () => (
   <Router>
@@ -31,16 +23,8 @@ const App = () => (
         <Route exact path="/main" component={Main} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/newgroup" component={NewGroup} />
-<<<<<<< HEAD
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/messages" component={Messages}/>
-=======
-
-        <Route exact path="/mypage" component={MyPage} />
-
-        <Route exact path="/messages" component={Messages}/>
-
->>>>>>> 4605f53c7cbec896b9c36a4a97abe5ab7c34adaa
         <Route path="/updategroup/:id" component={UpdateGroup} />
         <Route component={NoPage} />
       </Switch>
