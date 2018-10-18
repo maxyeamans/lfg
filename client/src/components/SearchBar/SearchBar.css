@@ -1,5 +1,7 @@
 
-
+form{
+	background-color:rgba(44, 44, 44, 0);
+}
 .submit-button{
 	background-color: #aed3e0;
 	font-family:"bignoodletoo";
@@ -9,6 +11,7 @@
   padding:10px;
 	width: 20%;
 	border-radius: 4px;
+	float:right;
 }
 
 .submit-button:hover {
