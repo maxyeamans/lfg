@@ -68,63 +68,54 @@ class Main extends Component {
           </div>
         </Row>
 
-
-        <div id="main-first">
-        </div>
+        <div id="main-first" />
 
         <div id="main-second">
-
           Recently Created
-
           <div className="main-groups">
             {this.state.groups.map(group => (
-              <RecentGroups group={group} handleGroupJoin={this.handleGroupJoin} />
+              <RecentGroups
+                group={group}
+                handleGroupJoin={this.handleGroupJoin}
+              />
             ))}
-
           </div>
-
         </div>
 
         <div id="main-next">
-
-
           <form action="/search">
             <input type="submit" value="search all" className="see-all-btn" />
           </form>
         </div>
 
-
-
         <div id="main-third">
-        
-
-        <Row>
-
-          <Col size="xl-7 sm-8">
-
-            <div id="about-us">
-
-              Meet the Development Team
-              <a href="url">  <h5>Max Yeamans</h5></a>
-              <a href="url">  <h5>Daniel Grantham</h5></a>
-              <a href="url"> <h5>Katri Morrison</h5></a>
-              <a href="url"> <h5>Mike Schumann</h5></a>
-             
-              
-              
-            </div>
-          </Col>
-          <Col size="xl-5 sm-8">
-
-            <div id="overwatch-char">
-            </div>
-
-          </Col>
-        </Row>
+          <Row>
+            <Col size="xl-7 sm-8">
+              <div id="about-us">
+                Meet the Development Team
+                <a href="url">
+                  {" "}
+                  <h5>Max Yeamans</h5>
+                </a>
+                <a href="url">
+                  {" "}
+                  <h5>Daniel Grantham</h5>
+                </a>
+                <a href="url">
+                  {" "}
+                  <h5>Katri Morrison</h5>
+                </a>
+                <a href="url">
+                  {" "}
+                  <h5>Mike Schumann</h5>
+                </a>
+              </div>
+            </Col>
+            <Col size="xl-5 sm-8">
+              <div id="overwatch-char" />
+            </Col>
+          </Row>
         </div>
-
-     
-
 
         <Footer />
       </Container>
