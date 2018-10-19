@@ -92,32 +92,25 @@ class Main extends Component {
           </div>
         </Row>
 
-
-        <div id="main-first">
-        </div>
+        <div id="main-first" />
 
         <div id="main-second">
-
           Recently Created
-
           <div className="main-groups">
             {this.state.groups.map(group => (
-              <RecentGroups group={group} handleGroupJoin={this.handleGroupJoin} />
+              <RecentGroups
+                group={group}
+                handleGroupJoin={this.handleGroupJoin}
+              />
             ))}
-
           </div>
-
         </div>
 
         <div id="main-next">
-
-
           <form action="/search">
             <input type="submit" value="search all" className="see-all-btn" />
           </form>
         </div>
-
-
 
         <div id="main-third">
         
@@ -137,9 +130,6 @@ class Main extends Component {
             </div>
         
         </div>
-
-     
-
 
         <Footer />
       </Container>
