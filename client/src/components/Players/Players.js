@@ -42,12 +42,11 @@ class Players extends React.Component {
   
 
   loadGroup = () => {
+    console.log(this.state._id, " group id from props")
     API.getGroup(this.state._id)
       .then(res =>
-        this.setState({ playerInfo: res.data }, function() {
-          // Determine Leader function is loaded only after the playerIno state is updated.
-          // this.determineLeader();
-
+        this.setState({ playerInfo: res.data }, () => {
+          console.log(this.state.playerInfo);
         })
       )
       .catch(err => console.log(err));
@@ -277,6 +276,7 @@ class Players extends React.Component {
     event.preventDefault();
     console.log(this.state.user);
     console.log(this.state.globalId);
+    console.log(this.state.playerInfo);
     if (this.state.playerInfo.player1.user === this.state.globalId) {
       this.updateCurrentPlayer(
         this.state._id,
