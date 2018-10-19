@@ -24,9 +24,9 @@ class Messages extends React.Component {
       gamertag: "",
       groupData: {},
       allMessages: []
-      
-     
-      
+
+
+
     };
   }
 
@@ -35,7 +35,7 @@ class Messages extends React.Component {
     this.loadGroup();
     this.loadMessages();
     this.getGroup();
-    
+
     // this.getGamertag();
   }
 
@@ -54,97 +54,96 @@ class Messages extends React.Component {
 
   loadLogin = () => {
     this.setState({ globalId: localStorage.getItem("globalId") });
-    
+
   }
 
   loadGroup = () => {
     this.setState({ groupId: localStorage.getItem("groupId") });
   }
 
-  
+
 
   getGamertag = () => {
     // if (this.state.groupData.length != "default") {
-    
+
     if (this.state.groupData.player1.user === this.state.globalId) {
       this.setState({
         gamertag: this.state.groupData.player1.gamertag
-        
+
       })
     }
     else if (this.state.groupData.player2.user === this.state.globalId) {
       this.setState({
         gamertag: this.state.groupData.player2.gamertag
-        
+
       })
     } else if
     (this.state.groupData.player3.user === this.state.globalId) {
       this.setState({
         gamertag: this.state.groupData.player3.gamertag
-        
+
       })
     } else if
     (this.state.groupData.player4.user === this.state.globalId) {
       this.setState({
         gamertag: this.state.groupData.player4.gamertag
-        
+
       })
     } else if
     (this.state.groupData.player5.user === this.state.globalId) {
       this.setState({
         gamertag: this.state.groupData.player5.gamertag
-        
+
       })
     } else if
     (this.state.groupData.player6.user === this.state.globalId) {
       this.setState({
         gamertag: this.state.groupData.player6.gamertag
-        
+
       })
     }
     else {
       console.log("no match");
     }
-  // }
+    // }
   }
 
   getGroup = () => {
     API.getGroup({
       _id: this.state.groupId
     })
-    .then(res =>
-      {
+      .then(res => {
         if (res.data._id === this.state.groupId) {
           this.setState({
             groupData: res.data
-            
+
           }, () => {
             this.getGamertag();
           })
         }
       }
-      
-    )
-    
-    .catch(err => console.log(err));
+
+      )
+
+      .catch(err => console.log(err));
   }
 
   loadMessages = () => {
     // console.log()
     API.getMessages(this.state.groupId)
-      .then(res =>
-        {
-          console.log(res.data);
-          res.data.map(message => {
-            if (message.groupId === this.state.groupId) {
-              this.state.groupMessages.push(message);
-                
-              
-            }
+      .then(res => {
+        console.log(res.data);
+        res.data.map(message => {
+          if (message.groupId === this.state.groupId) {
+            this.state.groupMessages.push(message);
+
+
+          }
         }
-        
-      
-        )}
+
+
+        )
+      }
       )
       .catch(err => console.log(err));
   };
@@ -159,12 +158,12 @@ class Messages extends React.Component {
       message: message,
       groupId: groupId,
       userId: globalId
-      
+
     })
       // .then(res => console.log(res))
       .catch(err => console.log(err));
   }
-  
+
 
   handleMessageSubmit = event => {
     event.preventDefault();
@@ -172,48 +171,45 @@ class Messages extends React.Component {
     this.saveMessage(this.state.gamertag, this.state.message, this.state.groupId, this.state.globalId), () => {
       this.loadMessages();
     };
+
     window.location.reload(true);
   } 
+
   
 
-  // handleClose() {
-  //   this.setState({ show: false });
-  // }
 
-  // handleShow() {
-  //   this.setState({ show: true });
-  // }
 
   render() {
-    
+
     return (
-    <Container fluid>
-      <Nav/>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Nav />
         <div>
-          
+
           <h1> Group Messages</h1>
 
         </div>
-        
 
-    <Row>
-      
-        
-      <Col size="xl-12 sm-12">
-            <textarea id="text-area" rows="4" cols="100" name="message" onChange={this.handleInputChange} value={this.state.message}>
-            </textarea>
-            <br/>
-            <a href="/messages"><button onClick={this.handleMessageSubmit}>Add Message</button></a>
-      </Col>
-    </Row>
-    {this.state.groupMessages.map(messages => (
-      <CurrentMessage 
-        gamertag={messages.gamertag}
-        date={messages.date}
-        message={messages.message}
 
-      />
-    ))}
+        <Row>
+          <textarea id="text-area" rows="4" cols="100" name="message" onChange={this.handleInputChange} value={this.state.message}>
+          </textarea>
+          <br />
+        </Row>
+
+        <Row>
+          
+          <a href="/messages"><button id="msg-btn" onClick={this.handleMessageSubmit}>Add Message</button></a>
+          
+        </Row>
+        {this.state.groupMessages.map(messages => (
+          <CurrentMessage
+            gamertag={messages.gamertag}
+            date={messages.date}
+            message={messages.message}
+
+          />
+        ))}
 
 
 

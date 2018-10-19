@@ -47,8 +47,9 @@ body {
 
 #main-first{
     height:40px;
-    background-color:rgba(51, 51, 51, 0.322);  
+    background-color:rgba(51, 51, 51, 0.322); 
     margin-top:140px;
+   width:100%
    
 }
 
@@ -75,7 +76,7 @@ body {
     background-color:rgba(51, 51, 51, 0.322);
   text-align:center;
   border:none;
-  
+  width:100%;
 }
 
 .see-all-btn{

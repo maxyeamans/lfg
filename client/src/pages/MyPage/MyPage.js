@@ -114,7 +114,7 @@ class Main extends Component {
      
       
 
-      <Container fluid>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         
         <Nav/>
         
