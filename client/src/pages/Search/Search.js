@@ -89,8 +89,8 @@ class Search extends Component {
 
   render() {
     return (
-      // NAV IS RIGHT HERE
-      <Container fluid>
+     
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
        <Nav/>
           
             <div id="search-groups">
@@ -104,7 +104,6 @@ class Search extends Component {
       
 
         <div id="search-results">
-          <h1> ▼ </h1>
           <h4> results</h4>
           {this.state.groups.map(group => <SearchGroup group={group} handleGroupJoin={this.handleGroupJoin}/>)}
         </div>

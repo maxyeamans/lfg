@@ -4,6 +4,7 @@
   text-align: center;
   width: 100%;
   margin: 0 auto;
+  
 }
 
 #search-groups {
@@ -34,7 +35,7 @@ h4 {
   #search-results {
     border: 2px;
     padding-bottom: 150px;
-    width: 60%;
+    width: 100%;
     margin: auto;
   }
 

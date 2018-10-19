@@ -23,12 +23,21 @@
     text-align:center;
   }
 
-  
+#text-area{
+  margin:auto;
+}
 
-  #text-test{
-    text-align: center;
+
+button{
+background-color:rgb(127, 173, 243);
+color:white;
+margin-bottom:20px;
+}
+
+button:hover{
+  background-color:rgb(169, 199, 245);
+  color:white;
   }
-
 
 
   @media only screen and (max-width: 425px) {

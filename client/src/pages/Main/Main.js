@@ -21,7 +21,31 @@ class Main extends Component {
 
   componentDidMount() {
     this.loadNewGroups();
+    this.loadUser();
+    this.deleteGroupId();
   }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+  }
+
+  loadUser = () => {
+    let username = localStorage.getItem("username");
+    console.log(username);
+    API.getUsers()
+      // .then(res => this.setState({ globalId: res.data._id }))
+      // .then(res => localStorage.setItem("globalId", res.data._id))
+      .then(res => res.data.map(group => {
+        if (username === group.username) {
+          this.setState({ globalId: group._id });
+          localStorage.setItem("globalId", group._id);
+        }
+      }),
+      )
+      // .then(this.handleGroups())
+      .catch(err => console.log(err));
+
+  };
 
   loadNewGroups = () => {
     // gets all groups
@@ -50,7 +74,7 @@ class Main extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         <Nav />
 
         <div id="mainpage-content">
@@ -89,32 +113,22 @@ class Main extends Component {
         </div>
 
         <div id="main-third">
-          <Row>
-            <Col size="xl-7 sm-8">
-              <div id="about-us">
-                Meet the Development Team
-                <a href="url">
-                  {" "}
-                  <h5>Max Yeamans</h5>
-                </a>
-                <a href="url">
-                  {" "}
-                  <h5>Daniel Grantham</h5>
-                </a>
-                <a href="url">
-                  {" "}
-                  <h5>Katri Morrison</h5>
-                </a>
-                <a href="url">
-                  {" "}
-                  <h5>Mike Schumann</h5>
-                </a>
-              </div>
-            </Col>
-            <Col size="xl-5 sm-8">
-              <div id="overwatch-char" />
-            </Col>
-          </Row>
+        
+
+      
+            <div id="about-us">
+
+              Meet the Development Team
+              <a href="https://www.linkedin.com/in/maxyeamans/">  Max Yeamans</a>
+              <a href="https://www.linkedin.com/in/daniel-grantham-7852a4a0/"> Daniel Grantham</a>
+              <a href="https://www.linkedin.com/in/katri-morrison-goulias/"> Katri Morrison-Goulias</a>
+              <a href="https://www.linkedin.com/in/michael-schumann-0a39991/"> Mike Schumann</a>
+
+            </div>
+         
+            <div id="overwatch-char">
+            </div>
+        
         </div>
 
         <Footer />

@@ -6,26 +6,22 @@ const SearchBar = props => {
 	return (
 
 		<div className="container">
-			<div className="search-box">
-				<div className="row" >
-					<div className="col-lg-12" id="search-bar">
-						<div className="panel panel-primary">
-							<div className="panel-body">
-								<form>
-									<div className="form-group">
-										<label htmlFor="topic">Group Name</label>
-										<input onChange={props.handleInputChange} type="text" className="form-control" name="groupName" aria-describedby="emailHelp" />
-									</div>
-									{/* <div className="form-group">
+
+			<form>
+				<div className="form-group">
+					<label htmlFor="topic">Group Name</label>
+					<input onChange={props.handleInputChange} type="text" className="form-control" name="groupName" aria-describedby="emailHelp" />
+				</div>
+				{/* <div className="form-group">
 										<label htmlFor="start-year">Platform</label>
 										<input onChange={props.handlePlatformChange} type="text" className="form-control" id="start-year" />
 									</div> */}
 
 
 
-									
 
-									{/* <div className="form-group">
+
+				{/* <div className="form-group">
 										<label htmlFor="topic">Platform 1.0 </label>
 										<br></br>
 										<div class="container">
@@ -43,22 +39,22 @@ const SearchBar = props => {
 										</div>
 
 									</div> */}
-									
-									<div className="form-group">
-										<label for="topic">Platform 2.0: </label>
-										<select className="form-control" name="platform" onChange={props.handleInputChange}>
-											<option value="">Choose Platform (3)</option>
-											<option value="PC">PC</option>
-											<option value="Xbox">Xbox</option>
-											<option value="PS4">PS4</option>
-											
-										</select>
-									</div>
+
+				<div className="form-group">
+					<label for="topic">Platform 2.0: </label>
+					<select className="form-control" name="platform" onChange={props.handleInputChange}>
+						<option value="">Choose Platform (3)</option>
+						<option value="PC">PC</option>
+						<option value="Xbox">Xbox</option>
+						<option value="PS4">PS4</option>
+
+					</select>
+				</div>
 
 
 
 
-									{/* <div class="form-group">
+				{/* <div class="form-group">
 										<label htmlFor="topic">Group Rank</label>
 										<br></br>
 										<label class="radio-inline"><input onChange={props.handleInputChange} value="bronze" type="radio" name="groupRank" />bronze</label>
@@ -70,27 +66,22 @@ const SearchBar = props => {
 										<label class="radio-inline"><input onChange={props.handleInputChange} value="grandmaster" type="radio" name="groupRank" />grandmaster</label>
 									</div> */}
 
-									<div className="form-group">
-										<label for="groupRank">Group Rank: </label>
-										<select className="form-control" name="groupRank" onChange={props.handleInputChange}>
-											<option value="">Choose Rank (7)</option>
-											<option value="Bronze">Bronze</option>
-											<option value="Silver">Silver</option>
-											<option value="Gold">Gold</option>
-											<option value="Platinum">Platinum</option>
-											<option value="Diamond">Diamond</option>
-											<option value="Master">Master</option>
-											<option value="Grand Master">Grand Master</option>
-										</select>
-									</div>
-
-									<button onClick={props.handleFormSubmit} type="submit" className="submit-button">Search</button>
-								</form>
-							</div>
-						</div>
-					</div>
+				<div className="form-group">
+					<label for="groupRank">Group Rank: </label>
+					<select className="form-control" name="groupRank" onChange={props.handleInputChange}>
+						<option value="">Choose Rank (7)</option>
+						<option value="Bronze">Bronze</option>
+						<option value="Silver">Silver</option>
+						<option value="Gold">Gold</option>
+						<option value="Platinum">Platinum</option>
+						<option value="Diamond">Diamond</option>
+						<option value="Master">Master</option>
+						<option value="Grand Master">Grand Master</option>
+					</select>
 				</div>
-			</div>
+
+				<button onClick={props.handleFormSubmit} type="submit" className="submit-button">Search</button>
+			</form>
 
 			<br /> <br />
 

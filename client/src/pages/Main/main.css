@@ -24,7 +24,8 @@ h3 {
 
 #mainpage-content {
   margin-top: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 110px;
+
 }
 
 .button1,
@@ -41,67 +42,51 @@ body {
   background-color: #999;
 }
 
-#overwatch-char {
-  background-image: url("../../images/sombra.png");
-  background-repeat: no-repeat;
-  height: 500px;
+
+#main-first{
+    height:40px;
+    background-color:rgba(51, 51, 51, 0.322); 
+    margin-top:140px;
+   width:100%
+   
 }
 
-#overwatch-char2 {
-  background-image: url("../../images/char6.png");
-  background-repeat: no-repeat;
-  height: 500px;
+
+
+#main-second{
+  height:430px;
+  background-color:rgba(51, 51, 51, 0.322);
+  width:100%;
+  color:rgb(255, 255, 255);
+  text-align:center;
+  font-size:50px;
+ 
 }
 
-#main-first {
-  height: 40px;
-  background-color: rgb(250, 249, 249);
-  margin-top: 140px;
+.main-groups{
+    color:black;
+    margin-top:30px;
+    
 }
 
-.mygroups {
-  margin-bottom: 200px;
-  margin-left: 0 !important;
+#main-next{
+    height:100px;
+    background-color:rgba(51, 51, 51, 0.322);
+  text-align:center;
+  border:none;
+  width:100%;
 }
 
-#main-first {
-  height: 60px;
-  background-color: rgb(233, 233, 233);
-  width: 105%;
-  margin-left: -20px;
-  margin-top: 140px;
-}
+.see-all-btn{
+    background-color:rgb(85, 157, 240);
+    border: none;
+    color:#ffffff;
+    font-family:"bignoodletoo";
+    letter-spacing: 2px;
+    padding:10px;
+    font-size: 20px;
+    border-radius:4px;   
 
-#main-second {
-  height: 400px;
-  background-color: rgb(250, 249, 249);
-  width: 100%;
-  color: rgb(58, 57, 57);
-  text-align: center;
-  font-size: 50px;
-}
-
-.main-groups {
-  color: black;
-  margin-top: 30px;
-}
-
-#main-next {
-  height: 60px;
-  background-color: rgb(250, 249, 249);
-  text-align: center;
-  border: none;
-}
-
-.see-all-btn {
-  background-color: rgb(139, 201, 241);
-  border: none;
-  color: #ffffff;
-  font-family: "bignoodletoo";
-  letter-spacing: 2px;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 4px;
 }
 
 .see-all-btn:hover {
@@ -109,102 +94,114 @@ body {
   background-color: rgb(185, 233, 245);
 }
 
-#main-third {
-  height: 360px;
-  background-color: rgba(109, 123, 170, 0.164);
-  width: 100%;
-  margin-top: 0px;
-  margin-bottom: 120px;
+#main-third{
+    height:350px;
+    background-color:rgba(109, 123, 170, 0.164);
+    width:100%;
+  margin-top:0px;
+  margin-bottom:120px;
+padding-top:30px;
+
 }
 
-@media only screen and (max-width: 425px) {
-  /* For mobile phones: */
-
-  #overwatch-char {
-    background-image: url("../../images/sombra.png");
-    background-repeat: no-repeat;
-    margin: auto;
-    margin-top: 40px;
-  }
-
-  #about-us {
-    color: white;
-    text-align: center;
-    padding-top: 80px;
-    font-size: 50px;
+#about-us{
+    color:white;
+    text-align:center;
+    padding-top:60px;
+    font-size:50px;
     letter-spacing: 2px;
-  }
-
-  h2 {
-    color: rgb(199, 199, 199);
-    font-family: "bignoodletoo";
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 15px;
-  }
+    float:left;
+    margin-left:20%
 }
 
-@media only screen and (max-width: 747px) {
-  /* For mobile phones: */
+#overwatch-char {
+  background-image: url("../../images/sombra.png");
+  background-repeat: no-repeat;
+ margin-left:55%;
+ height:400px;
 
-  h1 {
-    font-family: "bignoodletoo";
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 60px;
-    margin-top: 50px;
-    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-  }
+}
 
-  h2 {
-    color: rgb(199, 199, 199);
-    font-family: "bignoodletoo";
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 15px;
-
-    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-  }
-
-  h3 {
-    text-align: center;
-    color: rgb(196, 196, 196);
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 15px;
-  }
 
   h5 {
     font-size: 5px;
     color: blue;
   }
 
-  .button1,
-  .button2 {
-    margin: auto;
-  }
 
-  body {
-    background-image: url("../../images/background2.jpg");
-  }
+@media only screen and (max-width: 747px) {
+    /* For mobile phones: */
+    #mainpage-content {
+        margin-top: 100px;
+        
+      }
 
-  .mygroups {
-    margin-bottom: 300px;
-    margin-top: 100px;
-  }
+    h1 {
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:60px;
+        margin-top:30px;
+        /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+      }
+    
+      h2 {
+        color:rgb(199, 199, 199);
+        font-family:"bignoodletoo"; 
+        letter-spacing: 2px;
+        text-align:center;
+        font-size:15px;
+      
+       /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+      }
+    
+      h3{
+        text-align:center;
+        color:rgb(196, 196, 196);
+         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-size:15px;
+      }
+    
+     
+      
+      .button1, .button2{     
+          margin:auto;    
+          width:100%;   
+      }
+    
+    
+    
+      body{   
+        background-image: url("../../images/background2.jpg");    
+      }
+      
+    .mygroups{
+        margin-bottom:300px;
+        margin-top:100px;      
+    }
+    
+    #main-second{
+        height:980px;
+        background-color:rgba(51, 51, 51, 0.322);
+        width:100%;
+        color:rgb(58, 57, 57);
+        text-align:center;
+        font-size:50px;
+       
+      }
 
-  #main-second {
-    height: 1000px;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    color: rgb(58, 57, 57);
-    text-align: center;
-    font-size: 50px;
-  }
-
-  #about-us {
-    text-align: center;
-    padding-top: 80px;
-    font-size: 50px;
-    letter-spacing: 2px;
-  }
+      #about-us{
+        color:white;
+        text-align:center;
+        font-size:50px;
+        letter-spacing: 2px;
+       width:100%;
+       margin-left:0%;
+      padding-top:40px;
+    }
+    
+    #overwatch-char {
+   width:0px;
+    }
+   
 }

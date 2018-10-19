@@ -38,7 +38,13 @@ class ManagePlayersModal extends React.Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.deleteGroupId();
+  }
+
+  deleteGroupId = () => {
+    localStorage.removeItem("groupId");
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -104,7 +110,7 @@ class ManagePlayersModal extends React.Component {
               Close
             </Button> */}
 
-             <a className="btn btn-primary pmodal-button"  href="/main" role="button">close</a>
+             <a className="btn btn-primary pmodal-button"  href="/mypage" role="button">close</a>
           </Modal.Footer>
         </Modal>
       </div>

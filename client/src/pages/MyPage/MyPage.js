@@ -114,15 +114,19 @@ class Main extends Component {
      
       
 
-      <Container fluid>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         
         <Nav/>
         
           
+       
+          <h1>MY CURRENT GROUPS </h1>
+
         
-          <h1>MY CURRENT GROUPS ▼</h1>
+          <div id="groups-image">
+          </div>
+          
             <div className="mygroups">
-              
             
               {/* PLAYER TAG IS DEFAULTED TO PLAYER # IF PLAYER DOES NOT EXIST, MAY NEED AN IF COMMAND TO PREVENT THIS FROM RENDERING */}
               {this.handleGroups()}
