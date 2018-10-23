@@ -41,15 +41,15 @@ const CurrentGroups = props => (
         <ul className="list-group">
           <li className="list-group-item">
             <h5>Gamer Tag:</h5>
-            {props.player1}
+            {props.playerName}
           </li>
           <li className="list-group-item">
             <h5>My Role:</h5>
-            {props.player1Role}
+            {props.playerRole}
           </li>
           <li className="list-group-item">
             <h5>My Rank:</h5>
-            {props.player1Rank}
+            {props.playerRank}
           </li>
           <li hidden id={props.user} className="list-group-item">
             

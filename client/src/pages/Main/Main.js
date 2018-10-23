@@ -74,7 +74,7 @@ class Main extends Component {
 
   render() {
     return (
-      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0, margin: "0 auto" }}>
         <Nav />
 
         <div id="mainpage-content">
@@ -82,7 +82,7 @@ class Main extends Component {
           <h3>Create and join groups with other Overwatch players!</h3>
         </div>
 
-        <Row>
+        <Row style={{ paddingLeft: 0, paddingRight: 0 }}>
           <div class="button1">
             <CreateGroupBtn />
           </div>
