@@ -44,7 +44,21 @@
   }
   
   
-  
+  label, input, select {
+    font-family: "bignoodletoo" !important;
+    letter-spacing: 2px !important;
+    /* font-size: 2rem; */
+  }
+
+  label {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  input, select {
+    font-size: 2rem !important;
+    color: #111 !important;
+  }
   
   #main-first{
       height:40px;
