@@ -5,16 +5,6 @@ import Passport from "../../components/Passport";
 import "./Login.css";
 import API from "../../utils/API";
 
-// let styles = {
-//   position: "fixed",
-//   width: "100%",
-//   height: "100%",
-//   left: 0,
-//   top: 0,
-//   zIndex: 10,
-
-// }
-
 class Login extends Component {
   state = {
     username: "",

@@ -105,7 +105,16 @@ class Search extends Component {
 
         <div id="search-results">
           <h4> results</h4>
-          {this.state.groups.map(group => <SearchGroup group={group} handleGroupJoin={this.handleGroupJoin}/>)}
+          {this.state.groups
+            .filter( group => 
+              group.player1.user !== localStorage.getItem("globalId") &&
+              group.player2.user !== localStorage.getItem("globalId") &&
+              group.player3.user !== localStorage.getItem("globalId") &&
+              group.player4.user !== localStorage.getItem("globalId") &&
+              group.player5.user !== localStorage.getItem("globalId") &&
+              group.player6.user !== localStorage.getItem("globalId")
+            )
+            .map(group => <SearchGroup group={group} handleGroupJoin={this.handleGroupJoin}/>)}
         </div>
 
         <Footer />
