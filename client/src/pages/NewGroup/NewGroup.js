@@ -106,7 +106,7 @@ class NewGroup extends Component {
               <div className="form-group">
                 <label for="platform">Platform</label>
                 <select className="form-control" name="platform" value={this.state.platform} onChange={this.handleInputChange}>
-                  <option value="">Update Platform</option>
+                  <option value="">Choose Platform</option>
                   <option value="PC">PC</option>
                   <option value="Xbox">Xbox</option>
                   <option value="Playstation">Playstation</option>
@@ -116,7 +116,7 @@ class NewGroup extends Component {
               <div className="form-group">
                 <label for="groupRank">Group Rank</label>
                 <select className="form-control" name="groupRank" value={this.state.groupRank} onChange={this.handleInputChange}>
-                  <option value="">Update Rank (7)</option>
+                  <option value="">Choose Rank (7)</option>
                   <option value="Bronze">Bronze</option>
                   <option value="Silver">Silver</option>
                   <option value="Gold">Gold</option>
@@ -149,7 +149,25 @@ class NewGroup extends Component {
                 />
               </div>
               <div className="form-group">
-                <label for="role">Role</label>
+              <label for="role">Role</label>
+                <select
+                    className="form-control"
+                    name="role"
+                    value={this.state.role}
+                    onChange={this.handleInputChange}
+                  >
+                    <option value="">Update role (3)</option>
+                    <option value="Tank" name="role">
+                      Tank
+                    </option>
+                    <option value="Support" name="role">
+                      Support
+                    </option>
+                    <option value="Attack" name="role">
+                      Attack
+                    </option>
+                  </select>
+                {/* <label for="role">Role</label>
                 <input
                   type="role"
                   className="form-control"
@@ -157,12 +175,12 @@ class NewGroup extends Component {
                   placeholder="Role"
                   onChange={this.handleInputChange}
                   value={this.state.role}
-                />
+                /> */}
               </div>
               <div className="form-group">
                 <label for="rank">Player Rank</label>
                 <select className="form-control" name="rank" value={this.state.rank} onChange={this.handleInputChange}>
-                  <option value="">Update Rank (7)</option>
+                  <option value="">Choose Rank (7)</option>
                   <option value="Bronze">Bronze</option>
                   <option value="Silver">Silver</option>
                   <option value="Gold">Gold</option>

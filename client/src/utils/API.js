@@ -73,8 +73,8 @@ export default {
 
   // Gets the group with the given id
   getGroup: function(id) {
-    console.log(id._id);
-    return axios.get("/api/groups/" + id._id);
+    console.log(id);
+    return axios.get("/api/groups/" + id);
   },
   // Deletes the group with the given id
   deleteGroup: function(id) {

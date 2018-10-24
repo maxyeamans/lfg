@@ -15,7 +15,7 @@
 
 .newGroup-submit {
     border-radius: 4px;
-    background-color: #aed3e0;
+    background-color: #7fe07f;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -30,15 +30,7 @@
   }
   
   .newGroup-submit:hover {
-    background-color: rgb(44, 43, 43); /* Green */
+    background-color: rgb(44, 43, 43); 
     color: #f09731;
   }
 
-@media only screen and (max-width: 425px) {
-h1{
-    font-size:30px;
-    margin-bottom: 30px;
-    margin-top:60px;
-}
-
-}

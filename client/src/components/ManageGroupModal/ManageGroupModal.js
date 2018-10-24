@@ -227,21 +227,23 @@ class ManageGroupModal extends React.Component {
               <button
                 type="submit"
                 value="submit"
-                className="gm-submit"
+                className="group-update-btn"
                href="/"
                 onClick={this.handleFormSubmit}
                 
               >
                 Update
               </button>
-              <button
+               <button
                 type="submit"
-                className="btn btn-danger"
+                className="group-delete-btn"
                 onClick={this.handleFormDelete}
               >
                 Delete
+
               </button>
-              <div>{deleteBtn}</div>
+              <div>{DeleteBtn}</div>
+
             </form>
          
 
@@ -249,12 +251,10 @@ class ManageGroupModal extends React.Component {
           </Modal.Body>
           <Modal.Footer>
           
-            {/* <a className="btn btn-primary" id="mg-close" href="/mypage" role="button"><p>close</p></a> */}
+           
           
             <a className="btn btn-primary pmodal-close"  href="/mypage" role="button">close</a>
-            {/* <Button className="pmodal-close" onClick={this.handleClose}>
-              Close
-            </Button > */}
+           
            </Modal.Footer>
         </Modal>
       </div>

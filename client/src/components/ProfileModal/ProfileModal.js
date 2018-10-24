@@ -159,7 +159,7 @@ class ProfileModal extends React.Component {
                   value={this.state.email}
                 />
               </div>
-              <button className="pmodal-update-btn" onClick={this.handleFormSubmit}>
+              <button className="pmodal-update-btn1" onClick={this.handleFormSubmit}>
                 Update
               </button>
             </form>
