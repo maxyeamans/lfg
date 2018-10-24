@@ -43,8 +43,6 @@ body {
 }
 
 
-
-
 #main-first{
     height:40px;
     background-color:rgba(51, 51, 51, 0.322); 
@@ -88,13 +86,13 @@ body {
     padding:10px;
     font-size: 20px;
     border-radius:4px;   
+
 }
 
-.see-all-btn:hover { 
-    color:#ffffff;
-    background-color:rgb(185, 233, 245);
+.see-all-btn:hover {
+  color: #ffffff;
+  background-color: rgb(185, 233, 245);
 }
-
 
 #main-third{
     height:350px;
@@ -124,7 +122,11 @@ padding-top:30px;
 
 }
 
- 
+
+  h5 {
+    font-size: 5px;
+    color: blue;
+  }
 
 
 @media only screen and (max-width: 747px) {
@@ -182,7 +184,7 @@ padding-top:30px;
         height:980px;
         background-color:rgba(51, 51, 51, 0.322);
         width:100%;
-        color:rgb(58, 57, 57);
+        color:rgb(255, 255, 255);
         text-align:center;
         font-size:50px;
        
