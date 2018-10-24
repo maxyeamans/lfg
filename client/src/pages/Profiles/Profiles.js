@@ -12,15 +12,38 @@ import MainProfile from "../../components/MainProfile";
 class Profiles extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      // globalId: localStorage.getItem('globalId')
+    };
+
   }
 
   componentDidMount() {
+    // this.loadUser();
     this.loadUsers();
     this.loadProfiles();
     this.loadGroups();
     this.deleteGroupId();
+    
   }
+
+  // loadUser = () => {
+  //   let username = localStorage.getItem("username");
+  //   console.log(username);
+  //   API.getUsers()
+  //     // .then(res => this.setState({ globalId: res.data._id }))
+  //     // .then(res => localStorage.setItem("globalId", res.data._id))
+  //     .then(res => res.data.map(group => {
+  //       if (username === group.username) {
+  //         this.setState({ globalId: group._id });
+  //         localStorage.setItem("globalId", group._id);
+  //       }
+  //     }),
+  //     )
+  //     // .then(this.handleGroups())
+  //     .catch(err => console.log(err));
+
+  // };
 
   loadUsers = () => {
     // gets all users
@@ -37,7 +60,11 @@ class Profiles extends Component {
   loadGroups = () => {
     // gets all groups
     API.getGroups()
-      .then(res => this.setState({ groups: res.data }))
+      .then(res => {
+        if (this.state.globalId === res.data.player1.user || res.data.player2.user || res.data.player3.user || res.data.player4.user || res.data.player5.user || res.data.player6.user) {
+        this.setState({ groups: res.data })
+        }
+      })
       .catch(err => console.log(err));
   };
 
