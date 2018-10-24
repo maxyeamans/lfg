@@ -41,15 +41,30 @@
     background-size: cover;
     background-color: #999;
   }
-  
-  #main-options {
+    
+  label, input, select {
+    font-family: "bignoodletoo" !important;
+    letter-spacing: 2px !important;
+    /* font-size: 2rem; */
+  }
+
+  label {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  input, select {
+    font-size: 2rem !important;
+    color: #111 !important;
+  }
+
+#main-options {
   height: 300x;
   width: 100%;
   display: inline-grid;
   grid-template-columns: auto auto;
 }
-  
-  
+    
   #main-first{
       height:40px;
       background-color:rgba(51, 51, 51, 0.322); 
