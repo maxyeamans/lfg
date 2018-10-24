@@ -198,9 +198,9 @@ class Messages extends React.Component {
           <br />
  
           </Row>
-          
+          <Row>
           <a id ="a-btn" href="/messages"><button id="msg-btn" onClick={this.handleMessageSubmit}>Add Message</button></a>
-          
+          </Row>
 
         {this.state.groupMessages.map(messages => (
           <CurrentMessage
