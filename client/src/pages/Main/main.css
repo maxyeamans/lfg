@@ -1,4 +1,3 @@
-
  h1 {
     font-family: "bignoodletoo";
     letter-spacing: 2px;
@@ -43,7 +42,12 @@
     background-color: #999;
   }
   
-  
+  #main-options {
+  height: 300x;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+}
   
   
   #main-first{
