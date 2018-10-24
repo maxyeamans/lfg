@@ -1,71 +1,37 @@
-
+#groups-image{
+  background-image: url("../../images/group.png"); 
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 120px;
+}
 
 h1 {
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
-    font-size:80px;
-    margin-top:100px;
-    
-    
-   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+    font-size:60px;
+    margin-top:80px;
   }
 
+body{
+background-image: url("../../images/background2.jpg");
+background-position: center center;
+background-repeat:  no-repeat;
+background-attachment: fixed;
+background-size:  cover;
+background-color: #999;  
+}
 
-
-  h3{
-    text-align:center;
-    color:rgb(196, 196, 196);
-     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    
-  }
-
-  
-
-
-
-
-  body{
-
-    background-image: url("../../images/background2.jpg");
-    background-position: center center;
-    background-repeat:  no-repeat;
-    background-attachment: fixed;
-    background-size:  cover;
-    background-color: #999;
-    
-  }
-
-  #groups-image{
-    background-image: url("../../images/group.png"); 
-    background-position: center center;
-    background-repeat:no-repeat;
-   background-size: contain;
-   height: 300px;
-
-  }
-
-  
-  
 .mygroups{
-    margin-bottom:200px;
+    margin-bottom:100px;
+    margin-top:30px;  
+    padding:10px;
 }
 
-.card {
-  margin: 0 auto;
-  width: 80%;
-  margin-bottom:50px;
-}
 
-@media only screen and (max-width: 1024px)  {
-
-  #groups-image{
-    background-image: url("../../images/group.png"); 
-    background-repeat:no-repeat;
-   background-size: contain;
-   height: 200px;
- margin-left:6%;
-  }
+@media only screen and (min-width: 425px) and (max-width: 1023px) {
+   
 
   h1 {
     font-family:"bignoodletoo"; 
@@ -73,86 +39,68 @@ h1 {
     text-align:center;
     font-size:60px;
     margin-top:150px;
-    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
   }
 
-  h2 {
-    color:rgb(199, 199, 199);
+
+  body{
+    background-image: url("../../images/background2.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;  
+  }
+
+  #groups-image{
+    background-image: url("../../images/group.png"); 
+    background-repeat:no-repeat;
+   background-size: contain;
+   height: 200px;
+   background-position: center center;
+  }
+
+.mygroups{
+    margin-bottom:300px;
+    margin-top:50px;      
+}
+}
+
+
+@media only screen and (min-width: 1024px) {
+h1 {
     font-family:"bignoodletoo"; 
     letter-spacing: 2px;
     text-align:center;
-    font-size:15px;
-  
-   /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+    font-size:80px;
+    margin-top:100px;
   }
 
-  h3{
-    text-align:center;
-    color:rgb(196, 196, 196);
-     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size:15px;
+
+  body{
+    background-image: url("../../images/background2.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;  
   }
 
- 
-
-  body{   
-    background-image: url("../../images/background2.jpg");    
+  #groups-image{
+    background-image: url("../../images/group.png"); 
+    background-position: center center;
+    background-repeat:no-repeat;
+   background-size: contain;
+   height:300px;
   }
-  
+
 .mygroups{
-    margin-bottom:300px;
-    margin-top:100px;      
+    margin-bottom:200px;
+    margin-top:20px;
 }
+
+.card {
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom:50px;
 }
-
-
-@media only screen and (max-width: 425px) {
-    /* For mobile phones: */
-
-    #groups-image{
-      background-image: url("../../images/group.png"); 
-      background-repeat:no-repeat;
-     background-size: contain;
-     height: 120px;
-   margin-left:6%;
-    }
-
-    h1 {
-        font-family:"bignoodletoo"; 
-        letter-spacing: 2px;
-        text-align:center;
-        font-size:60px;
-        margin-top:80px;
-        /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-      }
-    
-      h2 {
-        color:rgb(199, 199, 199);
-        font-family:"bignoodletoo"; 
-        letter-spacing: 2px;
-        text-align:center;
-        font-size:15px;
-      
-       /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
-      }
-    
-      h3{
-        text-align:center;
-        color:rgb(196, 196, 196);
-         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-        font-size:15px;
-      }
-    
-    
-      body{   
-        background-image: url("../../images/background2.jpg");    
-      }
-      
-    .mygroups{
-        margin-bottom:100px;
-        margin-top:0px;      
-    }
-
-   
-    
 }
