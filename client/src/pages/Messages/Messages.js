@@ -109,9 +109,9 @@ class Messages extends React.Component {
   }
 
   getGroup = () => {
-    API.getGroup({
-      _id: this.state.groupId
-    })
+    API.getGroup(
+      this.state.groupId
+    )
       .then(res => {
         if (res.data._id === this.state.groupId) {
           this.setState({
@@ -136,15 +136,17 @@ class Messages extends React.Component {
         res.data.map(message => {
           if (message.groupId === this.state.groupId) {
             this.state.groupMessages.push(message);
-
-
+            console.log(message);
           }
         }
 
 
         )
-      }
-      )
+      
+      }, () => {
+        console.log(this.state.groupMessages);
+      })
+      
       .catch(err => console.log(err));
   };
 
@@ -199,7 +201,7 @@ class Messages extends React.Component {
 
         <Row>
           
-          <a href="/messages"><button id="msg-btn" onClick={this.handleMessageSubmit}>Add Message</button></a>
+          <a id ="a-btn" href="/messages"><button id="msg-btn" onClick={this.handleMessageSubmit}>Add Message</button></a>
           
         </Row>
         {this.state.groupMessages.map(messages => (
