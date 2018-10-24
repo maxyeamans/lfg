@@ -13,13 +13,13 @@ class Profiles extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      globalId: localStorage.getItem('globalId')
+      // globalId: localStorage.getItem('globalId')
     };
 
   }
 
   componentDidMount() {
-    this.loadUser();
+    // this.loadUser();
     this.loadUsers();
     this.loadProfiles();
     this.loadGroups();
@@ -27,23 +27,23 @@ class Profiles extends Component {
     
   }
 
-  loadUser = () => {
-    let username = localStorage.getItem("username");
-    console.log(username);
-    API.getUsers()
-      // .then(res => this.setState({ globalId: res.data._id }))
-      // .then(res => localStorage.setItem("globalId", res.data._id))
-      .then(res => res.data.map(group => {
-        if (username === group.username) {
-          this.setState({ globalId: group._id });
-          localStorage.setItem("globalId", group._id);
-        }
-      }),
-      )
-      // .then(this.handleGroups())
-      .catch(err => console.log(err));
+  // loadUser = () => {
+  //   let username = localStorage.getItem("username");
+  //   console.log(username);
+  //   API.getUsers()
+  //     // .then(res => this.setState({ globalId: res.data._id }))
+  //     // .then(res => localStorage.setItem("globalId", res.data._id))
+  //     .then(res => res.data.map(group => {
+  //       if (username === group.username) {
+  //         this.setState({ globalId: group._id });
+  //         localStorage.setItem("globalId", group._id);
+  //       }
+  //     }),
+  //     )
+  //     // .then(this.handleGroups())
+  //     .catch(err => console.log(err));
 
-  };
+  // };
 
   loadUsers = () => {
     // gets all users
