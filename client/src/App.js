@@ -15,7 +15,7 @@ import Messages from "./pages/Messages";
 
 const App = () => (
   <Router>
-    <div>
+    <div style={{ padding: 0, margin: 0 }}> 
       {/* <Nav isLoggedIn={true} /> */}
       <Switch>
         <Route exact path="/" component={Login} />
@@ -33,7 +33,6 @@ const App = () => (
         <Route path="/updategroup/:id" component={UpdateGroup} />
         <Route component={NoPage} />
       </Switch>
-      {/* <Footer /> */}
     </div>
   </Router>
 );
