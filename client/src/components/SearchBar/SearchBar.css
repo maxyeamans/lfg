@@ -1,17 +1,22 @@
 
+.container {
+	width:100%;
+ }
+
 form{
 	background-color:rgba(44, 44, 44, 0);
 }
 .submit-button{
-	background-color: #aed3e0;
+	width: 100%;
+	float:right;
+	background-color:rgb(85, 157, 240);
+	border: none;
+	color:#ffffff;
 	font-family:"bignoodletoo";
 	letter-spacing: 2px;
-	color: #FFFFFF;
+	padding:10px;
 	font-size: 20px;
-  padding:10px;
-	width: 20%;
-	border-radius: 4px;
-	float:right;
+	border-radius:4px; 
 }
 
 .submit-button:hover {
@@ -24,29 +29,20 @@ form{
 	letter-spacing: 2px;
 }
 
-@media only screen and (max-width: 425px) {
-	.container {
-		width:100%;
-	 }
+@media only screen and (min-width: 425px) {
+
 	 
 	 .submit-button{
-		 background-color: #aed3e0;
+		 width:20%;
+		 float:right;
+		 background-color:rgb(85, 157, 240);
+		 border: none;
+		 color:#ffffff;
 		 font-family:"bignoodletoo";
 		 letter-spacing: 2px;
-		 color: #FFFFFF;
-		 font-size: 20px;
 		 padding:10px;
-		 width: 40%;
-		 border-radius: 4px;
+		 font-size: 20px;
+		 border-radius:4px; 
 	 }
 	 
-	 .submit-button:hover {
-		 background-color: rgb(44, 43, 43); 
-		 color: #f09731;
-	 }
-	 
-	 .form-group{
-		 font-family:"bignoodletoo";
-		 letter-spacing: 2px;
-	 }
 }
