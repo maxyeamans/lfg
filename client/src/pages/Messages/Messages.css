@@ -27,11 +27,16 @@
   margin:auto;
 }
 
+#a-btn {
+  margin:auto;
+}
+
 
 button{
 background-color:rgb(127, 173, 243);
 color:white;
 margin-bottom:20px;
+
 }
 
 button:hover{
