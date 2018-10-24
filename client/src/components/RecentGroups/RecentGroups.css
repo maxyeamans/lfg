@@ -1,62 +1,38 @@
-.recent-results{
-width:30%;
-background-color:rgba(207, 207, 241, 0.233);
-float:left;
-margin-left:35px;
-border: 1px solid rgb(255, 255, 255);
-border-radius:4px;
+.recent-results {
+  width: 85%;
+  background-color: rgba(207, 207, 241, 0.233);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  margin: 0 auto;
 }
 
-.list-group-item-a{
-  font-family:"bignoodletoo";
+.list-group-item-a {
+  font-family: "bignoodletoo";
   letter-spacing: 2px;
   border: 0px solid rgb(255, 255, 255);
-  background-color:rgb(255, 255, 255);
-  font-size:20px;
-  padding-top:10px;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding-top: 10px;
   list-style: none;
 }
 
-.list-group-item1{
-  font-family:"bignoodletoo";
+.list-group-item1 {
+  font-family: "bignoodletoo";
   letter-spacing: 2px;
- text-align:left;
-  color:rgb(255, 255, 255);
-  font-size:20px;
-  padding-top:10px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding-top: 10px;
   list-style: none;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
-
-
-
-@media only screen and (max-width: 1150px) {
-  
-  .recent-results{
-    width:25%;
-    background-color:rgba(207, 207, 241, 0.233);
-    float:left;
-    margin-left:6%;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius:4px;
-    }
-
-
-}
-
+/* ####################################
+   ###### FOR MOBILE PHONES ###########
+   #################################### */
 @media only screen and (max-width: 747px) {
-  
-  .recent-results{
-  width:90%;
-  background-color:rgba(207, 207, 241, 0.233);
-  margin:auto;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius:4px;
-  margin-left:5%;
-  margin-bottom:10px;
+  .recent-results {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
-
-
 }
-
