@@ -190,18 +190,16 @@ class Messages extends React.Component {
 
         </div>
 
-
         <Row>
           <textarea id="text-area" rows="4" cols="100" name="message" onChange={this.handleInputChange} value={this.state.message}>
           </textarea>
           <br />
-        </Row>
-
-        <Row>
+ 
+          </Row>
           
           <a href="/messages"><button id="msg-btn" onClick={this.handleMessageSubmit}>Add Message</button></a>
           
-        </Row>
+
         {this.state.groupMessages.map(messages => (
           <CurrentMessage
             gamertag={messages.gamertag}
