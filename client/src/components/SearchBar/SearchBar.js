@@ -46,7 +46,7 @@ const SearchBar = props => {
 						<option value="">Choose Platform (3)</option>
 						<option value="PC">PC</option>
 						<option value="Xbox">Xbox</option>
-						<option value="PS4">PS4</option>
+						<option value="Playstation">Playstation</option>
 
 					</select>
 				</div>

@@ -234,14 +234,16 @@ class ManageGroupModal extends React.Component {
               >
                 Update
               </button>
-              <button
+              {/* <button
                 type="submit"
                 className="group-delete-btn"
                 onClick={this.handleFormDelete}
               >
                 Delete
+
               </button>
               <div>{DeleteBtn}</div>
+
             </form>
          
 
