@@ -34,3 +34,6 @@
     color: #f09731;
   }
 
+input, label, select {
+    font-family: "bignoodletoo" !important;
+}
