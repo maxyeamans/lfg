@@ -19,9 +19,11 @@ Landing Page- Once logged in you will arive at the landing page. Here you can cr
 
 Search Groups - On the search for groups page you have the option of searching for all open groups, groups with a specific rank, groups on a specific platform, or by a specific group name.
 
-Create Group -
+![searchgroup](https://user-images.githubusercontent.com/37599851/48167249-5861fd00-e2a8-11e8-9a8f-52838a2ea56f.jpg)
 
+Create Group - To create a group you have to enter a unique group name, gaming platform, group rank, first planned game time, your gamertag, rank, and role.
 
+![creategroup](https://user-images.githubusercontent.com/37599851/48167972-ca3b4600-e2aa-11e8-8b4a-384af86f0fdc.jpg)
 
 Request Join - If you would like to join a specific group you can request to join. When joining you provide your gamertag, role, and rank.
 
@@ -41,11 +43,16 @@ Manage Player - From the My Groups page you can manage your player info in the g
 
 Group Messages - From the My Groups page you can access your group messages. This is essentially a message board for the group to communicate any info related to the group.
 
-
+![groupmessages](https://user-images.githubusercontent.com/37599851/48167240-5730d000-e2a8-11e8-9203-b120d0a72988.jpg)
 
 Update Profile/Log Out - from this modal you can update your username, password, or email on your account. Additionally you can click logout to log out of the site.
 
 ![profileupdate](https://user-images.githubusercontent.com/37599851/48167246-57c96680-e2a8-11e8-9f2a-8d4aabcb7517.jpg)
+
+Technologies used - React.js, React Router, Node.js, Express, MongoDB, Javascript, CSS, HTML. NPM packages used: Mongoose, Bcrypt, Axios.
+
+
+
 
 
 
